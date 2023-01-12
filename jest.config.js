@@ -7,7 +7,6 @@ const compileModules = [
   'react-sticky-box',
   'tween-one',
   '@babel',
-  '@ant-design',
 ];
 
 const ignoreList = [];
