@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "anyUI": ["components/index.ts"],
+      "@": ["components"],
       "anyUI/es/*": ["components/*"],
       "anyUI/lib/*": ["components/*"],
       "anyUI/locale/*": ["components/locale/*"]
