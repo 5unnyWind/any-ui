@@ -1,3 +1,4 @@
+@import './basic.scss';
 @import "./mixin.scss";
 
 .ai-btn {
@@ -11,12 +12,10 @@
   vertical-align: middle;
   background-image: none;
   border: $ai-btn-border-width solid transparent;
-  @include button-size(
-    $ai-btn-padding-y,
+  @include button-size($ai-btn-padding-y,
     $ai-btn-padding-x,
     $ai-btn-font-size,
-    $border-radius
-  );
+    $border-radius);
   box-shadow: $ai-btn-box-shadow;
   cursor: pointer;
   transition: $ai-btn-transition;
@@ -27,28 +26,24 @@
     opacity: $ai-btn-disabled-opacity;
     box-shadow: none;
 
-    > * {
+    >* {
       pointer-events: none; // 清除鼠标事件
     }
   }
 }
 
 .ai-btn-lg {
-  @include button-size(
-    $ai-btn-padding-y-lg,
+  @include button-size($ai-btn-padding-y-lg,
     $ai-btn-padding-x-lg,
     $ai-btn-font-size-lg,
-    $ai-btn-border-radius-lg
-  );
+    $ai-btn-border-radius-lg);
 }
 
 .ai-btn-sm {
-  @include button-size(
-    $ai-btn-padding-y-sm,
+  @include button-size($ai-btn-padding-y-sm,
     $ai-btn-padding-x-sm,
     $ai-btn-font-size-sm,
-    $ai-btn-border-radius-sm
-  );
+    $ai-btn-border-radius-sm);
 }
 
 .ai-btn-primary {
@@ -60,14 +55,12 @@
 }
 
 .ai-btn-default {
-  @include button-style(
-    $white,
+  @include button-style($white,
     $gray-400,
     $body-color,
     $white,
     $primary,
-    $primary
-  );
+    $primary);
 }
 
 .ai-btn-link {
