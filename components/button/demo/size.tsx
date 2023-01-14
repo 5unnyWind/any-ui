@@ -11,7 +11,7 @@ const App: React.FC = () => {
 
   return (
     <>
-      <Button btnType="primary" size={size} onClick={changeSize}>
+      <Button type="primary" size={size} onClick={changeSize}>
         Download
       </Button>
     </>
