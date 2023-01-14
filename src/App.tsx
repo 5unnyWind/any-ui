@@ -1,11 +1,11 @@
 import React from "react";
 import "./components/styles/index.scss";
-import { Button } from "./components";
+import ButtonDemo from "./components/button/demo/size";
 
 function App() {
   return (
     <div className="App">
-      <Button></Button>
+      <ButtonDemo></ButtonDemo>
     </div>
   );
 }

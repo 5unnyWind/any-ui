@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@": ["components"],
+      "@": ["src"],
       "anyUI/es/*": ["components/*"],
       "anyUI/lib/*": ["components/*"],
       "anyUI/locale/*": ["components/locale/*"]
