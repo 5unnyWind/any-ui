@@ -11,7 +11,7 @@ let warning: Warning = noop;
 // 警告提示
 if (process.env.NODE_ENV !== "production") {
   warning = (valid, component, message) => {
-    rcWarning(valid, `[antd: ${component}] ${message}`);
+    rcWarning(valid, `[anyUI: ${component}] ${message}`);
     if (process.env.NODE_ENV === "test") {
       resetWarned();
     }
