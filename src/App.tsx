@@ -1,7 +1,6 @@
 import React from "react";
-import { Button } from "../components";
-
-console.log(process.env.NODE_ENV);
+import "./components/styles/index.scss";
+import { Button } from "./components";
 
 function App() {
   return (

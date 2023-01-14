@@ -1,0 +1,14 @@
+// 重置样式
+@import "../theme/themes/reset.scss";
+
+// 默认主题
+@import "../theme/themes/default/index.scss";
+
+// 暗黑主题
+@import "../theme/themes/dark/index.scss";
+
+// 全局样式
+@import "./mixin.scss";
+
+// button
+@import "../button/style";
