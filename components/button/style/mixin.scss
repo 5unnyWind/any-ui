@@ -14,18 +14,21 @@
 ) {
   color: $color;
   background: $background;
-  border-color: $border;
+  border-color: $border; // 覆盖基础边框颜色
+
   &:hover {
     color: $hover-color;
     background: $hover-background;
     border-color: $hover-border;
   }
+
   &:focus,
   &.focus {
     color: $hover-color;
     background: $hover-background;
     border-color: $hover-border;
   }
+
   &:disabled,
   &.disabled {
     color: $color;
@@ -44,6 +47,7 @@
     opacity: 0;
     transform: $scaleStart;
   }
+
   .zoom-in-#{$direction}-enter-active {
     opacity: 1;
     transform: $scaleEnd;
@@ -51,9 +55,11 @@
       opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) 100ms;
     transform-origin: $origin;
   }
+
   .zoom-in-#{$direction}-exit {
     opacity: 1;
   }
+
   .zoom-in-#{$direction}-exit-active {
     opacity: 0;
     transform: $scaleStart;

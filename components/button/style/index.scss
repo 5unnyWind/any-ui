@@ -1,6 +1,7 @@
 @import "./basic.scss";
 @import "./mixin.scss";
 
+// 默认样式
 .ai-btn {
   position: relative;
   display: inline-block;
@@ -12,13 +13,14 @@
   vertical-align: middle;
   background-image: none;
   border: $ai-btn-border-width solid transparent;
+  box-shadow: 0 1px 5px #0003, 0 2px 2px #00000024, 0 3px 1px -2px #0000001f;
   @include button-size(
     $ai-btn-padding-y,
     $ai-btn-padding-x,
     $ai-btn-font-size,
     $border-radius
   );
-  box-shadow: $ai-btn-box-shadow;
+  // box-shadow: $ai-btn-box-shadow;
   cursor: pointer;
   transition: $ai-btn-transition;
 
@@ -27,13 +29,13 @@
     cursor: not-allowed;
     opacity: $ai-btn-disabled-opacity;
     box-shadow: none;
-
     > * {
       pointer-events: none; // 清除鼠标事件
     }
   }
 }
 
+// 控制大小
 .ai-btn-lg {
   @include button-size(
     $ai-btn-padding-y-lg,
@@ -61,6 +63,7 @@
   );
 }
 
+// 组件type
 .ai-btn-primary {
   @include button-style($primary, $primary, $white);
 }
@@ -80,6 +83,7 @@
   );
 }
 
+// 链接时格式
 .ai-btn-link {
   font-weight: $font-weight-normal;
   color: $ai-btn-link-color;
