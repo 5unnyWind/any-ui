@@ -11,9 +11,7 @@ const App = () => {
 
   return (
     <>
-      <Button type="primary" size={size} onClick={changeSize}>
-        Download
-      </Button>
+      <Button label="Download" size={size}></Button>
     </>
   );
 };
