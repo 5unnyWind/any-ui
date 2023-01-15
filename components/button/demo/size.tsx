@@ -3,15 +3,13 @@ import Button from "../button";
 import type { ButtonSize } from "../button";
 
 const App = () => {
-  const [size, setSize] = useState<ButtonSize>("sm"); // default is 'sm'
-
-  const changeSize = () => {
-    size === "lg" ? setSize("sm") : setSize("lg");
-  };
-
   return (
     <>
-      <Button label="Download" size={size}></Button>
+      <Button label="Download" size="sm" type="default" wave></Button>
+      <span> </span>
+      <Button label="Download" size="md" type="primary" wave></Button>
+      <span> </span>
+      <Button label="Download" size="lg" type="danger" glossy></Button>
     </>
   );
 };
