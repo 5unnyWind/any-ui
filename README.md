@@ -1,7 +1,5 @@
 # ANY-UI
 
-## 开发
-
 # 请统一使用 pnpm：
 
 请统一使用 pnpm：
@@ -20,6 +18,8 @@ pnpm start
 
 # 添加依赖：
 
+=======
+
 ```bash
 # 生产依赖
 pnpm add xxx
@@ -28,6 +28,7 @@ pnpm add -D xxx
 ```
 
 =======
+
 测试：
 ...
 
