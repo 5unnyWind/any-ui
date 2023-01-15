@@ -37,5 +37,6 @@ module.exports = {
     "react/no-unstable-nested-components": 0,
     "no-undef": 0,
     "@typescript-eslint/no-empty-function": 0,
+    "@typescript-eslint/no-explicit-any": ["off"]
   },
 };
