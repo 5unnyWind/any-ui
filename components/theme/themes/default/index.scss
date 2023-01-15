@@ -51,6 +51,7 @@ $font-family-base: $font-family-sans-serif !default;
 // 字体大小
 $font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
 $font-size-lg: $font-size-base * 1.25 !default;
+$font-size-md: $font-size-base * 1 !default;
 $font-size-sm: $font-size-base * 0.875 !default;
 $font-size-root: null !default;
 
@@ -170,6 +171,7 @@ $border-color: $gray-300 !default;
 
 $border-radius: 0.25rem !default;
 $border-radius-lg: 0.3rem !default;
+$border-radius-md: 0.25rem !default;
 $border-radius-sm: 0.2rem !default;
 
 // 不同类型的 box shadow
@@ -177,8 +179,6 @@ $box-shadow-sm: 0 0.125rem 0.25rem rgba($black, 0.075) !default;
 $box-shadow: 0 0.5rem 1rem rgba($black, 0.15) !default;
 $box-shadow-lg: 0 1rem 3rem rgba($black, 0.175) !default;
 $box-shadow-inset: inset 0 1px 2px rgba($black, 0.075) !default;
-
-
 
 // menu
 $menu-border-width: $border-width !default;
@@ -198,8 +198,6 @@ $menu-item-disabled-color: $gray-600 !default;
 //submenu
 $submenu-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12),
   0 0 6px 0 rgba(0, 0, 0, 0.04);
-
-
 
 // Progress bars
 

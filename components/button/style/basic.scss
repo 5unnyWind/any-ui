@@ -12,6 +12,10 @@ $ai-btn-padding-y-sm: 0.25rem !default;
 $ai-btn-padding-x-sm: 0.5rem !default;
 $ai-btn-font-size-sm: $font-size-sm !default;
 
+$ai-btn-padding-y-md: 0.5rem !default;
+$ai-btn-padding-x-md: 1rem !default;
+$ai-btn-font-size-md: $font-size-md !default;
+
 $ai-btn-padding-y-lg: 0.5rem !default;
 $ai-btn-padding-x-lg: 1rem !default;
 $ai-btn-font-size-lg: $font-size-lg !default;
@@ -20,7 +24,8 @@ $ai-btn-font-size-lg: $font-size-lg !default;
 $ai-btn-border-width: $border-width !default;
 
 // 按钮其他
-$ai-btn-box-shadow: inset 0 1px 0 rgba($white, 0.15), 0 1px 1px rgba($black, 0.075) !default;
+$ai-btn-box-shadow: inset 0 1px 0 rgba($white, 0.15),
+  0 1px 1px rgba($black, 0.075) !default;
 $ai-btn-disabled-opacity: 0.65 !default;
 
 // 链接按钮
@@ -31,14 +36,13 @@ $ai-btn-link-disabled-color: $gray-600 !default;
 // 按钮 radius
 $ai-btn-border-radius: $border-radius !default;
 $ai-btn-border-radius-lg: $border-radius-lg !default;
+$ai-btn-border-radius-md: $border-radius-md !default;
 $ai-btn-border-radius-sm: $border-radius-sm !default;
 
 $ai-btn-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
   border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !default;
 
-
-
- //input
+// 输入框
 $input-padding-y: $ai-btn-padding-y !default;
 $input-padding-x: $ai-btn-padding-x !default;
 $input-font-family: $ai-btn-font-family !default;
@@ -65,6 +69,7 @@ $input-box-shadow: $box-shadow-inset !default;
 
 $input-border-radius: $border-radius !default;
 $input-border-radius-lg: $border-radius-lg !default;
+$input-border-radius-md: $border-radius-md !default;
 $input-border-radius-sm: $border-radius-sm !default;
 
 $input-focus-bg: $input-bg !default;
@@ -83,4 +88,4 @@ $input-transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out !d
 
 $input-group-addon-color: $input-color !default;
 $input-group-addon-bg: $gray-200 !default;
-$input-group-addon-border-color: $input-border-color !default; 
+$input-group-addon-border-color: $input-border-color !default;
