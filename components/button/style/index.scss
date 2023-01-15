@@ -1,30 +1,31 @@
+@import "./basic.scss";
 @import "./mixin.scss";
 
-.btn {
+.ai-btn {
   position: relative;
   display: inline-block;
-  font-weight: $btn-font-weight;
-  line-height: $btn-line-height;
+  font-weight: $ai-btn-font-weight;
+  line-height: $ai-btn-line-height;
   color: $body-color;
   white-space: nowrap;
   text-align: center;
   vertical-align: middle;
   background-image: none;
-  border: $btn-border-width solid transparent;
+  border: $ai-btn-border-width solid transparent;
   @include button-size(
-    $btn-padding-y,
-    $btn-padding-x,
-    $btn-font-size,
+    $ai-btn-padding-y,
+    $ai-btn-padding-x,
+    $ai-btn-font-size,
     $border-radius
   );
-  box-shadow: $btn-box-shadow;
+  box-shadow: $ai-btn-box-shadow;
   cursor: pointer;
-  transition: $btn-transition;
+  transition: $ai-btn-transition;
 
   &.disabled,
   &[disabled] {
     cursor: not-allowed;
-    opacity: $btn-disabled-opacity;
+    opacity: $ai-btn-disabled-opacity;
     box-shadow: none;
 
     > * {
@@ -33,33 +34,42 @@
   }
 }
 
-.btn-lg {
+.ai-btn-lg {
   @include button-size(
-    $btn-padding-y-lg,
-    $btn-padding-x-lg,
-    $btn-font-size-lg,
-    $btn-border-radius-lg
+    $ai-btn-padding-y-lg,
+    $ai-btn-padding-x-lg,
+    $ai-btn-font-size-lg,
+    $ai-btn-border-radius-lg
   );
 }
 
-.btn-sm {
+.ai-btn-md {
   @include button-size(
-    $btn-padding-y-sm,
-    $btn-padding-x-sm,
-    $btn-font-size-sm,
-    $btn-border-radius-sm
+    $ai-btn-padding-y-md,
+    $ai-btn-padding-x-md,
+    $ai-btn-font-size-md,
+    $ai-btn-border-radius-md
   );
 }
 
-.btn-primary {
+.ai-btn-sm {
+  @include button-size(
+    $ai-btn-padding-y-sm,
+    $ai-btn-padding-x-sm,
+    $ai-btn-font-size-sm,
+    $ai-btn-border-radius-sm
+  );
+}
+
+.ai-btn-primary {
   @include button-style($primary, $primary, $white);
 }
 
-.btn-danger {
+.ai-btn-danger {
   @include button-style($danger, $danger, $white);
 }
 
-.btn-default {
+.ai-btn-default {
   @include button-style(
     $white,
     $gray-400,
@@ -70,14 +80,14 @@
   );
 }
 
-.btn-link {
+.ai-btn-link {
   font-weight: $font-weight-normal;
-  color: $btn-link-color;
+  color: $ai-btn-link-color;
   text-decoration: $link-decoration;
   box-shadow: none;
 
   &:hover {
-    color: $btn-link-hover-color;
+    color: $ai-btn-link-hover-color;
     text-decoration: $link-hover-decoration;
   }
 
@@ -89,7 +99,7 @@
 
   &:disabled,
   &.disabled {
-    color: $btn-link-disabled-color;
+    color: $ai-btn-link-disabled-color;
     pointer-events: none;
   }
 }
