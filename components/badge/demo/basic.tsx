@@ -1,5 +1,5 @@
 import React from "react";
-import Badge from "../badge";
+import Badge from "../index";
 
 const App: React.FC = () => {
   return (
@@ -10,7 +10,14 @@ const App: React.FC = () => {
       <Badge type="warning">警告</Badge>
       <Badge type="error">失败</Badge>
       <Badge type="default">35</Badge>
-      <Badge type="default" dot/>
+      <Badge type="default" dot />
+
+      <div style={{margin:'20px'}}/>
+      
+      <Badge.Anchor placement="topRight">
+        <Badge type="default">12</Badge>
+        <div style={{width:"50px",height:"50px",backgroundColor:'gray',borderRadius:'10px'}}>头像</div>
+      </Badge.Anchor>
     </>
   );
 };

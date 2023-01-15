@@ -55,3 +55,43 @@
   );
 }
 
+.anchor {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+sup {
+  position: absolute;
+  z-index: 1;
+}
+
+.sup-topLeft{
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  transform-origin: 0% 0%;
+}
+
+.sup-topRight{
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  transform-origin: 100% 0%;
+}
+
+.sup-bottomLeft{
+  bottom: 0;
+  left: 0;
+  transform: translate(-50%, 50%);
+  transform-origin: 0% 100%;
+}
+
+.sup-bottomRight{
+  bottom: 0;
+  right: 0;
+  transform: translate(50%, 50%);
+  transform-origin: 100% 100%;
+}
