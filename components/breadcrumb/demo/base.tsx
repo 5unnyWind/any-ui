@@ -1,22 +1,30 @@
 import React, { useState } from "react";
 import Breadcrumb from "../breadcrumb";
-import BreadcrumbItem from "../breadcrumbItem";
 import type { BreadcrumbProps } from "../index";
-import type { Route } from "../breadcrumb";
 
 const App: React.FC = () => {
   const [size, setSize] = useState<BreadcrumbProps>({});
 
-  const routes: Route[] = [
+  const routes = [
     {
       label: "首页",
-      routeUrl: "/home",
+      route: "/home",
       disabled: false,
+      className: "hah",
     },
     {
       label: "面板",
-      routeUrl: "/workplace",
-      disabled: false,
+      route: "/workplace",
+      href: "https://www.baidu.com",
+    },
+    {
+      label: "主页",
+      route: "/2131",
+      disabled: true,
+    },
+    {
+      label: "主页",
+      route: "/2131",
     },
   ];
 
@@ -26,7 +34,7 @@ const App: React.FC = () => {
 
   return (
     <>
-      <BreadcrumbItem />
+      <Breadcrumb routes={routes} separator="/" />
     </>
   );
 };

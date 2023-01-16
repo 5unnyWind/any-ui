@@ -1,0 +1,26 @@
+.breadcrumb {
+  line-height: $line-height-lg;
+  background-color: $white;
+  margin: 0 0.75rem;
+}
+
+.breadcrumb-item {
+  margin: 0 8px;
+  cursor: pointer;
+  list-style: none;
+  text-decoration: none;
+  outline: none;
+
+  &:not(:last-child) {
+    color: $gray-500;
+  }
+
+  &.disabled {
+    color: $gray-500;
+    cursor: default;
+  }
+}
+
+.breadcrum-separator {
+  color: $gray-500;
+}
