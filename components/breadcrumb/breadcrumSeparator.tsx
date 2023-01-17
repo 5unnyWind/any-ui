@@ -6,7 +6,7 @@ const breadcrumSeparator: React.FC<{
   const { separator } = props;
   return (
     <>
-      <span className="breadcrum-separator">{separator ? separator : "/"}</span>
+      <span className="bcb-separator">{separator ? separator : "/"}</span>
     </>
   );
 };

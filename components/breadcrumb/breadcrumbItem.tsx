@@ -17,7 +17,10 @@ export type BreadcrumbItemProps = Partial<NativeBreadcrumbItemProps>;
 const BreadcrumbItem: React.FC<BreadcrumbItemProps> = (props) => {
   const { className, href, label, route, disabled } = props;
 
-  const classes = classnames("breadcrumb-item", className, { disabled });
+  const classes = classnames("bcb-item", className, {
+    disabled,
+    [`bcb-link`]: href,
+  });
 
   const indexUrl = (route: string) => {
     return () => {

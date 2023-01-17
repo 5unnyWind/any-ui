@@ -5,36 +5,45 @@ import type { BreadcrumbProps } from "../index";
 const App: React.FC = () => {
   const [size, setSize] = useState<BreadcrumbProps>({});
 
-  const routes = [
-    {
-      label: "首页",
-      route: "/home",
-      disabled: false,
-      className: "hah",
-    },
-    {
-      label: "面板",
-      route: "/workplace",
-      href: "https://www.baidu.com",
-    },
-    {
-      label: "主页",
-      route: "/2131",
-      disabled: true,
-    },
-    {
-      label: "主页",
-      route: "/2131",
-    },
+  const routes1 = [
+    { label: "Home" },
+    { label: "System" },
+    { label: "Workplace" },
   ];
-
-  const data: BreadcrumbProps = {
-    routes: routes,
-  };
+  const routes2 = [
+    { label: "Home" },
+    { label: "System", href: "https://www.baidu.com" },
+    { label: "Workplace" },
+  ];
+  const routes3 = [
+    { label: "Home", route: "/home" },
+    { label: "System", route: "/system" },
+    { label: "Workplace", route: "/workplace" },
+  ];
 
   return (
     <>
-      <Breadcrumb routes={routes} separator="/" />
+      <div className="session">
+        <h6>基本用法</h6>
+        <Breadcrumb routes={routes1} />
+      </div>
+      <div className="session">
+        <h6>自定义分割线</h6>
+        <Breadcrumb routes={routes1} separator=">" />
+        <Breadcrumb routes={routes1} separator="→" />
+      </div>
+      <div className="session">
+        <h6>指向外链接</h6>
+        <Breadcrumb routes={routes2} />
+      </div>
+      <div className="session">
+        <h6>颜色类型</h6>
+        <Breadcrumb routes={routes1} colorType="black" />
+      </div>
+      <div className="session">
+        <h6>router绑定（未完成）</h6>
+        <Breadcrumb routes={routes3} />
+      </div>
     </>
   );
 };
