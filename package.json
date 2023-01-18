@@ -1,9 +1,9 @@
 {
-  "name": "any-vite",
+  "name": "any-ui",
   "version": "0.0.1",
-  "homepage": "https://github.com/KusStar/any-vite#readme",
+  "homepage": "https://github.com/xiaoLi-TvT/any-ui#readme",
   "license": "MIT",
-  "author": "KusStar (https://github.com/KusStar)",
+  "author": "AnyU",
   "scripts": {
     "build": "tsc && vite build",
     "dev": "vite",
