@@ -48,3 +48,7 @@ pnpm add -D xxx
 # ...
 
 ...
+
+## License
+
+[MIT](LICENSE)
