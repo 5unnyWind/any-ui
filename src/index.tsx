@@ -1,13 +1,18 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App";
+import "../components/styles/index.scss";
+import './stories/style.css'
 
-const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
-);
+// import React from "react";
+// import ReactDOM from "react-dom/client";
+// import App from "./App";
 
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+// const root = ReactDOM.createRoot(
+//   document.getElementById("root") as HTMLElement
+// );
+
+// root.render(
+//   <React.StrictMode>
+//     <App />
+//   </React.StrictMode>
+// );
+
+export * from '../components'

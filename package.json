@@ -24,6 +24,9 @@
     "webpack": "^5.75.0"
   },
   "scripts": {
+    "doc":"ladle serve",
+    "doc:build":"ladle build",
+    "doc:preview":"ladle preview",
     "start": "craco start",
     "build": "craco build",
     "build:dev": "cross-env NODE_ENV=development webpack --config webpack.dev.js",

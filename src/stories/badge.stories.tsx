@@ -1,7 +1,10 @@
 import React from "react";
-import { Badge } from "../components";
+import { Badge } from "@";
+// export default {
+//   title: "Components / Badge",
+// };
 
-export const Basic = () => (
+export const Basic  = () => (
   <>
     <h2>徽标</h2>
     <Badge type="default">默认</Badge>
@@ -13,6 +16,8 @@ export const Basic = () => (
     <Badge type="default" dot />
   </>
 );
+
+
 
 export const anchor = () => (
   <>
