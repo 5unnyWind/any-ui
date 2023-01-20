@@ -17,6 +17,7 @@ interface BaseButtonProps {
   label: string; // 按钮内部内容
   wave: unknown; // 开起波纹
   glossy: unknown; // 渐变色
+  border: string;
 }
 
 type NativeButtonProps = BaseButtonProps &
@@ -57,31 +58,25 @@ const Button: React.FC<ButtonProps> = (props) => {
     textColor,
     wave,
     glossy,
+    border,
     ...restProps
   } = props;
 
   const classes = classNames("ai-btn", className, {
     [`ai-btn-${type}`]: type, // type 参数存在时则动态添加 `ai-btn-${btnType}` 类
     [`ai-btn-${size}`]: size, // size 参数存在时动态添加 `ai-btn-${size}` 类 , size 包括大小padding ; font-size ; border-radius;
+    ["ai-btn-glossy"]: glossy,
     disabled: type === "link" && disabled, // 由于 a 链接原生不带有 disabled 属性，因此需要手动给它添加一个 disabled 类。通过编写类的样式实现disabled效果
   });
 
   const getStyle = () => {
-    // 默认分割 + wave
     let style = {};
 
-    if (!type) {
+    if (type === "default") {
       style = {
-        "background-color": color,
+        backgroundColor: color,
         color: textColor,
-      };
-    }
-    console.log(glossy);
-
-    if (!glossy) {
-      style = {
-        ...style,
-        backgroundmage: "none !import",
+        border,
       };
     }
     if (wave) {
@@ -102,7 +97,7 @@ const Button: React.FC<ButtonProps> = (props) => {
   };
 
   if (type && (color || textColor)) {
-    warning(false, Button.toString(), "\n使用自定义样式请取消 type 属性");
+    warning(false, "Button", "\n使用自定义样式请取消 type 属性");
   }
 
   if (type === "link" && href) {

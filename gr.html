@@ -52,14 +52,23 @@
     </style>
   </head>
   <body>
-    <div class="box">
-      <button class="btn">Click Me</button>
-    </div>
+    <html>
+      <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <title>04</title>
+      </head>
+      <body>
+        <div οnfοcus='alert("得到焦点!");' style="border:1px solid #ccc;width:200px;height:200px;"> </div>
+        <input type="text" id="text1" id="text1" tabindex="0" />
+        <input type="text" id="text2" id="text2" tabindex="0" />
+        <input type="text" id="text3" id="text3" tabindex="0" />
+      </body>
+    </html>
     <script>
-      const btn = document.querySelector(".btn");
-      btn.addEventListener("click", (event) => {
-        console.log(event);
-      });
+      // const btn = document.querySelector(".btn");
+      // btn.addEventListener("click", (event) => {
+      //   console.log(event);
+      // });
     </script>
   </body>
 </html>

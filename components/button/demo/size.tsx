@@ -9,7 +9,7 @@ const App = () => {
       <span> </span>
       <Button label="Download" size="md" type="primary" wave></Button>
       <span> </span>
-      <Button label="Download" size="lg" type="danger" glossy></Button>
+      <Button label="Download" size="lg" color="red" glossy wave></Button>
     </>
   );
 };

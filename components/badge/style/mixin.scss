@@ -1,10 +1,4 @@
-
-
-@mixin colors(
-  $color,
-  $background,
-  $border,
-) {
+@mixin colors($color, $background, $border) {
   color: $color;
   border-color: $border;
   background: $background;

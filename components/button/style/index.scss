@@ -12,13 +12,7 @@
   white-space: nowrap;
   text-align: center;
   vertical-align: middle;
-  background-image: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.3),
-    rgba(255, 255, 255, 0) 50%,
-    rgba(0, 0, 0, 0.12) 51%,
-    rgba(0, 0, 0, 0.04)
-  ) !important;
+  background-image: none;
   border: $ai-btn-border-width solid transparent;
   box-shadow: 0 1px 5px #0003, 0 2px 2px #00000024, 0 3px 1px -2px #0000001f;
   @include button-size(
@@ -131,4 +125,14 @@
   transform: scale(0);
   opacity: 0.5;
   transition: 0s;
+}
+
+.ai-btn-glossy {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 0, 0, 0.12) 51%,
+    rgba(0, 0, 0, 0.04)
+  ) !important;
 }

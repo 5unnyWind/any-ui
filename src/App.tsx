@@ -1,11 +1,11 @@
 import React from "react";
 import "../components/styles/index.scss";
-import ButtonDemo from "../components/button/demo/size";
+import TreeDemo from "../components/tree/demo/index";
 
 function App() {
   return (
     <div className="App">
-      <ButtonDemo></ButtonDemo>
+      <TreeDemo></TreeDemo>
     </div>
   );
 }
