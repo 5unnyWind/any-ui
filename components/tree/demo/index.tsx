@@ -7,25 +7,22 @@ const App = () => {
       label: "Satisfied customers (with avatar)",
       children: [
         {
-          label: "Good food (with icon)",
+          label: "1231231",
+          children: [{ label: "12312" }, { label: "421412e" }],
+        },
+        {
+          label: "214121t1412 i412)",
           children: [
-            { label: "Quality ingredients" },
-            { label: "Good recipe" },
+            { label: "Pr142141tion" },
+            { label: "Pro21412412al41iter" },
           ],
         },
         {
-          label: "Good service (disabled node with icon)",
+          label: "Ple4nt su141h icon)",
           children: [
-            { label: "Prompt attention" },
-            { label: "Professional waiter" },
-          ],
-        },
-        {
-          label: "Pleasant surroundings (with icon)",
-          children: [
-            { label: "Happy atmosphere (with image)" },
-            { label: "Good table presentation" },
-            { label: "Pleasing decor" },
+            { label: "Ha141" },
+            { label: "Good ta124ation" },
+            { label: "Plea124or" },
           ],
         },
       ],

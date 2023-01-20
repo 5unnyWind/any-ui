@@ -91,6 +91,10 @@
   padding: 0 0 3px 22px;
 }
 
+.ai-tree-arrow-rotate {
+  transform: rotate3d(0, 0, 1, 90deg);
+}
+
 .ai-tree-header {
   display: flex;
   flex-wrap: nowrap;
@@ -143,7 +147,6 @@
   font-size: 16px;
   margin-right: 4px;
   transition: transform 0.3s;
-  transform: rotate3d(0, 0, 1, 90deg);
   line-height: 1;
   width: 1em;
   height: 1em;

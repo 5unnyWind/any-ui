@@ -4,6 +4,22 @@ import type { TreeProps } from "./index";
 const TreeItem: React.FC<TreeProps> = (props) => {
   const { list, ...restProps } = props;
 
+  const changeParent = (e: React.MouseEvent<HTMLElement>) => {
+    (e.currentTarget.parentNode?.nextSibling as HTMLElement).style.display =
+      (e.currentTarget.parentNode?.nextSibling as HTMLElement).style.display ===
+      "block"
+        ? "none"
+        : "block";
+  };
+
+  const handlerClick = (e: React.MouseEvent<HTMLElement>) => {
+    e.currentTarget.className =
+      e.currentTarget.className === "ai-tree-arrow"
+        ? "ai-tree-arrow ai-tree-arrow-rotate"
+        : "ai-tree-arrow";
+    changeParent(e);
+  };
+
   return (
     <>
       {list?.map((item, index) => {
@@ -21,6 +37,7 @@ const TreeItem: React.FC<TreeProps> = (props) => {
                   <div className="ai-tree-helper"></div>
                   {list[index].children ? (
                     <span
+                      onClick={handlerClick}
                       className="ai-tree-arrow"
                       aria-hidden="true"
                       role="presentation"
@@ -36,7 +53,12 @@ const TreeItem: React.FC<TreeProps> = (props) => {
                     <div>{item.label}</div>
                   </div>
                 </div>
-                <TreeItem list={list[index].children} {...restProps}></TreeItem>
+                <div style={{ display: "none" }}>
+                  <TreeItem
+                    list={list[index].children}
+                    {...restProps}
+                  ></TreeItem>
+                </div>
               </div>
             </div>
           </div>
