@@ -19,7 +19,6 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
 export type BadgeAnchorProps = Props & NativeAttrs;
 
-
 const BadgeAnchor: React.FC<React.PropsWithChildren<BadgeAnchorProps>> = ({
   children,
   placement,
