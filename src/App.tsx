@@ -4,6 +4,7 @@ import ButtonDemo from "../components/button/demo/size";
 import BadgeDemo from "../components/badge/demo/basic";
 import SwitchDemo from "../components/switch/demo/demo";
 import CardDemo from "../components/card/demo/basic";
+import FormDemo from "../components/form/demo/index";
 function App() {
   return (
     <div className="App">
@@ -12,6 +13,7 @@ function App() {
       <BadgeDemo></BadgeDemo>
       <SwitchDemo></SwitchDemo>
       <CardDemo></CardDemo>
+      <FormDemo></FormDemo>
     </div>
   );
 }

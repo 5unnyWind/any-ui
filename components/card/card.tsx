@@ -9,11 +9,10 @@ export interface Cardprops
   size?: cardSize; //控制组件大小
   title?: string; //传入的标题
   bordered?: boolean; //控制是否有边框
-  headStyle?: React.CSSProperties;
-  style?: React.CSSProperties;
-  bodyStyle?: React.CSSProperties;
+  headStyle?: React.CSSProperties; //用户传入标题样式
+  style?: React.CSSProperties; //用户传入整体样式
+  bodyStyle?: React.CSSProperties; //用户传入的内容样式
   children?: React.ReactNode;
-  loading?: boolean;
 }
 const Card = React.forwardRef(
   (props: Cardprops, ref: React.Ref<HTMLDivElement>) => {
@@ -27,7 +26,6 @@ const Card = React.forwardRef(
       bodyStyle,
       style,
       children,
-      loading,
       ...others
     } = props;
 
