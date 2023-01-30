@@ -1,4 +1,4 @@
-import React, { Children, useRef, useState } from "react";
+import React, { useState } from "react";
 import classNames from "classnames";
 
 export type cardSize = "default" | "small";
