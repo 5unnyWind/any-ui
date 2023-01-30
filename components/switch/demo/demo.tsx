@@ -9,7 +9,7 @@ interface IProps {
 const Demo: React.FC<IProps> = () => {
   return (
     <>
-      <Switch></Switch>
+      <Switch>1</Switch>
     </>
   );
 };

@@ -1,0 +1,35 @@
+@mixin switch-size($span-width) {
+  border-radius: $span-width / 2;
+  width: $span-width;
+  height: $span-width / 2;
+
+  &:after {
+    width: $span-width * 2 / 5;
+    height: $span-width * 2 / 5;
+  }
+
+  &.off {
+    &:after {
+      top: $span-width / 20;
+      left: $span-width / 20;
+    }
+  }
+
+  &.on {
+    &:after {
+      top: $span-width / 20;
+      left: 100%;
+      margin-left: -($span-width * 9 / 20);
+    }
+  }
+}
+
+@mixin switch-color($sw-off-background, $sw-on-background) {
+  &.off {
+    background-color: $sw-off-background;
+  }
+
+  &.on {
+    background-color: $sw-on-background;
+  }
+}

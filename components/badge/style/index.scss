@@ -17,41 +17,24 @@
   box-sizing: content-box;
 }
 
-
 .badge-default {
-  @include colors(
-    $white,
-    map-get($map: $theme-colors, $key:"primary" ),
-    none
-  );
+  @include colors($white, map-get($map: $theme-colors, $key: "primary"), none);
 }
 .badge-secondary {
   @include colors(
     $white,
-    map-get($map: $theme-colors, $key:"secondary" ),
+    map-get($map: $theme-colors, $key: "secondary"),
     none
   );
 }
 .badge-success {
-  @include colors(
-    $white,
-    map-get($map: $theme-colors, $key:"success" ),
-    none
-  );
+  @include colors($white, map-get($map: $theme-colors, $key: "success"), none);
 }
 .badge-warning {
-  @include colors(
-    $white,
-    map-get($map: $theme-colors, $key:"warning" ),
-    none
-  );
+  @include colors($white, map-get($map: $theme-colors, $key: "warning"), none);
 }
 .badge-error {
-  @include colors(
-    $white,
-    map-get($map: $theme-colors, $key:"danger" ),
-    none
-  );
+  @include colors($white, map-get($map: $theme-colors, $key: "danger"), none);
 }
 
 .anchor {
@@ -67,28 +50,28 @@ sup {
   z-index: 1;
 }
 
-.sup-topLeft{
+.sup-topLeft {
   top: 0;
   left: 0;
   transform: translate(-50%, -50%);
   transform-origin: 0% 0%;
 }
 
-.sup-topRight{
+.sup-topRight {
   top: 0;
   right: 0;
   transform: translate(50%, -50%);
   transform-origin: 100% 0%;
 }
 
-.sup-bottomLeft{
+.sup-bottomLeft {
   bottom: 0;
   left: 0;
   transform: translate(-50%, 50%);
   transform-origin: 0% 100%;
 }
 
-.sup-bottomRight{
+.sup-bottomRight {
   bottom: 0;
   right: 0;
   transform: translate(50%, 50%);
