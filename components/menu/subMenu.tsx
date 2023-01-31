@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import ClassNames from "classnames";
+import MenuDivider from "./menuDivider";
 
 import type { ItemType, MenuThemeType } from "./menu";
 
@@ -14,27 +15,45 @@ interface SubMenuType {
   popupOffset?: number[]; //子菜单偏移量，mode="inline" 时无效
   popupClassName?: string; //子菜单样式，mode="inline" 时无效
   onTitleClick?: (e: React.MouseEventHandler) => void; //点击子菜单标题事件
+  isMenuSub?: boolean;
 }
 
 export type SubMenuProps = Partial<SubMenuType>;
 
 const SubMenuCompontent: React.FC<SubMenuType> = (props) => {
-  const { disabled, icon, index, label, children, theme, ...rest } = props;
-  const classes = ClassNames("sub-menu", { [`menu-${theme}`]: theme });
+  const { disabled, icon, index, label, children, isMenuSub, theme } = props;
+  const classes = ClassNames(
+    "sub-menu",
+    { [`menu-${theme}`]: theme },
+    { [`menu-isMenuSub`]: !isMenuSub }
+  );
+  console.log(isMenuSub);
 
   return (
     <>
       <ul className={classes}>
-        {children?.map((item2, p2) => {
+        {children?.map((item, p2) => {
+          const { children: ch, isMenuSub, ...res } = item;
           return (
             <li key={p2} className="sub-menu-item">
-              {item2.label}
+              <MenuDivider icon={item.icon} />
+              <span>{item.label}</span>
+              {/* 判断子集 */}
+              {ch && ch.length !== 0 ? (
+                <SubMenuCompontent {...res} children={ch} isMenuSub={false} />
+              ) : (
+                ""
+              )}
             </li>
           );
         })}
       </ul>
     </>
   );
+};
+
+SubMenuCompontent.defaultProps = {
+  isMenuSub: true,
 };
 
 export default SubMenuCompontent;

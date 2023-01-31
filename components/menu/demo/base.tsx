@@ -73,18 +73,22 @@ const items4 = [
   {
     label: "主页",
     index: "0",
+    icon: "$",
   },
   {
     label: "邮箱",
     index: "1",
+    icon: "$",
   },
   {
     label: "更多咨询",
     index: "2",
+    icon: "$",
   },
   {
     label: "友链",
     index: "3",
+    icon: "$",
   },
 ];
 
@@ -92,22 +96,11 @@ const items5 = [
   {
     label: "导航1",
     index: "mail",
-    icon: "",
-  },
-  {
-    label: "导航2",
-    index: "app",
-    icon: "",
-    disabled: true,
-  },
-  {
-    label: "导航3",
-    index: "SubMenu",
-    icon: "&",
     children: [
       {
         type: "group",
         label: "子菜单1",
+        icon: "$",
         children: [
           {
             label: "子菜单1-1",
@@ -122,6 +115,7 @@ const items5 = [
       {
         type: "group",
         label: "子菜单2",
+        icon: "$",
         children: [
           {
             label: "子菜单2-1",
@@ -130,10 +124,53 @@ const items5 = [
           {
             label: "子菜单2-2",
             index: "setting:4",
+            children: [
+              {
+                type: "group",
+                label: "子菜单1",
+                icon: "$",
+                children: [
+                  {
+                    label: "子菜单1-1",
+                    index: "setting:1",
+                  },
+                  {
+                    label: "子菜单1-2",
+                    index: "setting:2",
+                  },
+                ],
+              },
+              {
+                type: "group",
+                label: "子菜单2",
+                icon: "$",
+                children: [
+                  {
+                    label: "子菜单2-1",
+                    index: "setting:3",
+                  },
+                  {
+                    label: "子菜单2-2",
+                    index: "setting:4",
+                  },
+                ],
+              },
+            ],
           },
         ],
       },
     ],
+  },
+  {
+    label: "导航2",
+    index: "app",
+    icon: "",
+    disabled: true,
+  },
+  {
+    label: "导航3",
+    index: "SubMenu",
+    icon: "&",
   },
   {
     label: (
@@ -155,6 +192,7 @@ const App: React.FC = () => {
   return (
     <div>
       <h2 style={{ marginLeft: "40px" }}>菜单</h2>
+      <p style={{ marginLeft: "40px" }}>菜单组件演示，以下中&，￥，$为图标</p>
 
       <div className="containerStyle">
         <div className="sessionStyle">

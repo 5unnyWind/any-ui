@@ -1,11 +1,11 @@
 import path from "path";
-import fs from 'fs'
-import cracoBabelLoader from 'craco-babel-loader'
+import fs from "fs";
+import cracoBabelLoader from "craco-babel-loader";
 
 // Handle relative paths to sibling packages
-const appDirectory = fs.realpathSync(process.cwd())
-const resolvePackage = (relativePath: string) => path.resolve(appDirectory, relativePath)
-
+const appDirectory = fs.realpathSync(process.cwd());
+const resolvePackage = (relativePath: string) =>
+  path.resolve(appDirectory, relativePath);
 
 module.exports = {
   webpack: {
@@ -13,9 +13,12 @@ module.exports = {
       "@": path.resolve(__dirname, "src"),
     },
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    configure: (webpackConfig: { resolve: { plugins: { constructor: any; }[]; }; }) => {
+    configure: (webpackConfig: {
+      resolve: { plugins: { constructor: any }[] };
+    }) => {
       const scopePluginIndex = webpackConfig.resolve.plugins.findIndex(
-        ({ constructor }) => constructor && constructor.name === 'ModuleScopePlugin'
+        ({ constructor }) =>
+          constructor && constructor.name === "ModuleScopePlugin"
       );
 
       webpackConfig.resolve.plugins.splice(scopePluginIndex, 1);
@@ -26,9 +29,7 @@ module.exports = {
     {
       plugin: cracoBabelLoader,
       options: {
-        includes: [
-          resolvePackage('./components'),
-        ],
+        includes: [resolvePackage("./components")],
       },
     },
   ],
