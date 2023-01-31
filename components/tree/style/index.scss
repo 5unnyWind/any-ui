@@ -1,42 +1,3 @@
-// .ai-tree {
-//   margin-left: 20px;
-//   position: relative;
-
-//   .ai-tree-fold {
-//     display: inline-block;
-//     line-height: 1em;
-//     width: 1em;
-//     height: 1em;
-//     flex-shrink: 0;
-//     letter-spacing: normal;
-//     text-transform: none;
-//     white-space: nowrap;
-//     word-wrap: normal;
-//     direction: ltr;
-//     text-align: center;
-//     position: relative;
-//     box-sizing: content-box;
-//     fill: currentColor;
-//     transition: transform .3s;
-//     font-size: 16px;
-//     margin-right: 4px;
-
-//     &::before {
-//       content: "";
-//       position: absolute;
-//       top: -3px;
-//       bottom: 50%;
-//       width: 31px;
-//       left: -12px;
-//       border-left: 1px solid currentColor;
-//       border-bottom: 1px solid currentColor;
-//     }
-//   }
-
-//   .ai-tree-fold-arrow {
-//     transform: rotate3d(0, 0, 1, 90deg);
-//   }
-// }
 @import "./mixin.scss";
 
 .ai-tree-standard {
@@ -50,12 +11,7 @@
 }
 
 .ai-tree-header-first {
-  display: flex;
-  flex-wrap: nowrap;
-  padding: 4px;
-  margin-top: 3px;
-  border-radius: 4px;
-  align-items: center;
+  @include ai-tree-header();
 }
 
 .ai-tree-children {
@@ -96,12 +52,7 @@
 }
 
 .ai-tree-header {
-  display: flex;
-  flex-wrap: nowrap;
-  padding: 4px;
-  margin-top: 3px;
-  border-radius: 4px;
-  align-items: center;
+  @include ai-tree-header();
   position: relative;
   outline: 0;
   cursor: pointer;

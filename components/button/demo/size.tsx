@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import Button from "../button";
-import type { ButtonSize } from "../button";
 
 const App = () => {
   return (

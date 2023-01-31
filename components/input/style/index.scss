@@ -1,0 +1,157 @@
+@import "./mixin.scss";
+
+.ai-input-container {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  font-size: 14px;
+  box-sizing: content-box;
+
+  .ai-input-inner {
+    width: auto;
+    min-width: 0;
+    position: relative;
+    align-self: stretch;
+    max-width: 100%;
+    text-align: left;
+
+    .ai-input-control {
+      @include display-flex();
+      height: 50px;
+      max-width: 100%;
+      outline: none;
+
+      &-container {
+        @include display-flex();
+        flex: 10000 1 0%;
+        height: inherit;
+
+        .ai-input-native {
+          width: 100%;
+          min-width: 0;
+          outline: 0 !important;
+          -webkit-user-select: auto;
+          user-select: auto;
+          font-weight: 400;
+          line-height: 28px;
+          letter-spacing: 0.00937em;
+          border: none;
+          border-radius: 0;
+          background: none;
+          color: #000000de;
+          outline: 0;
+          overflow: visible;
+          margin: 0;
+          padding-left: 0;
+        }
+
+        .ai-field-label {
+          left: 0;
+          top: 15px;
+          max-width: 100%;
+          color: #0009;
+          font-size: 16px;
+          line-height: 20px;
+          font-weight: 400;
+          letter-spacing: 0.00937em;
+          transform-origin: left top;
+          transition: transform 0.36s cubic-bezier(0.4, 0, 0.2, 1),
+            max-width 0.324s cubic-bezier(0.4, 0, 0.2, 1);
+          backface-visibility: hidden;
+          pointer-events: none !important;
+          position: absolute;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+        }
+      }
+
+      &::before {
+        @include content();
+        border-radius: inherit;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.24);
+        transition: border-color $field-transition;
+      }
+
+      &:hover::before {
+        border-color: #000;
+      }
+
+      &::after {
+        @include content();
+        height: 2px;
+        top: auto;
+        border-bottom-left-radius: inherit;
+        border-bottom-right-radius: inherit;
+        transform-origin: center bottom;
+        transform: scale3d(0, 1, 1);
+        background: currentColor;
+        transition: transform 0.36s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    }
+  }
+}
+
+.ai-field-float {
+  .ai-field-label {
+    max-width: 133%;
+    transform: translateY(-40%) scale(0.75);
+    transition: transform $field-transition,
+      max-width $field-transition-label-right-down;
+  }
+}
+
+.ai-field-highlighted {
+  .ai-field-label {
+    color: currentColor;
+  }
+
+  .ai-field-shadow {
+    opacity: 0.5;
+  }
+}
+
+.ai-field-labeld {
+  .ai-input-native {
+    line-height: 24px;
+    padding-top: 24px;
+    padding-bottom: 8px;
+  }
+}
+
+.ai-input-outline {
+  .ai-input-control {
+    border-radius: 5px;
+    padding: 0 12px;
+
+    &::before {
+      border: 1px solid rgba(0, 0, 0, 0.24);
+      transition: border-color $field-transition;
+    }
+
+    &:hover {
+      &::after {
+        border-color: #000;
+      }
+    }
+
+    &::after {
+      height: inherit;
+      border-radius: inherit;
+      border: 2px solid transparent;
+      transition: border-color $field-transition;
+    }
+  }
+
+  &.ai-field-highlighted {
+    .q-fiel-control:hover:before {
+      border-color: transparent;
+    }
+
+    .q-field-control:after {
+      border-color: currentColor;
+      border-width: 2px;
+      transform: scale3d(1, 1, 1);
+    }
+  }
+}

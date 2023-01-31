@@ -1,0 +1,21 @@
+@mixin content {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+@mixin display-flex {
+  display: flex;
+  width: auto;
+  max-width: 100%;
+  position: relative;
+  flex-wrap: nowrap;
+}
+
+$field-transition: 0.36s cubic-bezier(0.4, 0, 0.2, 1);
+$field-transition-label-right-down: 0.396s cubic-bezier(0.4, 0, 0.2, 1);
+$field-transition-label-right-up: 0.324s cubic-bezier(0.4, 0, 0.2, 1);

@@ -1,24 +1,8 @@
 import React from "react";
 import type { TreeProps } from "./index";
-
+import { handlerClick } from "./index";
 const TreeItem: React.FC<TreeProps> = (props) => {
   const { list, ...restProps } = props;
-
-  const changeParent = (e: React.MouseEvent<HTMLElement>) => {
-    (e.currentTarget.parentNode?.nextSibling as HTMLElement).style.display =
-      (e.currentTarget.parentNode?.nextSibling as HTMLElement).style.display ===
-      "block"
-        ? "none"
-        : "block";
-  };
-
-  const handlerClick = (e: React.MouseEvent<HTMLElement>) => {
-    e.currentTarget.className =
-      e.currentTarget.className === "ai-tree-arrow"
-        ? "ai-tree-arrow ai-tree-arrow-rotate"
-        : "ai-tree-arrow";
-    changeParent(e);
-  };
 
   return (
     <>
