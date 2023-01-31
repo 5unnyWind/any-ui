@@ -4,7 +4,7 @@ import classNames from "classnames";
 interface BaseSwitchProps {
   className?: string; // 接受用户自定义类名
   disabled?: boolean; // 是否开启禁用
-  width?: number; // 控制组件大小
+  width?: string; // 控制组件大小
   defaultChecked?: boolean; // 控制是否
   activeColor?: [boolean, string, number];
   inactiveColor?: [boolean, string, number];
@@ -38,16 +38,31 @@ const Switch: React.FC<BaseSwitchProps> = (props) => {
     disabled: disabled,
   });
 
-  const spanclasses = classNames("core", ischeckout ? "on" : "off", {
+  const spanClasses = classNames("core", ischeckout ? "on" : "off", {
     disabled: disabled,
   });
 
+  const spanValueClasses = classNames("switchValue", ischeckout ? "on" : "off");
+
   return (
-    <div className={switchclasses} onClick={handleClick}>
-      <input type="text" />
-      <span className={spanclasses}></span>
-      <span className="switchValue">
-        {activeValue ? activeValue : children}
+    <div
+      className={switchclasses}
+      style={{
+        "--width": `${width}px`,
+        "--activeColor": `${activeColor}`,
+        "--inactiveColor": `${inactiveColor}`,
+      }}
+    >
+      <input className="switchInput" type="text" />
+      <span className={spanClasses} onClick={handleClick}></span>
+      <span className={spanValueClasses}>
+        <span>
+          {activeValue && ischeckout
+            ? activeValue
+            : inactiveValue && !ischeckout
+            ? inactiveValue
+            : children}
+        </span>
       </span>
     </div>
   );
@@ -56,6 +71,8 @@ const Switch: React.FC<BaseSwitchProps> = (props) => {
 Switch.defaultProps = {
   disabled: false,
   width: 40,
+  activeColor: "rgb(22, 119, 255)",
+  inactiveColor: "rgb(191, 191, 191)",
   defaultChecked: true,
 };
 

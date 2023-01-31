@@ -1,19 +1,27 @@
 @import "./basic.scss";
 @import "./mixin.scss";
 
-input {
+input.switchInput {
   display: none;
 }
 
 .switch {
-  display: flex;
+  display: inline-block;
   height: $ai-sw-width / 2;
-  align-items: center;
 }
 
-.switchValue {
-  margin-left: 5px;
-  color: $ai-sw-on-background;
+span.switchValue {
+  display: inline-block;
+  margin-left: $ai-sw-width / 8;
+  height: $ai-sw-width / 2;
+  overflow: hidden;
+  &:hover {
+    cursor: pointer;
+  }
+  span {
+    display: inline-block;
+    font-size: $ai-sw-width * 7 / 20;
+  }
 }
 
 span.core:after {
@@ -30,7 +38,13 @@ span.core {
   @include switch-size($ai-sw-width);
   cursor: pointer;
 
-  @include switch-color($ai-sw-off-background, $ai-sw-on-background);
+  &.off {
+    background-color: var(--inactiveColor);
+  }
+
+  &.on {
+    background-color: var(--activeColor);
+  }
 
   &:disabled,
   &.disabled {

@@ -1,6 +1,6 @@
 @mixin switch-size($span-width) {
   border-radius: $span-width / 2;
-  width: $span-width;
+  width: var(--width);
   height: $span-width / 2;
 
   &:after {
@@ -21,15 +21,5 @@
       left: 100%;
       margin-left: -($span-width * 9 / 20);
     }
-  }
-}
-
-@mixin switch-color($sw-off-background, $sw-on-background) {
-  &.off {
-    background-color: $sw-off-background;
-  }
-
-  &.on {
-    background-color: $sw-on-background;
   }
 }
