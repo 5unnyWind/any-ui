@@ -1,5 +1,5 @@
-@import "./mixin.scss";
 @use "sass:map";
+@import "./mixin.scss";
 .badge {
   position: relative;
   display: inline-block;
