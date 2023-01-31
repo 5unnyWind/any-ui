@@ -1,50 +1,67 @@
 # ANY-UI
+<p align="center" height="370">
+<img align="center" height="370" src="./logo.png">
+</p>
 
-# 请统一使用 pnpm：
+> 一套用于构建现代 Web 应用的开源设计敏捷方案
 
-请统一使用 pnpm：
+<br/>
+
+## Quick Start
 
 ```bash
-# 建议全局安装 pnpm （或使用 npx
-npm i -g pnpm
+npm i any-ui
+# or
+yarn add any-ui
+# or
+pnpm add any-ui
 ```
 
-# 开发：
+```js
+import { Button } from "any-ui";
+
+export default () => (
+  <>
+    <h2>按钮</h2>
+    <Button type="default">默认</Button>
+  </>
+);
+```
+
+<br/>
+
+## Documentation
+
+- [中文文档]()
+- [Document Site]()
+
+<br/>
+
+## 开发：
 
 ```bash
 pnpm i
-pnpm start
+pnpm dev
 ```
 
-# 添加依赖：
-
-=======
-
-```bash
-# 生产依赖
-pnpm add xxx
-# 开发依赖
-pnpm add -D xxx
-```
-
-=======
-
-测试：
-...
+<br/>
 
 ## 项目结构
 
-=======
-
 ```
-├── README.md
-├── package.json
-├── src
+├── components # 组件
+├── src # 文档
+├── package.json # 项目配置
 ……
 ```
 
 ## 发布
 
-# ...
+## ...
 
 ...
+
+
+## LICENSE
+
+[MIT](./LICENSE)
