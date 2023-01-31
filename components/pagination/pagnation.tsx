@@ -26,9 +26,19 @@ const Pagination: React.FC<PaginationProps> = ({
   locale: customLocale,
   ...restProps
 }) => {
-  const extendedClassName = classNames("pgn", {}, className);
+  const extendedClassName = classNames(className, {});
 
-  return <RcPagination {...restProps} className={extendedClassName} />;
+  return (
+    <RcPagination
+      {...restProps}
+      className={extendedClassName}
+      prevIcon={"<"}
+      nextIcon={">"}
+      jumpPrevIcon={"•••"}
+      jumpNextIcon={"•••"}
+      showQuickJumper
+    />
+  );
 };
 
 if (process.env.NODE_ENV !== "production") {

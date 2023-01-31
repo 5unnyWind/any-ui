@@ -1,0 +1,130 @@
+@import "mixin";
+
+.rc-pagination {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.88);
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  list-style: none;
+
+  li {
+    display: inline-block;
+    min-width: 35px;
+    height: 35px;
+    margin-inline-end: 8px;
+    font-weight: $font-weight-normal;
+    line-height: $line-height-base;
+    text-align: center;
+    vertical-align: middle;
+    list-style: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    outline: 0;
+    cursor: pointer;
+    user-select: none;
+    box-sizing: border-box;
+  }
+
+  /*分页器样式*/
+  .rc-pagination-item {
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: $gray-300;
+    }
+
+    a {
+      line-height: $line-height-base;
+      text-align: center;
+      vertical-align: middle;
+      overflow: hidden;
+      padding: 0 6px;
+      color: rgba(0, 0, 0, 0.88);
+      transition: none;
+    }
+  }
+
+  /*分页按钮上一页样式*/
+  .rc-pagination-prev {
+    color: rgba(0, 0, 0, 0.88);
+    line-height: $line-height-base;
+    border-radius: 6px;
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: $gray-300;
+    }
+  }
+
+  /*分页按钮下一页样式*/
+  .rc-pagination-next {
+    color: rgba(0, 0, 0, 0.88);
+    line-height: $line-height-base;
+    border-radius: 6px;
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: $gray-300;
+    }
+  }
+
+  /*当前页样式*/
+  .rc-pagination-item-active {
+    font-weight: $font-weight-bold - 150;
+    background-color: $white;
+    border-color: $blue;
+
+    a {
+      color: $blue;
+    }
+  }
+
+  /*分页器菜单样式*/
+  .rc-pagination-options {
+    .rc-pagination-options-quick-jumper {
+      display: inline-block;
+      height: 32px;
+      margin-inline-start: 8px;
+      line-height: $line-height-base;
+      vertical-align: top;
+
+      input {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        min-width: 0;
+        padding: 4px 11px;
+        color: rgba(0, 0, 0, 0.88);
+        font-size: $font-size-sm;
+        line-height: $line-height-base;
+        background-color: $white;
+        background-image: none;
+        border-width: 1px;
+        border-style: solid;
+        border-color: $gray-400;
+        border-radius: 6px;
+        transition: all 0.2s;
+        height: 32px;
+        box-sizing: border-box;
+        margin: 0;
+        margin-inline-start: 8px;
+        margin-inline-end: 8px;
+
+        &:focus {
+          border-color: $blue;
+          box-shadow: 0 0 0 2px rgba(5, 145, 255, 0.1);
+          border-inline-end-width: 1px;
+          outline: 0;
+        }
+
+        &:hover {
+          border-color: blue;
+          border-inline-end-width: 1px;
+        }
+      }
+    }
+  }
+}
