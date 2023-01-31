@@ -2,6 +2,7 @@ import React, { memo, useMemo } from "react";
 import type { FC, ReactNode } from "react";
 import { buildWeeks, buildDayNames } from "../_util/data";
 import getDate from "date-fns/getDate";
+import "./style/index.scss";
 
 interface BaseCalendarProps {
   year?: number;
