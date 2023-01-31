@@ -11,8 +11,12 @@ function App() {
       <ButtonDemo></ButtonDemo>
       <div />
       <BadgeDemo></BadgeDemo>
+      <div />
       <SwitchDemo></SwitchDemo>
+      <div />
+      <br />
       <CardDemo></CardDemo>
+      <div />
       <FormDemo></FormDemo>
     </div>
   );
