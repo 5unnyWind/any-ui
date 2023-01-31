@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useState, useRef, useEffect } from "react";
 import ClassNames from "classnames";
 import MenuDivider from "./menuDivider";
 
@@ -16,31 +16,56 @@ interface SubMenuType {
   popupClassName?: string; //子菜单样式，mode="inline" 时无效
   onTitleClick?: (e: React.MouseEventHandler) => void; //点击子菜单标题事件
   isMenuSub?: boolean;
+  getSelectedKey?: (index?: string) => void | null;
 }
 
 export type SubMenuProps = Partial<SubMenuType>;
 
 const SubMenuCompontent: React.FC<SubMenuType> = (props) => {
-  const { disabled, icon, index, label, children, isMenuSub, theme } = props;
+  const { children, isMenuSub, theme, getSelectedKey } = props;
   const classes = ClassNames(
     "sub-menu",
     { [`menu-${theme}`]: theme },
     { [`menu-isMenuSub`]: !isMenuSub }
   );
-  console.log(isMenuSub);
+
+  const [key, setKey] = useState("");
+
+  const firstUpdate = useRef(true);
+  // 懒加载菜单的onClick事件
+  useEffect(() => {
+    if (firstUpdate.current) {
+      firstUpdate.current = false;
+      return;
+    } else {
+      getSelectedKey ? getSelectedKey(key) : "";
+    }
+  }, [key]);
 
   return (
     <>
       <ul className={classes}>
-        {children?.map((item, p2) => {
-          const { children: ch, isMenuSub, ...res } = item;
+        {children?.map((item, p) => {
+          let { children: ch, index, isMenuSub, ...res } = item;
+          index = String(index || p);
           return (
-            <li key={p2} className="sub-menu-item">
+            <li key={index} className="sub-menu-item">
               <MenuDivider icon={item.icon} />
-              <span>{item.label}</span>
+              <span
+                onClick={() => {
+                  setKey(index ? index : "");
+                }}
+              >
+                {item.label}
+              </span>
               {/* 判断子集 */}
               {ch && ch.length !== 0 ? (
-                <SubMenuCompontent {...res} children={ch} isMenuSub={false} />
+                <SubMenuCompontent
+                  {...res}
+                  children={ch}
+                  isMenuSub={false}
+                  getSelectedKey={getSelectedKey}
+                />
               ) : (
                 ""
               )}

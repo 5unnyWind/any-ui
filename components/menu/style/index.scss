@@ -3,7 +3,7 @@
   margin: 0.5rem;
   display: flex;
   justify-content: space-around;
-  border-bottom: 0.1rem solid $gray-200;
+  border-bottom: 0.15rem solid $gray-200;
   transition: 1s;
 
   .menu-item-box {
@@ -12,8 +12,8 @@
     .menu-item {
       padding: 0.75rem 0;
       cursor: pointer;
-      border-bottom: 0.1rem solid $gray-200;
-      margin-bottom: -0.1rem;
+      border-bottom: 0.15rem solid $gray-200;
+      margin-bottom: -0.15rem;
       transition: all 0.6s ease-in-out;
       position: relative;
       width: 100%;
@@ -39,6 +39,7 @@
         transition: all 0.3s ease-in-out;
         box-shadow: 0 0.625rem 1.875rem -0.9375rem $gray-900;
         border-radius: 0.5rem;
+        background-color: #fff;
 
         .sub-menu-item {
           width: 100%;
@@ -46,7 +47,6 @@
           padding: 0.5rem 1.25rem;
           min-width: 6rem;
           list-style: none;
-          display: block;
           text-overflow: ellipsis;
           overflow: hidden;
           white-space: nowrap;
@@ -69,6 +69,7 @@
         display: none;
         transition: all 0.4s;
         border-radius: 0.5rem;
+        background-color: #fff;
 
         &::before {
           content: "";
@@ -81,7 +82,7 @@
       }
 
       &:not(.menu-disabled):hover {
-        border-bottom: 0.1rem solid $primary;
+        border-bottom: 0.15rem solid $primary;
 
         & > span {
           color: $primary;
@@ -95,7 +96,7 @@
 
     .menu-selected {
       color: $primary;
-      border-bottom: 0.1rem solid $primary;
+      border-bottom: 0.15rem solid $primary;
     }
 
     .menu-disabled {

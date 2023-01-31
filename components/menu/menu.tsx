@@ -1,8 +1,8 @@
-import React, { ReactNode, useState, useEffect } from "react";
+import React, { ReactNode, useState, useRef, useEffect } from "react";
 import MenuItem from "./menuItem";
 import classNames from "classnames";
 import { SubMenuProps } from "./subMenu";
-import { MenuItemProps } from ".//menuItem";
+import { MenuItemProps } from "./menuItem";
 
 export type MenuModeType = "vertical" | "horizontal" | "inline";
 
@@ -63,9 +63,15 @@ const MenuCompontent: React.FC<MenuProps> = (props) => {
     setSelectedKey(index);
   };
 
+  const firstUpdate = useRef(true);
   // 懒加载菜单的onClick事件
   useEffect(() => {
-    onClick ? onClick(selectedKey) : "";
+    if (firstUpdate.current) {
+      firstUpdate.current = false;
+      return;
+    } else {
+      onClick ? onClick(selectedKey) : "";
+    }
   }, [selectedKey]);
 
   return (
@@ -73,7 +79,7 @@ const MenuCompontent: React.FC<MenuProps> = (props) => {
       <div className={classes} {...restProps}>
         {items?.map((item, p) => {
           let { index, ...res } = item;
-          index = String(p);
+          index = String(index || p);
           return (
             <div key={index} className="menu-item-box">
               <MenuItem
@@ -87,7 +93,7 @@ const MenuCompontent: React.FC<MenuProps> = (props) => {
         })}
       </div>
       {/* 下划线 */}
-      <div className="menu-underline-box">
+      {/* <div className="menu-underline-box">
         <div
           className="menu-underline"
           style={{
@@ -97,7 +103,7 @@ const MenuCompontent: React.FC<MenuProps> = (props) => {
             width: `calc(100% / ${items?.length})`,
           }}
         ></div>
-      </div>
+      </div> */}
     </>
   );
 };

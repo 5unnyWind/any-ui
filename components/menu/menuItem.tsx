@@ -16,7 +16,7 @@ interface MenuItemType {
   label?: ReactNode; //菜单项标题
   title?: string; //设置收缩时展示的悬浮标题
   selectedKey?: string; //是否选中
-  getSelectedKey: (index?: string) => void | null;
+  getSelectedKey?: (index?: string) => void | null;
 }
 
 export type MenuItemProps = Partial<MenuItemType>;
@@ -40,15 +40,17 @@ const MenuItem: React.FC<ItemType> = (props) => {
   });
 
   return (
-    <div
-      className={classes}
-      onClick={() => (getSelectedKey ? getSelectedKey(index) : "")}
-      {...rest}
-    >
+    <div className={classes} {...rest}>
       <MenuDivider icon={icon} />
-      <span>{label}</span>
+      <span onClick={() => (getSelectedKey ? getSelectedKey(index) : "")}>
+        {label}
+      </span>
       {/* 判断子集 */}
-      {children && children.length !== 0 ? <SubMenu {...props} /> : ""}
+      {children && children.length !== 0 ? (
+        <SubMenu {...props} getSelectedKey={getSelectedKey} />
+      ) : (
+        ""
+      )}
     </div>
   );
 };

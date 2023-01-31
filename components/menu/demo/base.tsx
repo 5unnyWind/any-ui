@@ -140,21 +140,6 @@ const items5 = [
                   },
                 ],
               },
-              {
-                type: "group",
-                label: "子菜单2",
-                icon: "$",
-                children: [
-                  {
-                    label: "子菜单2-1",
-                    index: "setting:3",
-                  },
-                  {
-                    label: "子菜单2-2",
-                    index: "setting:4",
-                  },
-                ],
-              },
             ],
           },
         ],
@@ -179,6 +164,25 @@ const items5 = [
       </a>
     ),
     key: "alipay",
+  },
+];
+
+const items7 = [
+  {
+    label: "主页",
+    index: "/home",
+  },
+  {
+    label: "邮箱",
+    index: "/email",
+  },
+  {
+    label: "更多咨询",
+    index: "/more",
+  },
+  {
+    label: "友链",
+    index: "/friend",
   },
 ];
 
@@ -233,7 +237,23 @@ const App: React.FC = () => {
         <div className="sessionStyle">
           <div className="style1">
             <h3 className="h3Style">6，子菜单</h3>
-            <Menu items={items5} />
+            <Menu items={items5} onClick={onClick} />
+          </div>
+        </div>
+
+        <div className="sessionStyle">
+          <div className="style1">
+            <h3 className="h3Style">
+              7，指定index路由（在onClick事件中，没有实现路由跳转）
+            </h3>
+            <Menu items={items7} onClick={onClick} />
+          </div>
+        </div>
+
+        <div className="sessionStyle">
+          <div className="style1">
+            <h3 className="h3Style">8，dark主题</h3>
+            <Menu items={items1} theme="dark" />
           </div>
         </div>
       </div>
