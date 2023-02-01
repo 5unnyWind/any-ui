@@ -1,10 +1,10 @@
 import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import BreadcrumbItem from "./breadcrumbItem";
-import BreadcrumSeparator from "./breadcrumSeparator";
-
+import BreadcrumbSeparator from "./breadcrumbSeparator";
 import classnames from "classnames";
 
-type ColorType = "black" | "default";
+export type ColorType = "black" | "default";
 
 //单个路由信息定义
 export type Route = {
@@ -31,25 +31,34 @@ const Breadcrumb: React.FC<BreadcrumbProps> = (props) => {
   const { routes, colorType, separator, className } = props;
 
   const classes = classnames("ai-bcb", className, {
-    [`bcb-${colorType}`]: colorType,
+    [`ai-bcb-${colorType}`]: colorType,
   });
 
   return (
     <>
-      <div className={classes}>
-        {routes?.map((item, index) => {
-          return (
-            <span key={index}>
-              <BreadcrumbItem {...item} />
-              {index !== routes.length - 1 ? (
-                <BreadcrumSeparator separator={separator} />
-              ) : (
-                ""
-              )}
-            </span>
-          );
-        })}
-      </div>
+      <Router>
+        <div className={classes}>
+          {routes?.map((item, index) => {
+            return (
+              <div key={index} className="ai-bcb-box">
+                {/* 子项 */}
+                <BreadcrumbItem
+                  {...item}
+                  last={index === routes.length - 1}
+                  routes={routes}
+                />
+
+                {/* 分隔符 */}
+                {index !== routes.length - 1 ? (
+                  <BreadcrumbSeparator separator={separator} />
+                ) : (
+                  ""
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </Router>
     </>
   );
 };

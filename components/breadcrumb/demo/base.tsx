@@ -38,10 +38,10 @@ const App: React.FC = () => {
       </div>
       <div className="session">
         <h6>颜色类型</h6>
-        <Breadcrumb routes={routes1} colorType="black" />
+        <Breadcrumb routes={routes1} colorType="default" />
       </div>
       <div className="session">
-        <h6>router绑定（未完成）</h6>
+        <h6>router绑定</h6>
         <Breadcrumb routes={routes3} />
       </div>
     </>

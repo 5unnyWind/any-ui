@@ -2,6 +2,7 @@
   line-height: $line-height-lg;
   background-color: $white;
   margin: 0 0.75rem;
+  display: flex;
 }
 
 .ai-bcb-item {
@@ -10,6 +11,8 @@
   list-style: none;
   text-decoration: none;
   outline: none;
+  color: $black;
+  text-decoration: none !important;
 
   &:not(:last-child) {
     color: $gray-500;
