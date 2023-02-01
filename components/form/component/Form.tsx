@@ -1,6 +1,7 @@
 import React, { useImperativeHandle } from "react";
 import FieldContext from "./FieldContext";
 import useForm from "./useForm";
+
 import type { Callbacks, FormInstance } from "./interface";
 
 interface FormProps<Values = any> {
@@ -22,10 +23,12 @@ const Form: React.FC<FormProps> = (props) => {
         e.preventDefault();
         formInstance.submit();
       }}
+      className={"ai-form"}
     >
-      <FieldContext.Provider value={formInstance}>
+      <FieldContext.Provider value={formInstance} >
         {children}
       </FieldContext.Provider>
+            
     </form>
   );
 };

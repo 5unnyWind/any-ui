@@ -1,1 +1,1 @@
-export { Badge,Button } from '../components';
+export { Badge,Button,Card} from '../components';
