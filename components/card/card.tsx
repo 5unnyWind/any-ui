@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import classNames from "classnames";
-
 export type cardSize = "default" | "small";
 
 export interface Cardprops
@@ -13,6 +12,8 @@ export interface Cardprops
   style?: React.CSSProperties; //用户传入整体样式
   bodyStyle?: React.CSSProperties; //用户传入的内容样式
   children?: React.ReactNode;
+  cover?: React.ReactNode; //添加图片
+  extra?: React.ReactNode; //添加链接
 }
 const Card = React.forwardRef(
   (props: Cardprops, ref: React.Ref<HTMLDivElement>) => {
@@ -26,6 +27,8 @@ const Card = React.forwardRef(
       bodyStyle,
       style,
       children,
+      cover,
+      extra,
       ...others
     } = props;
 
@@ -46,14 +49,24 @@ const Card = React.forwardRef(
         {children}
       </div>
     );
+    const coverDom = cover ? (
+      <div className={"ai-card-cover"}>{cover}</div>
+    ) : null;
     return (
       <div className={card} style={style}>
         {/* head */}
         <div className={headclass}>
           <div className={headwrapperclass}>
-            {title && <div style={headStyle}>{title}</div>}
+            {title && (
+              <div style={headStyle} className={"ai-card-head-title"}>
+                {title}
+              </div>
+            )}
+            {extra && <div className={"ai-card-extra"}>{extra}</div>}
           </div>
+          {coverDom}
         </div>
+
         {/* body */}
         {body}
       </div>
