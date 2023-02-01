@@ -6,7 +6,8 @@ interface defaultBreadcrumbItemProps {
   className: string; //自定义类名
   href: string; //链接
   label: string;
-  onClick: (e: MouseEventHandler<HTMLSpanElement>) => void;
+  route: string;
+  disabled: boolean;
 }
 type NativeBreadcrumbItemProps = defaultBreadcrumbItemProps &
   React.BaseHTMLAttributes<HTMLSpanElement>;
@@ -14,9 +15,19 @@ type NativeBreadcrumbItemProps = defaultBreadcrumbItemProps &
 export type BreadcrumbItemProps = Partial<NativeBreadcrumbItemProps>;
 
 const BreadcrumbItem: React.FC<BreadcrumbItemProps> = (props) => {
-  const { className, href, label, onClick } = props;
+  const { className, href, label, route, disabled } = props;
 
-  const classes = classnames("breadcrumb", className);
+  const classes = classnames("ai-bcb-item", className, {
+    disabled,
+    [`ai-bcb-link`]: href,
+  });
+
+  const indexUrl = (route: string) => {
+    return () => {
+      // if(route) navigate(route)
+      // alert('你已跳转到页面：'  + route)
+    };
+  };
 
   return (
     <>
@@ -25,7 +36,7 @@ const BreadcrumbItem: React.FC<BreadcrumbItemProps> = (props) => {
           {label}
         </a>
       ) : (
-        <span className={classes} onClick={onClick}>
+        <span className={classes} onClick={() => indexUrl(route || "")}>
           {label}
         </span>
       )}
@@ -34,12 +45,9 @@ const BreadcrumbItem: React.FC<BreadcrumbItemProps> = (props) => {
 };
 
 BreadcrumbItem.defaultProps = {
-  className: "breadcrumb-item",
+  className: "",
   href: "",
   label: "路径",
-  onClick: () => {
-    alert(1);
-  },
 };
 
 export default BreadcrumbItem;
