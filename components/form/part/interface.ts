@@ -24,6 +24,7 @@ export interface FieldEntity {
   props: {
     name?: NamePath;
     rules?: Rule[];
+    label?: NamePath;
   };
   onStoreChange: () => void;
 }

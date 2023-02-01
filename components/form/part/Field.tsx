@@ -6,10 +6,11 @@ type FiledProps = {
   name: NamePath;
   rules: Rule[];
   children?: React.ReactNode;
+  label: NamePath;
 };
 
 const Field: React.FC<FiledProps> = (props) => {
-  const { children, name } = props;
+  const { children, name, label } = props;
   const { getFieldValue, setFieldsValue, registerFieldEntities } =
     React.useContext(FieldContext);
   const [, forceUpdate] = React.useReducer((x) => x + 1, 0);
