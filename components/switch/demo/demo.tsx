@@ -9,7 +9,12 @@ interface IProps {
 const Demo: React.FC<IProps> = () => {
   return (
     <>
-      <Switch></Switch>
+      <Switch
+        width="40"
+        activeValue="1"
+        inactiveValue="2"
+        defaultChecked={true}
+      ></Switch>
     </>
   );
 };

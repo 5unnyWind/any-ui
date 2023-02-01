@@ -1,7 +1,27 @@
+@import "./basic.scss";
 @import "./mixin.scss";
 
-input {
+input.switchInput {
   display: none;
+}
+
+.switch {
+  display: inline-block;
+  height: $ai-sw-width / 2;
+}
+
+span.switchValue {
+  display: inline-block;
+  margin-left: $ai-sw-width / 8;
+  height: $ai-sw-width / 2;
+  overflow: hidden;
+  &:hover {
+    cursor: pointer;
+  }
+  span {
+    display: inline-block;
+    font-size: $ai-sw-width * 7 / 20;
+  }
 }
 
 span.core:after {
@@ -9,40 +29,26 @@ span.core:after {
   position: absolute;
   border-radius: 50%;
   transition: all 0.3s;
-  width: 32px;
-  height: 32px;
   background-color: #fff;
 }
 
 span.core {
   position: relative;
-  display: block;
-  display: flex;
-  border-radius: 24px;
-  width: 90px;
-  height: 36px;
+  display: inline-block;
+  @include switch-size($ai-sw-width);
   cursor: pointer;
-  background-color: rgb(22, 119, 255);
+
   &.off {
-    background-color: rgb(191, 191, 191);
-    &:after {
-      top: 2px;
-      left: 2px;
-    }
-    &:hover {
-      background-color: rgb(140, 140, 140);
-    }
+    background-color: var(--inactiveColor);
   }
 
   &.on {
-    background-color: rgb(22, 119, 255);
-    &:after {
-      top: 2px;
-      left: 100%;
-      margin-left: -34px;
-    }
-    &:hover {
-      background-color: rgb(64, 150, 255);
-    }
+    background-color: var(--activeColor);
+  }
+
+  &:disabled,
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.8;
   }
 }
