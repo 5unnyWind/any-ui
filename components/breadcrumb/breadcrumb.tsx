@@ -1,5 +1,4 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
 import BreadcrumbItem from "./breadcrumbItem";
 import BreadcrumbSeparator from "./breadcrumbSeparator";
 import classnames from "classnames";
@@ -36,29 +35,27 @@ const Breadcrumb: React.FC<BreadcrumbProps> = (props) => {
 
   return (
     <>
-      <Router>
-        <div className={classes}>
-          {routes?.map((item, index) => {
-            return (
-              <div key={index} className="ai-bcb-box">
-                {/* 子项 */}
-                <BreadcrumbItem
-                  {...item}
-                  last={index === routes.length - 1}
-                  routes={routes}
-                />
+      <div className={classes}>
+        {routes?.map((item, index) => {
+          return (
+            <div key={index} className="ai-bcb-box">
+              {/* 子项 */}
+              <BreadcrumbItem
+                {...item}
+                last={index === routes.length - 1}
+                routes={routes}
+              />
 
-                {/* 分隔符 */}
-                {index !== routes.length - 1 ? (
-                  <BreadcrumbSeparator separator={separator} />
-                ) : (
-                  ""
-                )}
-              </div>
-            );
-          })}
-        </div>
-      </Router>
+              {/* 分隔符 */}
+              {index !== routes.length - 1 ? (
+                <BreadcrumbSeparator separator={separator} />
+              ) : (
+                ""
+              )}
+            </div>
+          );
+        })}
+      </div>
     </>
   );
 };

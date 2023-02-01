@@ -50,7 +50,7 @@ export default () => (
       <Breadcrumb routes={routes1} colorType="black" />
     </div>
     <div className="session">
-      <h4>router绑定（未完成）</h4>
+      <h4>router绑定</h4>
       <Breadcrumb routes={routes3} />
     </div>
   </>
