@@ -16,6 +16,7 @@
     "prepare": "husky install",
     "lint:style": "stylelint --fix \"src/**/*.{css,scss}\""
   },
+  "packageManager": "pnpm@7.26.3",
   "eslintConfig": {
     "extends": [
       "react-app",
