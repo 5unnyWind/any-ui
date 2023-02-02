@@ -1,0 +1,52 @@
+.rc-pagination-simple {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.88);
+  font-size: 14px;
+  line-height: 30px;
+  list-style: none;
+
+  .rc-pagination-simple-pager {
+    display: inline-block;
+    height: inherit;
+    min-height: 24px;
+    margin-inline-end: 8px;
+
+    input {
+      box-sizing: border-box;
+      height: 100%;
+      margin-inline-end: 8px;
+      padding: 0 6px;
+      text-align: center;
+      background-color: $white;
+      border: 1px solid $gray-300;
+      border-radius: 6px;
+      outline: none;
+      transition: border-color 0.2s;
+      color: inherit;
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      min-width: 0;
+      font-size: $font-size-sm;
+      line-height: $line-height-base;
+      background-image: none;
+      border-color: $gray-400;
+      margin-inline-start: 8px;
+      &:focus {
+        border-color: #4096ff;
+        box-shadow: 0 0 0 2px rgba(5, 145, 255, 0.1);
+      }
+
+      &:hover {
+        border-color: $blue;
+      }
+    }
+  }
+
+  .rc-pagination-slash {
+    margin-inline-end: 12px;
+    margin-inline-start: 4px;
+  }
+}

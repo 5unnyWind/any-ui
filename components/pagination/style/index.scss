@@ -11,6 +11,7 @@
 
   li {
     display: inline-block;
+    position: relative;
     min-width: 35px;
     height: 35px;
     margin-inline-end: 8px;
@@ -37,7 +38,8 @@
     }
 
     a {
-      line-height: $line-height-base;
+      display: inline-block;
+      line-height: $line-height-sm;
       text-align: center;
       vertical-align: middle;
       overflow: hidden;
@@ -77,8 +79,17 @@
     background-color: $white;
     border-color: $blue;
 
+    &:hover {
+      background-color: $white;
+      border-color: #094ebd;
+    }
+
     a {
       color: $blue;
+
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
 
