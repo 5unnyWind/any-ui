@@ -1,0 +1,54 @@
+@import "./basic.scss";
+@import "./mixin.scss";
+
+input.switchInput {
+  display: none;
+}
+
+.switch {
+  display: inline-block;
+  height: $ai-sw-width / 2;
+}
+
+span.switchValue {
+  display: inline-block;
+  margin-left: $ai-sw-width / 8;
+  height: $ai-sw-width / 2;
+  overflow: hidden;
+  &:hover {
+    cursor: pointer;
+  }
+  span {
+    display: inline-block;
+    font-size: $ai-sw-width * 7 / 20;
+  }
+}
+
+span.core:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  transition: all 0.3s;
+  background-color: #fff;
+}
+
+span.core {
+  position: relative;
+  display: inline-block;
+  @include switch-size($ai-sw-width);
+  cursor: pointer;
+
+  &.off {
+    background-color: var(--inactiveColor);
+  }
+
+  &.on {
+    background-color: var(--activeColor);
+  }
+
+  &:disabled,
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.8;
+  }
+}

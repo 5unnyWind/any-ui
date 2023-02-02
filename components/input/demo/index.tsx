@@ -5,6 +5,10 @@ const App = () => {
   return (
     <>
       <Input label="Label" placeholder="Placeholder"></Input>
+      <br />
+      <Input label="Label"></Input>
+      <br />
+      <Input label="Label" outlined></Input>
     </>
   );
 };

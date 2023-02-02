@@ -16,24 +16,22 @@ type NativeInputProps = BaseInputPorps & React.InputHTMLAttributes<HTMLElement>;
 type InputTypes = Partial<NativeInputProps>;
 
 const Input: React.FC<InputTypes> = (props) => {
-  const { label, stucky, placeholder } = props;
+  const { label, stucky, placeholder, outlined } = props;
 
   const labelRef = useRef<HTMLLabelElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
-
-  const [classes, useClasses] = useState<string>(
-    classNames({
-      ["ai-field-labeld"]: label,
-      ["ai-field-float"]: stucky,
-    })
-  );
 
   const getClassNames = (float: boolean, highlighted: boolean) =>
     classNames({
       ["ai-field-labeld"]: label,
       ["ai-field-float"]: float || stucky,
       ["ai-field-highlighted"]: highlighted,
+      ["ai-input-outline"]: outlined,
     });
+
+  const [classes, useClasses] = useState<string>(
+    getClassNames(stucky || false, false)
+  );
 
   const handleClick = () => {
     if (labelRef.current && inputRef.current) {
@@ -58,7 +56,7 @@ const Input: React.FC<InputTypes> = (props) => {
     <>
       <label
         ref={labelRef}
-        className={`ai-input-container ai-input-outline ${classes}`}
+        className={`ai-input-container ${classes}`}
         htmlFor="ai-input"
       >
         <div className="ai-input-inner">
