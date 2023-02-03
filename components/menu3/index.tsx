@@ -1,8 +1,13 @@
 import Menu from "./Menu";
 import MenuItem from "./MenuItem";
 
-export { MenuItem };
+export type MenuComponentType = typeof Menu & {
+  Item: typeof MenuItem;
+};
 
-// Menu.Item = MenuItem;
+(Menu as MenuComponentType).Item = MenuItem;
 
-export default Menu;
+export type { IMenuProps, MenuModeType, ClickParam } from "./Menu";
+export type { IMenuItemProps } from "./MenuItem";
+
+export default Menu as MenuComponentType;

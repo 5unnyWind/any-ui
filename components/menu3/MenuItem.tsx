@@ -16,17 +16,15 @@ interface MenuItemPropsType {
 
 export type IMenuItemProps = Partial<MenuItemPropsType>;
 
-const MenuItemCompontent: React.FC<IMenuItemProps> = (props) => {
-  const {
-    classPrefix,
-    className,
-    index,
-    style,
-    disabled,
-    children,
-    ...restProps
-  } = props;
-
+const MenuItemCompontent: React.FC<IMenuItemProps> = ({
+  classPrefix,
+  className,
+  index,
+  style,
+  disabled,
+  children,
+  ...restProps
+}) => {
   //MenuItem的状态
   const [state, setState] = useState({
     expanded: false,

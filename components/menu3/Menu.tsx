@@ -38,19 +38,17 @@ export const MenuContext = createContext({});
  * @param props
  * @returns
  */
-const MenuCompontent: React.FC<IMenuProps> = (props) => {
-  const {
-    classPrefix,
-    className,
-    style,
-    children,
-    mode,
-    selectedKeys,
-    onClick: onClickFnc,
-    onSelect: onSelectFnc,
-    ...restProps
-  } = props;
-
+const MenuCompontent: React.FC<React.PropsWithChildren<IMenuProps>> = ({
+  classPrefix,
+  className,
+  style,
+  children,
+  mode,
+  selectedKeys,
+  onClick: onClickFnc,
+  onSelect: onSelectFnc,
+  ...restProps
+}: IMenuProps) => {
   //定义全局回调方法
   const onSelectCallBack = (params: ClickParam) => {
     useState({
