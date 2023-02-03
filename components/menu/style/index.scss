@@ -8,6 +8,7 @@
 
   .menu-item-box {
     width: 100%;
+    position: relative;
 
     .menu-item {
       padding: 0.75rem 0;
@@ -27,58 +28,6 @@
 
       .menu-divider {
         margin-right: 0.4rem;
-      }
-
-      .sub-menu {
-        margin-top: 0.5rem;
-        padding: 0.5rem 0;
-        position: absolute;
-        top: calc(100%);
-        left: 0;
-        visibility: hidden;
-        transition: all 0.3s ease-in-out;
-        box-shadow: 0 0.625rem 1.875rem -0.9375rem $gray-900;
-        border-radius: 0.5rem;
-        background-color: #fff;
-
-        .sub-menu-item {
-          width: 100%;
-          height: 100%;
-          padding: 0.5rem 1.25rem;
-          min-width: 6rem;
-          list-style: none;
-          text-overflow: ellipsis;
-          overflow: hidden;
-          white-space: nowrap;
-
-          &:hover {
-            & > .menu-isMenuSub {
-              display: block;
-            }
-
-            & > span {
-              color: $primary;
-            }
-          }
-        }
-      }
-
-      .menu-isMenuSub {
-        position: absolute;
-        transform: translate(105%, -50%);
-        display: none;
-        transition: all 0.4s;
-        border-radius: 0.5rem;
-        background-color: #fff;
-
-        &::before {
-          content: "";
-          width: 20%;
-          height: 100%;
-          left: -20%;
-          top: 0;
-          position: absolute;
-        }
       }
 
       &:not(.menu-disabled):hover {
@@ -102,6 +51,68 @@
     .menu-disabled {
       cursor: not-allowed;
       color: $gray-200;
+    }
+
+    &:hover {
+      .sub-menu {
+        visibility: visible;
+      }
+    }
+
+    .sub-menu {
+      margin: 0.5rem;
+      background-color: #fff;
+      padding: 0.5rem 0 0.25rem 0;
+      position: absolute;
+      top: calc(100%);
+      left: 0;
+      visibility: hidden;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 0.625rem 1.875rem -0.9375rem $gray-900;
+      border-radius: 0.5rem;
+
+      .sub-menu-item {
+        width: 100%;
+        height: 100%;
+        padding: 0.5rem 1.25rem;
+        margin: 0.25rem 0;
+        min-width: 6rem;
+        list-style: none;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        cursor: pointer;
+        background-color: #ccc;
+        font-size: 0.8rem;
+
+        &:hover {
+          & > .menu-isMenuSub {
+            display: block;
+          }
+
+          & > span {
+            color: $primary;
+          }
+        }
+      }
+    }
+
+    .menu-isMenuSub {
+      position: absolute;
+      transform: translate(105%, -50%);
+      display: none;
+      transition: all 0.4s;
+      border-radius: 0.5rem;
+      background-color: #fff;
+
+      &::before {
+        content: "";
+        width: 20%;
+        height: 100%;
+        left: -20%;
+        top: 0;
+        position: absolute;
+      }
     }
   }
 }

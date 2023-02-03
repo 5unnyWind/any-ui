@@ -40,18 +40,23 @@ const MenuItem: React.FC<ItemType> = (props) => {
   });
 
   return (
-    <div className={classes} {...rest}>
-      <MenuDivider icon={icon} />
-      <span onClick={() => (getSelectedKey ? getSelectedKey(index) : "")}>
-        {label}
-      </span>
+    <>
+      {/* 菜单导航 */}
+      <div
+        className={classes}
+        {...rest}
+        onClick={() => (getSelectedKey ? getSelectedKey(index) : "")}
+      >
+        <MenuDivider icon={icon} />
+        <span>{label}</span>
+      </div>
       {/* 判断子集 */}
       {children && children.length !== 0 ? (
         <SubMenu {...props} getSelectedKey={getSelectedKey} />
       ) : (
         ""
       )}
-    </div>
+    </>
   );
 };
 

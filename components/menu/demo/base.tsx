@@ -114,6 +114,21 @@ const items5 = [
       },
       {
         type: "group",
+        label: "子菜单1",
+        icon: "$",
+        children: [
+          {
+            label: "子菜单1-1",
+            index: "setting:1",
+          },
+          {
+            label: "子菜单1-2",
+            index: "setting:2",
+          },
+        ],
+      },
+      {
+        type: "group",
         label: "子菜单2",
         icon: "$",
         children: [
@@ -127,7 +142,7 @@ const items5 = [
             children: [
               {
                 type: "group",
-                label: "子菜单1",
+                label: "子菜单2-2-1",
                 icon: "$",
                 children: [
                   {
@@ -186,6 +201,7 @@ const items7 = [
   },
 ];
 
+import Menu3 from "../../menu3/Menu";
 const App: React.FC = () => {
   const [current, setCurrent] = useState("mail");
 
@@ -195,6 +211,7 @@ const App: React.FC = () => {
 
   return (
     <div>
+      <Menu3>这是menu3</Menu3>
       <h2 style={{ marginLeft: "40px" }}>菜单</h2>
       <p style={{ marginLeft: "40px" }}>菜单组件演示，以下中&，￥，$为图标</p>
 
