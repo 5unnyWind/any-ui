@@ -201,7 +201,7 @@ const items7 = [
   },
 ];
 
-import Menu3 from "../../menu3/Menu";
+import Menu3, { MenuItem } from "../../menu3";
 const App: React.FC = () => {
   const [current, setCurrent] = useState("mail");
 
@@ -211,7 +211,18 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <Menu3>这是menu3</Menu3>
+      <Menu3 selectedKeys={["analysis"]}>
+        {/* <Menu.Item index="analysis">分析</Menu.Item>
+      <Menu.Item index="market">营销</Menu.Item>
+      <Menu.SubMenu index="set" title={<span>设置</span>}>
+          <Menu.Item index="4">二级标题</Menu.Item>
+          <Menu.Item index="5">二级标题</Menu.Item>
+          <Menu.SubMenu index="sub3" title={<span>二级菜单</span>}>
+              <Menu.Item  index="6">三级标题</Menu.Item>
+          </Menu.SubMenu>
+      </Menu.SubMenu> */}
+      </Menu3>
+
       <h2 style={{ marginLeft: "40px" }}>菜单</h2>
       <p style={{ marginLeft: "40px" }}>菜单组件演示，以下中&，￥，$为图标</p>
 
