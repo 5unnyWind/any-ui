@@ -1,0 +1,27 @@
+.containerStyle {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-bottom: 10vh;
+}
+
+.h3Style {
+  font-size: 1.2rem;
+  margin: 10px 40px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid grey;
+  color: grey;
+}
+
+.sessionStyle {
+  width: 800px;
+  border: 2px solid grey;
+  margin: 2rem;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.style1 {
+  width: "600px";
+}

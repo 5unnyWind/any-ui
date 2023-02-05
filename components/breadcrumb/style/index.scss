@@ -1,0 +1,39 @@
+.ai-bcb {
+  line-height: $line-height-lg;
+  background-color: $white;
+  margin: 0 0.75rem;
+  display: flex;
+}
+
+.ai-bcb-item {
+  margin: 0 8px;
+  cursor: pointer;
+  list-style: none;
+  text-decoration: none;
+  outline: none;
+  color: $black;
+  text-decoration: none !important;
+
+  &:not(:last-child) {
+    color: $gray-500;
+  }
+
+  &.ai-disabled {
+    color: $gray-500;
+    cursor: default;
+  }
+
+  &.ai-bcb-link {
+    color: $black;
+  }
+}
+
+.ai-bcb-black {
+  .ai-bcb-item {
+    color: $black;
+  }
+}
+
+.ai-bcb-separator {
+  color: $gray-500;
+}
