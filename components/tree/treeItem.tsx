@@ -12,7 +12,7 @@ const TreeItem: React.FC<TreeProps> = (props) => {
             <div className="ai-tree-children">
               <div
                 className={`reactive-postion ai-tree-node-parent ${
-                  index == list.length - 1
+                  index === list.length - 1
                     ? "ai-tree-node-last"
                     : "ai-tree-node"
                 }`}

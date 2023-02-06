@@ -29,21 +29,21 @@ const Input: React.FC<InputTypes> = (props) => {
       ["ai-input-outline"]: outlined,
     });
 
-  const [classes, useClasses] = useState<string>(
+  const [classes, UseClasses] = useState<string>(
     getClassNames(stucky || false, false)
   );
 
   const handleClick = () => {
     if (labelRef.current && inputRef.current) {
       inputRef.current.placeholder = placeholder || "";
-      useClasses(getClassNames(true, true));
+      UseClasses(getClassNames(true, true));
     }
   };
 
   const handleBlur = () => {
     if (labelRef.current && inputRef.current) {
       inputRef.current.placeholder = "";
-      useClasses(
+      UseClasses(
         getClassNames(
           inputRef.current?.value.length === 0 ? false : true,
           false

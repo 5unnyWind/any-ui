@@ -16,8 +16,9 @@ import { Button } from "any-ui";
 
 export default () => (
   <>
-    <h2>按钮</h2>
-    <Button type="default">默认</Button>
+    <Button label="Download" size="sm" type="default" wave></Button>
+    <Button label="Download" size="md" type="primary" wave></Button>
+    <Button label="Download" size="lg" color="red" glossy wave></Button>
   </>
 );
 ```
