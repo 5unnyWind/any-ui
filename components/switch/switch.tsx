@@ -1,5 +1,6 @@
 import React, { memo, useState } from "react";
 import classNames from "classnames";
+import "./style/index.scss";
 
 interface BaseSwitchProps {
   className?: string; // 接受用户自定义类名
@@ -33,7 +34,7 @@ const Switch: React.FC<BaseSwitchProps> = (props) => {
       setischeckout(!ischeckout);
     }
   };
-  console.log(ischeckout);
+
   const switchclasses = classNames("switch", className, {
     disabled: disabled,
   });

@@ -7,3 +7,4 @@ export { default as Breadcrumb } from "./breadcrumb";
 export { default as Menu } from "./menu";
 export { default as Input } from "./input";
 export { default as Upload } from "./upload";
+export { default as Switch } from "./switch";

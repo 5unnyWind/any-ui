@@ -7,4 +7,5 @@ export {
   Upload,
   Input,
   Tree,
+  Switch,
 } from "../components";
