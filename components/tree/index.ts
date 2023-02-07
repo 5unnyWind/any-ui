@@ -1,11 +1,16 @@
-interface ListItem {
+export interface ListItem {
   label: string;
   avatar?: string;
   children?: ListItem[];
+  check?: boolean;
 }
 
 interface BaseTreeProps {
   list: ListItem[];
+  checkbox?: boolean;
+  parentBox: string;
+  handleParent?: (e: any, status: boolean) => void;
+  parentStatus?: boolean;
 }
 
 type NativeDivProps = BaseTreeProps & React.HTMLAttributes<HTMLElement>;

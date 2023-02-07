@@ -11,7 +11,12 @@
 }
 
 .ai-tree-header-first {
-  @include ai-tree-header();
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 4px;
+  margin-top: 3px;
+  border-radius: 4px;
+  align-items: center;
 }
 
 .ai-tree-children {
@@ -52,7 +57,12 @@
 }
 
 .ai-tree-header {
-  @include ai-tree-header();
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 4px;
+  margin-top: 3px;
+  border-radius: 4px;
+  align-items: center;
   position: relative;
   outline: 0;
   cursor: pointer;
@@ -127,4 +137,115 @@
 
 .ai-tree-node-parent {
   padding-left: 2px;
+}
+
+.ai-tree-checkbox {
+  background-color: #fff;
+  display: inline-flex;
+  outline: 0 !important;
+  cursor: pointer !important;
+  align-items: center;
+  flex-wrap: nowrap;
+  vertical-align: middle;
+  margin-right: 4px;
+
+  &-inner {
+    font-size: 40px;
+    width: 1em;
+    min-width: 1em;
+    height: 1em;
+    outline: 0;
+    border-radius: 50%;
+    color: #0000008a;
+    position: relative;
+    width: 0.5em;
+    min-width: 0.5em;
+    height: 0.5em;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border-radius: 50%;
+      background: currentColor;
+      opacity: 0.12;
+      transform: scale3d(0, 0, 1);
+      transition: transform 0.22s cubic-bezier(0, 0, 0.2, 1);
+
+      &:hover {
+        transform: scale3d(1.4, 1.4, 1);
+      }
+    }
+
+    .q-checkbox-native {
+      display: none !important;
+      margin: 0;
+      padding: 0;
+      width: 1px;
+      height: 1px;
+      overflow: visible;
+      text-transform: none;
+      font: inherit;
+      font-family: inherit;
+      writing-mode: horizontal-tb !important;
+      text-rendering: auto;
+      color: fieldtext;
+      text-indent: 0px;
+      text-align: start;
+    }
+
+    .ai-tree-checkbox__bg {
+      left: 5%;
+      top: 5%;
+      width: 90%;
+      height: 90%;
+      border: 2px solid currentColor;
+      border-radius: 2px;
+      transition: background 0.22s cubic-bezier(0, 0, 0.2, 1) 0ms;
+      -webkit-print-color-adjust: exact;
+      position: absolute;
+      user-select: none;
+      background: currentColor;
+
+      .ai-tree-svg {
+        width: 100% !important;
+        height: 100% !important;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        color: #fff;
+        overflow: hidden;
+
+        .ai-tree-checkbox__truthy {
+          stroke: currentColor;
+          stroke-width: 3.12px;
+          stroke-dashoffset: 29.78334;
+          stroke-dasharray: 29.78334;
+        }
+
+        .ai-tree-checkbox__indet {
+          fill: currentColor;
+          transform-origin: 50% 50%;
+          transform: rotate(-280deg) scale(0);
+        }
+      }
+    }
+  }
+}
+
+.ai-tree-checkbox-inner-truthy {
+  path {
+    stroke-dashoffset: 0 !important;
+    stroke-dashoffset: 0 !important;
+    transition: stroke-dashoffset 0.18s cubic-bezier(0.4, 0, 0.6, 1) 0ms !important;
+  }
+}
+
+.ai-tree-checkbox-inner-truthy {
+  color: #1976d2;
 }
