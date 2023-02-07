@@ -10,9 +10,11 @@ const Demo: React.FC<IProps> = () => {
   return (
     <>
       <Switch
-        width="40"
-        activeValue="1"
-        inactiveValue="2"
+        width={"40"}
+        activeValue={"1"}
+        inactiveValue={"2"}
+        // activeColor={""}
+        // inactiveColor={""}
         defaultChecked={true}
       ></Switch>
     </>
