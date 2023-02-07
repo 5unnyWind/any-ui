@@ -8,4 +8,5 @@ export {
   Input,
   Tree,
   Switch,
+  Calendar,
 } from "../components";
