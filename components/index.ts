@@ -4,3 +4,4 @@ export { default as Badge } from "./badge";
 export { default as Card } from "./card/card";
 export { default as Breadcrumb } from "./breadcrumb";
 export { default as Menu } from "./menu";
+export { default as Upload } from "./upload";

@@ -1,1 +1,1 @@
-export { Badge, Button, Card, Breadcrumb, Menu } from "../components";
+export { Badge, Button, Card, Breadcrumb, Menu, Upload } from "../components";
