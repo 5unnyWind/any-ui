@@ -19,7 +19,12 @@ const simple = [
     children: [
       {
         label: "1231231",
-        children: [{ label: "12312" }, { label: "421412e" }],
+        children: [
+          {
+            label: "12312",
+          },
+          { label: "421412e" },
+        ],
       },
       {
         label: "214121t1412 i412)",
@@ -53,7 +58,22 @@ const simple = [
     children: [
       {
         label: "1231231",
-        children: [{ label: "12312" }, { label: "421412e" }],
+        children: [
+          {
+            label: "12312",
+            children: [
+              {
+                label: "Pr142141tion",
+                children: [
+                  { label: "Pr142141tion" },
+                  { label: "Pro21412412al41iter" },
+                ],
+              },
+              { label: "Pro21412412al41iter" },
+            ],
+          },
+          { label: "421412e" },
+        ],
       },
       {
         label: "214121t1412 i412)",
@@ -73,7 +93,7 @@ const simple = [
 export default () => {
   return (
     <>
-      <Tree list={simple}></Tree>
+      <Tree list={simple} checkbox></Tree>
     </>
   );
 };
