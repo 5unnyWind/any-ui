@@ -1,8 +1,8 @@
-import { defineConfig } from 'dumi';
+import { defineConfig } from "dumi";
 
 export default defineConfig({
-  outputPath: 'docs-dist',
+  outputPath: "docs-dist",
   themeConfig: {
-    name: 'any-ui',
+    name: "any-ui",
   },
 });

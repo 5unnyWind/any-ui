@@ -11,6 +11,7 @@ class FormStore {
   private store: Store = {};
   private callbacks: Callbacks = {};
   private fieldEntities: FieldEntity[] = [];
+  private initialValues: Store = {};
 
   getFieldsValue = () => {
     return { ...this.store };
@@ -33,17 +34,24 @@ class FormStore {
 
     return err;
   };
+  getFieldEntities = (pure: boolean = false) => {
+    if (!pure) {
+      return this.fieldEntities;
+    }
 
-  setFieldsValue = (newStore: Store) => {
+    return this.fieldEntities.filter((field) => field.props.name);
+  };
+  setFieldsValue = (values: any, reset?: boolean) => {
     this.store = {
       ...this.store,
-      ...newStore,
+      ...values,
     };
     // update Filed
-    this.fieldEntities.forEach((entity) => {
-      Object.keys(newStore).forEach((k) => {
-        if (k === entity.props.name) {
-          entity.onStoreChange();
+    this.getFieldEntities(true).forEach(({ props, onStoreChange }) => {
+      const name = props.name as string;
+      Object.keys(values).forEach((key) => {
+        if (name === key || reset) {
+          onStoreChange();
         }
       });
     });
@@ -72,6 +80,12 @@ class FormStore {
       onFinishFailed && onFinishFailed(err);
     }
   };
+  resetFields = (nameList?: string[]) => {
+    if (!nameList) {
+      this.store = { ...this.initialValues };
+      this.setFieldsValue(this.store, true);
+    }
+  };
 
   getForm = (): FormInstance => {
     return {
@@ -81,6 +95,7 @@ class FormStore {
       submit: this.submit,
       setCallbacks: this.setCallbacks,
       registerFieldEntities: this.registerFieldEntities,
+      resetFields: this.resetFields,
     };
   };
 }

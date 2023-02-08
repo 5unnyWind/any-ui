@@ -16,14 +16,6 @@ import { Form, Card, Button, Field, useForm } from "any-ui";
 import React, { useEffect } from "react";
 const nameRules = { required: true, message: "请输入姓名！" };
 const passworRules = { required: true, message: "请输入密码！" };
-
-const index: React.FC = () => {
-  const [form] = useForm();
-
-  useEffect(() => {
-    form.setFieldsValue({ username: "default" });
-  }, []);
-};
 export default () => (
   <>
     <Form
@@ -34,13 +26,15 @@ export default () => (
         console.log("err", err);
       }}
     >
-      <Field name={"username"} label="username" rules={[nameRules]}>
+      <Field name={"username"} label="用户名:" rules={[nameRules]}>
         <input placeholder="用户名" />
       </Field>
-      <Field name={"password"} rules={[passworRules]}>
+      <Field name={"password"} label="密码:" rules={[passworRules]}>
         <input placeholder="密码" type="password" />
       </Field>
-      <Button type="primary">admin</Button>
+      <Field>
+        <Button type="primary">admin</Button>
+      </Field>
     </Form>
   </>
 );

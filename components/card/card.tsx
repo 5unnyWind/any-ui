@@ -13,7 +13,7 @@ export interface Cardprops
   bodyStyle?: React.CSSProperties; //用户传入的内容样式
   children?: React.ReactNode;
   cover?: React.ReactNode; //添加图片
-  extra?:React.ReactNode; //添加链接
+  extra?: React.ReactNode; //添加链接
 }
 const Card = React.forwardRef(
   (props: Cardprops, ref: React.Ref<HTMLDivElement>) => {
@@ -33,10 +33,13 @@ const Card = React.forwardRef(
     } = props;
 
     const card = classNames("ai-card");
+    const coverDom = cover ? (
+      <div className={"ai-card-cover"}>{cover}</div>
+    ) : null;
     const headclass = classNames(
       "ai-card-head",
       hasborder ? "hasborder" : null,
-      title ? null : "istitle"
+      title || coverDom ? null : "istitle"
     );
     const headwrapperclass = classNames("ai-card-head-wrapper");
     //    const headtitleclass=classNames()
@@ -49,18 +52,22 @@ const Card = React.forwardRef(
         {children}
       </div>
     );
-    const coverDom = cover ? <div className={"ai-card-cover"}>{cover}</div> : null;
+
     return (
       <div className={card} style={style}>
         {/* head */}
         <div className={headclass}>
           <div className={headwrapperclass}>
-            {title && <div style={headStyle} className={"ai-card-head-title"}>{title}</div>}
+            {title && (
+              <div style={headStyle} className={"ai-card-head-title"}>
+                {title}
+              </div>
+            )}
             {extra && <div className={"ai-card-extra"}>{extra}</div>}
           </div>
           {coverDom}
         </div>
-        
+
         {/* body */}
         {body}
       </div>

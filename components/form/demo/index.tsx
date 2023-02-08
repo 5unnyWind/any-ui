@@ -31,6 +31,14 @@ const index: React.FC = () => {
       </Field>
 
       <Button type="primary">admin</Button>
+      <Button
+        type="primary"
+        onClick={() => {
+          form.resetFields();
+        }}
+      >
+        reset
+      </Button>
     </Form>
   );
 };

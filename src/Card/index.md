@@ -8,26 +8,35 @@ group:
 ---
 
 # Card
+
 通用卡片容器
 
 ```jsx
-import { Card } from 'any-ui';
+import { Card } from "any-ui";
 
 export default () => (
   <>
     <Card
-        title="Card title"
-        style={{ width: 300 }}
-        bordered={true}
-        extra={<a href="#">More</a>}
-        cover={<img
+      title="Card title"
+      style={{ width: 300 }}
+      bordered={true}
+      extra={<a href="#">More</a>}
+    >
+      <p>Card content</p>
+      <p>Card content</p>
+    </Card>
+
+    <Card
+      style={{ width: 300 }}
+      cover={
+        <img
           alt="example"
           src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-        />}      
-      >
-        <p>Card content</p>
-        <p>Card content</p>
-      </Card>
+        />
+      }
+    >
+      <p>Card content</p>
+    </Card>
   </>
-);  
+);
 ```

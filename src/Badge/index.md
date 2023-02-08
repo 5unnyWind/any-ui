@@ -12,7 +12,7 @@ group:
 显示一个需要注意的指标
 
 ```jsx
-import { Badge } from 'any-ui';
+import { Badge } from "any-ui";
 
 export default () => (
   <>
@@ -21,14 +21,22 @@ export default () => (
 
     <h2>锚定徽标</h2>
     <h3>topRight:</h3>
-    <Badge.Anchor  >
+    <Badge.Anchor>
       <Badge>12</Badge>
-      <img src="https://img.yzcdn.cn/vant/cat.jpeg" alt="头像" style={{width:'50px',height:'50px',borderRadius:'5px'}} />
+      <img
+        src="https://img.yzcdn.cn/vant/cat.jpeg"
+        alt="头像"
+        style={{ width: "50px", height: "50px", borderRadius: "5px" }}
+      />
     </Badge.Anchor>
     <h3>bottomRight:</h3>
-    <Badge.Anchor  placement="bottomRight">
+    <Badge.Anchor placement="bottomRight">
       <Badge>徽标</Badge>
-      <img src="https://img.yzcdn.cn/vant/cat.jpeg" alt="头像" style={{width:'50px',height:'50px',borderRadius:'5px'}} />
+      <img
+        src="https://img.yzcdn.cn/vant/cat.jpeg"
+        alt="头像"
+        style={{ width: "50px", height: "50px", borderRadius: "5px" }}
+      />
     </Badge.Anchor>
   </>
 );
