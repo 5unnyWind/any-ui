@@ -1,8 +1,8 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import classNames from "classnames";
 import warning from "../_util/warning";
 
-export type ButtonSize = "lg" | "sm";
+export type ButtonSize = "lg" | "md" | "sm";
 export type ButtonType = "primary" | "default" | "danger" | "link";
 export type ButtonShape = "default" | "circle" | "round";
 
@@ -15,6 +15,9 @@ interface BaseButtonProps {
   padding: string; // 内外边距
   textColor: string; // 字体颜色
   label: string; // 按钮内部内容
+  wave: unknown; // 开起波纹
+  glossy: unknown; // 渐变色
+  border: string;
 }
 
 type NativeButtonProps = BaseButtonProps &
@@ -35,6 +38,14 @@ export type ButtonProps = fileterPartialType<
 };
 
 const Button: React.FC<ButtonProps> = (props) => {
+  const [x, setX] = useState("50%");
+  const [y, setY] = useState("50%");
+
+  const origin = {
+    "--originX": x,
+    "--originY": y,
+  };
+
   const {
     disabled,
     label,
@@ -45,22 +56,48 @@ const Button: React.FC<ButtonProps> = (props) => {
     type,
     color,
     textColor,
+    wave,
+    glossy,
+    border,
     ...restProps
   } = props;
 
   const classes = classNames("ai-btn", className, {
     [`ai-btn-${type}`]: type, // type 参数存在时则动态添加 `ai-btn-${btnType}` 类
     [`ai-btn-${size}`]: size, // size 参数存在时动态添加 `ai-btn-${size}` 类 , size 包括大小padding ; font-size ; border-radius;
+    ["ai-btn-glossy"]: glossy,
     disabled: type === "link" && disabled, // 由于 a 链接原生不带有 disabled 属性，因此需要手动给它添加一个 disabled 类。通过编写类的样式实现disabled效果
   });
 
-  const coverStyle = {
-    "background-color": color,
-    color: textColor,
+  const getStyle = () => {
+    let style = {};
+
+    if (type === "default") {
+      style = {
+        backgroundColor: color,
+        color: textColor,
+        border,
+      };
+    }
+    if (wave) {
+      style = {
+        ...style,
+        ...origin,
+      };
+    }
+
+    return style;
+  };
+
+  const changeOirgin = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    const x = e.nativeEvent.offsetX;
+    const y = e.nativeEvent.offsetY;
+    setX(x + "px");
+    setY(y + "px");
   };
 
   if (type && (color || textColor)) {
-    warning(false, Button.toString(), "\n使用自定义样式请取消 type 属性");
+    warning(false, "Button", "\n使用自定义样式请取消 type 属性");
   }
 
   if (type === "link" && href) {
@@ -74,8 +111,9 @@ const Button: React.FC<ButtonProps> = (props) => {
       <button
         {...restProps}
         className={classes}
-        style={type ? {} : coverStyle}
+        style={getStyle()}
         disabled={disabled}
+        onMouseMove={wave ? changeOirgin : () => {}}
       >
         {label ? label : children}
       </button>

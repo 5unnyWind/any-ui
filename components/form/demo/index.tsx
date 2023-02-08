@@ -23,13 +23,46 @@ const index: React.FC = () => {
       }}
       form={form}
     >
-      <Field name={"username"} label="Username" rules={[nameRules]}>
+      <Field name={"username"} rules={[nameRules]}>
         <input placeholder="用户名" />
       </Field>
-      <Field name={"password"} label="Username" rules={[passworRules]}>
+      <Field name={"password"} rules={[passworRules]}>
         <input placeholder="密码" type="password" />
       </Field>
-
+      <Card
+        title="123"
+        style={{ width: 300 }}
+        bordered={true}
+        headStyle={{ color: "yellow" }}
+        bodyStyle={{ color: "red" }}
+        extra={<a href="#">More</a>}
+        cover={
+          <img
+            alt="example"
+            src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+          />
+        }
+      >
+        <p>9999</p>
+        <p>9999</p>
+      </Card>
+      <Card
+        title="123"
+        style={{ width: 300 }}
+        bordered={true}
+        headStyle={{ color: "yellow" }}
+        bodyStyle={{ color: "red" }}
+        extra={<a href="#">More</a>}
+        cover={
+          <img
+            alt="example"
+            src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+          />
+        }
+      >
+        <p>9999</p>
+        <p>9999</p>
+      </Card>
       <Button type="primary">admin</Button>
       <Button
         type="primary"

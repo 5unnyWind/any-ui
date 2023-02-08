@@ -1,0 +1,74 @@
+@import "./basic.scss";
+@import "./mixin.scss";
+
+.ai-calendar {
+  width: 445.64px;
+  height: 452.25px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  &-header {
+    border-bottom: 1px solid black;
+    &-date {
+      &-month,
+      &-year {
+        &.on {
+          border-color: blue;
+          color: blue;
+        }
+      }
+    }
+  }
+  &-month-body {
+    button {
+      border: none;
+      width: 60px;
+      height: 60px;
+      color: blue;
+      background-color: #fff;
+      &:hover {
+        border-radius: 50%;
+        background-color: blue;
+        color: #fff;
+      }
+      &.isToday {
+        border-radius: 50%;
+        border: 1px solid blue;
+      }
+      &.notCurrentMonth {
+        opacity: 0.5;
+      }
+      &.isSelect {
+        background-color: blue;
+        color: #fff;
+        border-radius: 50%;
+      }
+    }
+  }
+  &-year-body {
+    button {
+      border: none;
+      width: 148.546px;
+      height: 102.28px;
+      &:hover {
+        border-radius: 50%;
+        background-color: blue;
+        color: #fff;
+      }
+      &.isCurrentMonth {
+        border-radius: 50%;
+        border: 1px solid blue;
+      }
+      &.isSelect {
+        border-radius: 50%;
+        background-color: blue;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.ai-calendar tr th,
+td {
+  border-bottom: 1px solid black;
+}

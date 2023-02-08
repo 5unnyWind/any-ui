@@ -21,13 +21,6 @@ export default () => (
       style={{ width: 300 }}
       bordered={true}
       extra={<a href="#">More</a>}
-    >
-      <p>Card content</p>
-      <p>Card content</p>
-    </Card>
-
-    <Card
-      style={{ width: 300 }}
       cover={
         <img
           alt="example"
@@ -35,6 +28,7 @@ export default () => (
         />
       }
     >
+      <p>Card content</p>
       <p>Card content</p>
     </Card>
   </>

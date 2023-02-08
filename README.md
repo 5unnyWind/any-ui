@@ -33,8 +33,8 @@ export default () => (
 
 ## Documentation
 
-- [中文文档]()
-- [Document Site]()
+- [中文文档](https://any-ui.ncuos.com/)
+- [Document Site](https://any-ui.ncuos.com/en-US)
 
 <br/>
 
@@ -50,15 +50,16 @@ pnpm dev
 ## 项目结构
 
 ```
-├── components # 组件
-├── src # 文档
+├── components # 组件源码
+├── docs # 指南文档
+├── src # 各组件文档源码
 ├── package.json # 项目配置
 ……
 ```
 
 ## 发布
 
-## ...
+推送到 mian 分支后，会自动发布
 
 ...
 

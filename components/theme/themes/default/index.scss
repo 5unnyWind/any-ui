@@ -170,9 +170,9 @@ $border-width: 1px !default;
 $border-color: $gray-300 !default;
 
 $border-radius: 0.25rem !default;
-$border-radius-lg: 0.3rem !default;
-$border-radius-md: 0.25rem !default;
-$border-radius-sm: 0.2rem !default;
+$border-radius-lg: 0.25rem !default;
+$border-radius-md: 0.2rem !default;
+$border-radius-sm: 0.15rem !default;
 
 // 不同类型的 box shadow
 $box-shadow-sm: 0 0.125rem 0.25rem rgba($black, 0.075) !default;
@@ -200,7 +200,6 @@ $submenu-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12),
   0 0 6px 0 rgba(0, 0, 0, 0.04);
 
 // Progress bars
-
 $progress-font-size: $font-size-base * 0.75 !default;
 $progress-bg: $gray-200 !default;
 $progress-border-radius: $border-radius !default;
