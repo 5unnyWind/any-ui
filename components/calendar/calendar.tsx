@@ -82,10 +82,18 @@ const Calendar: FC<BaseCalendarProps> = (props) => {
         <div className="ai-calendar-header">
           <div className="ai-calendar-header-name">Calendar header</div>
           <div className="ai-calendar-header-date">
-            <button className={monthClassname} onClick={selectMonthCalendar}>
+            <button
+              type="button"
+              className={monthClassname}
+              onClick={selectMonthCalendar}
+            >
               Month
             </button>
-            <button className={yearClassname} onClick={selectYearCalendar}>
+            <button
+              type="button"
+              className={yearClassname}
+              onClick={selectYearCalendar}
+            >
               Year
             </button>
             <select
@@ -141,6 +149,7 @@ const Calendar: FC<BaseCalendarProps> = (props) => {
                     return (
                       <td key={j}>
                         <button
+                          type="button"
                           className={btnclassnames}
                           onClick={() => handleClick(day)}
                         >
@@ -170,6 +179,7 @@ const Calendar: FC<BaseCalendarProps> = (props) => {
                     return (
                       <td key={j}>
                         <button
+                          type="button"
                           className={btnclassnames}
                           onClick={() => handleClick2(_)}
                         >
