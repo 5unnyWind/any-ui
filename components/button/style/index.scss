@@ -5,6 +5,7 @@
 .ai-btn {
   position: relative;
   display: inline-block;
+  overflow: hidden;
   font-weight: $ai-btn-font-weight;
   line-height: $ai-btn-line-height;
   color: $body-color;
@@ -29,6 +30,7 @@
     cursor: not-allowed;
     opacity: $ai-btn-disabled-opacity;
     box-shadow: none;
+
     > * {
       pointer-events: none; // 清除鼠标事件
     }
@@ -73,14 +75,7 @@
 }
 
 .ai-btn-default {
-  @include button-style(
-    $white,
-    $gray-400,
-    $body-color,
-    $white,
-    $primary,
-    $primary
-  );
+  @include button-style($white, $gray-400, $body-color, $white, $primary);
 }
 
 // 链接时格式
@@ -106,4 +101,38 @@
     color: $ai-btn-link-disabled-color;
     pointer-events: none;
   }
+}
+
+.ai-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(
+    circle at var(--originX) var(--originY),
+    #ccc 10%,
+    transparent 10.1%
+  );
+  transform-origin: var(--originX) var(--originY);
+  transform: scale(20);
+  opacity: 0;
+  transition: all 0.6s;
+}
+
+.ai-btn:active::after {
+  transform: scale(0);
+  opacity: 0.5;
+  transition: 0s;
+}
+
+.ai-btn-glossy {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 0, 0, 0.12) 51%,
+    rgba(0, 0, 0, 0.04)
+  ) !important;
 }

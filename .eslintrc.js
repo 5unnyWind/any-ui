@@ -40,5 +40,9 @@ module.exports = {
     "no-undef": 0,
     "@typescript-eslint/no-empty-function": 0,
     "@typescript-eslint/no-explicit-any": 0,
+    "@typescript-eslint/no-unused-expressions": 0,
+    "prefer-const": 0,
+    "@typescript-eslint/no-unused-vars": 0,
+    "react/no-children-prop": 0,
   },
 };

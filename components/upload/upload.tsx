@@ -258,7 +258,15 @@ const InternalUpload: React.ForwardRefRenderFunction<unknown, UploadProps> = (
           {uploadState === "上传中" ? (
             <ReactLoading color={"#367edd"} width={25} />
           ) : (
-            <p style={{fontSize:"0.875rem",lineHeight:'.8rem',fontWeight:'600'}}>{uploadState}</p>
+            <p
+              style={{
+                fontSize: "0.875rem",
+                lineHeight: ".8rem",
+                fontWeight: "600",
+              }}
+            >
+              {uploadState}
+            </p>
           )}
         </>
       );

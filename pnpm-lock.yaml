@@ -20,6 +20,7 @@ specifiers:
   classnames: ^2.3.2
   craco-babel-loader: ^1.0.4
   cross-env: ^7.0.3
+  date-fns: ^2.29.3
   dumi: ^2.0.2
   eslint: ^8.31.0
   eslint-config-prettier: ^8.6.0
@@ -31,6 +32,7 @@ specifiers:
   jest-environment-jsdom: ^29.3.1
   jsdom: ^21.0.0
   lint-staged: ^13.1.0
+  lodash: ^4.17.21
   node-sass: ^7.0.3
   postcss-html: ^1.5.0
   postcss-scss: ^4.0.6
@@ -68,6 +70,8 @@ dependencies:
   "@types/react-dom": 18.0.10
   classnames: 2.3.2
   cross-env: 7.0.3
+  date-fns: 2.29.3
+  lodash: 4.17.21
   node-sass: 7.0.3
   rc-field-form: 1.27.3_biqbaboplfbrettd7655fr4n2y
   rc-upload: 4.3.4_biqbaboplfbrettd7655fr4n2y
@@ -8953,6 +8957,11 @@ packages:
       image-size: 0.8.3
       mimer: 1.1.0
     dev: true
+
+  /date-fns/2.29.3:
+    resolution: {integrity: sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==}
+    engines: {node: '>=0.11'}
+    dev: false
 
   /debug/2.6.9:
     resolution:

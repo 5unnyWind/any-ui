@@ -2,16 +2,21 @@ import type {
   RcFile as OriRcFile,
   UploadProps as RcUploadProps,
   UploadRequestOption as RcCustomRequestOptions,
-} from 'rc-upload/lib/interface';
-import type * as React from 'react';
+} from "rc-upload/lib/interface";
+import type * as React from "react";
 // import type { ProgressProps } from '../progress';
-type ProgressProps = unknown
+type ProgressProps = unknown;
 
 export interface RcFile extends OriRcFile {
   readonly lastModifiedDate: Date;
 }
 
-export type UploadFileStatus = 'error' | 'success' | 'done' | 'uploading' | 'removed';
+export type UploadFileStatus =
+  | "error"
+  | "success"
+  | "done"
+  | "uploading"
+  | "removed";
 
 export interface HttpRequestHeader {
   [key: string]: string;
@@ -28,7 +33,7 @@ export interface UploadFile<T = any> {
   status?: UploadFileStatus;
   percent?: number;
   thumbUrl?: string;
-  crossOrigin?: React.ImgHTMLAttributes<HTMLImageElement>['crossOrigin'];
+  crossOrigin?: React.ImgHTMLAttributes<HTMLImageElement>["crossOrigin"];
   originFileObj?: RcFile;
   response?: T;
   error?: any;
@@ -66,9 +71,9 @@ export interface UploadLocale {
   previewFile?: string;
 }
 
-export type UploadType = 'drag' | 'select';
-export type UploadListType = 'text' | 'picture' | 'picture-card';
-export type UploadListProgressProps = Omit<ProgressProps, 'percent' | 'type'>;
+export type UploadType = "drag" | "select";
+export type UploadListType = "text" | "picture" | "picture-card";
+export type UploadListProgressProps = Omit<ProgressProps, "percent" | "type">;
 
 export type ItemRender<T = any> = (
   originNode: React.ReactElement,
@@ -78,33 +83,38 @@ export type ItemRender<T = any> = (
     download: () => void;
     preview: () => void;
     remove: () => void;
-  },
+  }
 ) => React.ReactNode;
 
 type PreviewFileHandler = (file: File | Blob) => PromiseLike<string>;
 type TransformFileHandler = (
-  file: RcFile,
+  file: RcFile
 ) => string | Blob | File | PromiseLike<string | Blob | File>;
 type BeforeUploadValueType = void | boolean | string | Blob | File;
 
-export interface UploadProps<T = any> extends Pick<RcUploadProps, 'capture'> {
+export interface UploadProps<T = any> extends Pick<RcUploadProps, "capture"> {
   type?: UploadType;
   name?: string;
   defaultFileList?: Array<UploadFile<T>>;
   fileList?: Array<UploadFile<T>>;
-  action?: string | ((file: RcFile) => string) | ((file: RcFile) => PromiseLike<string>);
+  action?:
+    | string
+    | ((file: RcFile) => string)
+    | ((file: RcFile) => PromiseLike<string>);
   directory?: boolean;
   data?:
     | Record<string, unknown>
-    | ((file: UploadFile<T>) => Record<string, unknown> | Promise<Record<string, unknown>>);
-  method?: 'POST' | 'PUT' | 'PATCH' | 'post' | 'put' | 'patch';
+    | ((
+        file: UploadFile<T>
+      ) => Record<string, unknown> | Promise<Record<string, unknown>>);
+  method?: "POST" | "PUT" | "PATCH" | "post" | "put" | "patch";
   headers?: HttpRequestHeader;
   showUploadList?: boolean | ShowUploadListInterface;
   multiple?: boolean;
   accept?: string;
   beforeUpload?: (
     file: RcFile,
-    FileList: RcFile[],
+    FileList: RcFile[]
   ) => BeforeUploadValueType | Promise<BeforeUploadValueType>;
   onChange?: (info: UploadChangeParam<UploadFile<T>>) => void;
   onDrop?: (event: React.DragEvent<HTMLDivElement>) => void;
@@ -125,7 +135,10 @@ export interface UploadProps<T = any> extends Pick<RcUploadProps, 'capture'> {
   previewFile?: PreviewFileHandler;
   /** @deprecated Please use `beforeUpload` directly */
   transformFile?: TransformFileHandler;
-  iconRender?: (file: UploadFile<T>, listType?: UploadListType) => React.ReactNode;
+  iconRender?: (
+    file: UploadFile<T>,
+    listType?: UploadListType
+  ) => React.ReactNode;
   isImageUrl?: (file: UploadFile) => boolean;
   progress?: UploadListProgressProps;
   itemRender?: ItemRender<T>;
@@ -156,7 +169,10 @@ export interface UploadListProps<T = any> {
   previewIcon?: React.ReactNode | ((file: UploadFile) => React.ReactNode);
   locale: UploadLocale;
   previewFile?: PreviewFileHandler;
-  iconRender?: (file: UploadFile<T>, listType?: UploadListType) => React.ReactNode;
+  iconRender?: (
+    file: UploadFile<T>,
+    listType?: UploadListType
+  ) => React.ReactNode;
   isImageUrl?: (file: UploadFile) => boolean;
   appendAction?: React.ReactNode;
   appendActionVisible?: boolean;

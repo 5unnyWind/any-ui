@@ -12,7 +12,7 @@ group:
 文件选择上传控件
 
 ```jsx
-import { Upload,Button } from "any-ui";
+import { Upload, Button } from "any-ui";
 const props: UploadProps = {
   name: "file",
   action: "https://www.mocky.io/v2/5cc8019d300000980a055e76",
@@ -34,7 +34,7 @@ export default () => (
   <>
     <h2>上传</h2>
     <Upload {...props}>
-      <Button >Click to Upload</Button>
+      <Button>Click to Upload</Button>
     </Upload>
   </>
 );

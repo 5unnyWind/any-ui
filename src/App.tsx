@@ -1,18 +1,23 @@
 import React from "react";
 import "../components/styles/index.scss";
-import ButtonDemo from "../components/button/demo/size";
-import BadgeDemo from "../components/badge/demo/basic";
-import SwitchDemo from "../components/switch/demo/demo";
-import BreadcrumbDemo from "../components/breadcrumb/demo/base";
+import InputDemo from "../components/input/demo/index";
+import TreeDemo from "../components/tree/demo/index";
+import ButtonDemo from "../components/button/demo/index";
 
 function App() {
   return (
-    <div className="App">
+    <div
+      className="App"
+      style={{
+        width: "400px",
+        margin: "20px auto",
+      }}
+    >
+      <InputDemo></InputDemo>
+      <br />
+      <TreeDemo></TreeDemo>
+      <br />
       <ButtonDemo></ButtonDemo>
-      <div />
-      <BadgeDemo></BadgeDemo>
-      <SwitchDemo></SwitchDemo>
-      <BreadcrumbDemo></BreadcrumbDemo>
     </div>
   );
 }
