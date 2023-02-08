@@ -132,10 +132,9 @@ const Calendar: FC<BaseCalendarProps> = (props) => {
               </tr>
             </thead>
             <tbody>
-              {weeks.map((week, i) => (
+              {weeks.map((week: any, i: any) => (
                 <tr key={i}>
-                  {week.map((day, j) => {
-                    // eslint-disable-next-line react/jsx-key
+                  {week.map((day: any, j: any) => {
                     const isToday = dateFnsIsToday(day);
                     const isCurrentMonth =
                       getMonth(day) === (selectMonth as number) - 1;
@@ -168,8 +167,9 @@ const Calendar: FC<BaseCalendarProps> = (props) => {
               {monthesList.map((monthList, i) => (
                 <tr key={i}>
                   {monthList.map((_, j) => {
-                    const isCurrentMonth = _ === getMonth(new Date()) + 1;
-
+                    const isCurrentMonth =
+                      _ === getMonth(new Date()) + 1 &&
+                      selectYear === getYear(new Date());
                     const isSelect = _ === (selectMonth as number);
 
                     const btnclassnames = classNames(
