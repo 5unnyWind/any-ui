@@ -6,12 +6,12 @@ describe("button按钮测试", () => {
   test("测试click", () => {
     const toggle = jest.fn();
     const wrapper = mount(
-      // @ts-ignore let me do it
       <Button
         label="Download"
         size="sm"
         type="default"
         wave
+        // @ts-ignore let me do it
         toggle={toggle}
       ></Button>
     );
