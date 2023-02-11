@@ -17,6 +17,6 @@ describe("button按钮测试", () => {
     );
     const b = wrapper.find("button");
     b.simulate("click");
-    expect(toggle).toBeCalledWith(2);
+    expect(toggle).toBeCalledWith(1);
   });
 });
