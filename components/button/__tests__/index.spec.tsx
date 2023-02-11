@@ -1,10 +1,10 @@
 import "@testing-library/jest-dom";
 import React from "react";
 import Button from "../index";
-import { render, fireEvent, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 
 describe("button按钮测试", () => {
-  test("测试click", () => {
+  test("测试属性值", () => {
     const props = {
       label: "Download",
       size: "sm",
@@ -16,5 +16,7 @@ describe("button按钮测试", () => {
     const b = screen.getByText(props.label);
 
     expect(b).toBeInTheDocument();
+    expect(b).toHaveTextContent(props.label);
+    expect(b).toHaveClass(`ai-btn-${props.type} ai-btn-${props.size}`);
   });
 });
