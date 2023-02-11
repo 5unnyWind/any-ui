@@ -11,7 +11,7 @@ group:
 
 水平菜单
 
-> 菜单组件演示，以下中&，￥，$作为为图标代替
+> 📝 菜单组件演示，以下中以 📝、📗 作为为图标代替
 
 ```jsx
 import { Menu } from "any-ui";
@@ -86,10 +86,10 @@ import { Menu } from "any-ui";
 const myIcon = <span>￥￥</span>;
 
 const items = [
-  { label: "主页", index: "0", icon: "$" },
+  { label: "主页", index: "0", icon: "📗" },
   { label: "邮箱", index: "1", icon: myIcon },
-  { label: "更多咨询", index: "2", icon: "$" },
-  { label: "友链", index: "3", icon: "$" },
+  { label: "更多咨询", index: "2", icon: "📝" },
+  { label: "友链", index: "3", icon: "📗" },
 ];
 
 export default () => (
@@ -206,6 +206,124 @@ export default () => (
     <div>
       <h3>5，子菜单及选择事件</h3>
       <Menu items={items} onClick={onClick} />
+    </div>
+  </>
+);
+```
+
+```jsx
+import { Menu } from "any-ui";
+
+const onClick: MenuProps["onClick"] = (e) => {
+  console.log("click ", e);
+};
+
+const items = [
+  {
+    label: "导航1",
+    index: "mail",
+    icon: "📗",
+    children: [
+      {
+        type: "group",
+        label: "子菜单1",
+        icon: "📗",
+        children: [
+          {
+            label: "子菜单1-1",
+            index: "setting:1",
+            icon: "📗",
+          },
+          {
+            label: "子菜单1-2",
+            index: "setting:2",
+            icon: "📗",
+          },
+        ],
+      },
+      {
+        type: "group",
+        label: "子菜单2",
+        icon: "📗",
+        children: [
+          {
+            label: "子菜单2-1",
+            index: "setting:3",
+            icon: "📗",
+          },
+          {
+            label: "子菜单2-2",
+            index: "setting:4",
+            icon: "📗",
+            children: [
+              {
+                type: "group",
+                label: "子菜单1",
+                icon: "📗",
+                children: [
+                  {
+                    label: "子菜单1-1",
+                    index: "setting:1",
+                    icon: "📗",
+                  },
+                  {
+                    label: "子菜单1-2",
+                    index: "setting:2",
+                    icon: "📗",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    label: "导航2",
+    index: "app",
+    icon: "",
+    disabled: true,
+  },
+  {
+    label: "导航3",
+    index: "SubMenu",
+    icon: "\t",
+    children: [
+      {
+        type: "group",
+        label: "子菜单1",
+        icon: "📗",
+        children: [
+          {
+            label: "子菜单1-1",
+            index: "setting:1",
+            icon: "📗",
+          },
+          {
+            label: "子菜单1-2",
+            index: "setting:2",
+            icon: "📗",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    label: (
+      <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+        链接4
+      </a>
+    ),
+    icon: "📝",
+  },
+];
+
+export default () => (
+  <>
+    <div>
+      <h3>6，垂直菜单</h3>
+      <Menu items={items} onClick={onClick} mode="vertical" />
     </div>
   </>
 );

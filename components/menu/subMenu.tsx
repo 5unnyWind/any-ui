@@ -5,7 +5,8 @@ import MenuDivider from "./menuDivider";
 import type { SubMenuProps, MenuThemeType } from "./index";
 
 const SubMenuCompontent: React.FC<SubMenuProps> = (props) => {
-  const { children, isMenuSub, theme, getSelectedKey } = props;
+  const { children, isMenuSub, theme, selectedKey, getSelectedKey, mode } =
+    props;
   const classes = classNames(
     "menu-submenu",
     { [`menu-${theme}`]: theme },
@@ -32,7 +33,14 @@ const SubMenuCompontent: React.FC<SubMenuProps> = (props) => {
           let { children: ch, index, isMenuSub, ...res } = item;
           index = String(index || p);
           return (
-            <li key={index} className="menu-submenu-item">
+            <li
+              key={index}
+              className={classNames("menu-submenu-item", {
+                [`${selectedKey === index ? "menu-submenu-selected" : ""}`]:
+                  selectedKey,
+                [`menu-submenu-${mode}`]: mode,
+              })}
+            >
               <div className={classNames(`menu-item-content`)}>
                 <MenuDivider icon={item.icon} />
                 <span

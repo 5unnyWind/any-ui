@@ -1,4 +1,9 @@
-import React, { ReactNode, createContext } from "react";
+import React, {
+  ReactNode,
+  createContext,
+  Dispatch,
+  SetStateAction,
+} from "react";
 
 /**
  * 菜单全局类型
@@ -40,6 +45,7 @@ interface MenuItemType {
   title?: string; //设置收缩时展示的悬浮标题
   selectedKey?: string; //是否选中
   getSelectedKey?: (index?: string) => void | null;
+  mode?: MenuModeType;
 }
 
 //MenuItem的props
@@ -59,7 +65,9 @@ interface SubMenuType {
   theme?: MenuThemeType; //设置子菜单的主题，默认从 Menu 上继承
   onTitleClick?: (e: React.MouseEventHandler) => void; //点击子菜单标题事件
   isMenuSub?: boolean;
+  selectedKey: string;
   getSelectedKey?: (index?: string) => void | null;
+  mode?: MenuModeType;
 }
 
 //SubMenu的props
@@ -67,24 +75,6 @@ export type SubMenuProps = Partial<SubMenuType>;
 
 //菜单子项类型：可能为子菜单也可能为子项
 export type ItemType = Partial<SubMenuProps & MenuItemProps>;
-
-/**
- * 共享参数
- */
-
-// 全局共享参数类型
-export type MenuContextType = {
-  mode?: MenuModeType;
-  selectedKey: string;
-};
-
-export type ContextType = {
-  context: MenuContextType;
-  setContext: React.SetStateAction<MenuContextType>;
-};
-
-// 组件全局共享参数
-export const MenuContext = createContext<ContextType | null>(null);
 
 import Menu from "./menu";
 import MenuDivider from "./menuDivider";

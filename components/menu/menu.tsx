@@ -1,20 +1,7 @@
-import React, {
-  ReactNode,
-  useState,
-  useRef,
-  useEffect,
-  useContext,
-} from "react";
+import React, { ReactNode, useState, useRef, useEffect } from "react";
 import MenuItem from "./menuItem";
 import classNames from "classnames";
-import {
-  ClickParams,
-  MenuModeType,
-  MenuThemeType,
-  ItemType,
-  MenuContext,
-  ContextType,
-} from "./index";
+import { ClickParams, MenuModeType, MenuThemeType, ItemType } from "./index";
 
 //菜单类型
 interface MenuType {
@@ -39,20 +26,11 @@ const MenuCompontent: React.FC<MenuProps> = (props) => {
     expandIcon,
     mode,
     theme,
-    inlineCollapsed,
-    inlineIndent,
     items,
     className,
     onClick,
     ...restProps
   } = props;
-
-  const classes = classNames(
-    "menu",
-    className,
-    { [`menu-${mode}`]: mode },
-    { [`menu-${theme}`]: theme }
-  );
 
   //公共状态--选中的item的key
   const [selectedKey, setSelectedKey] = useState(
@@ -82,15 +60,20 @@ const MenuCompontent: React.FC<MenuProps> = (props) => {
     }
   }, [selectedKey]);
 
-  const [context, setContext] = useState({
-    mode: mode,
-    selectedKey: selectedKey,
-  });
+  // 更改expand状态
+  const [expand, setExpand] = useState(true);
 
   return (
     <>
-      {/* <MenuContext.Provider value={{context, setContext}}> */}
-      <div className={classes} {...restProps}>
+      <div
+        className={classNames(
+          "menu",
+          className,
+          { [`menu-${mode}`]: mode },
+          { [`menu-${theme}`]: theme }
+        )}
+        {...restProps}
+      >
         {items?.map((item, p) => {
           let { index, ...res } = item;
           index = String(index || p);
@@ -100,25 +83,13 @@ const MenuCompontent: React.FC<MenuProps> = (props) => {
                 selectedKey={selectedKey}
                 getSelectedKey={getSelectedKey}
                 {...res}
+                mode={mode}
                 index={index}
               />
             </div>
           );
         })}
       </div>
-      {/* </MenuContext.Provider> */}
-      {/* 下划线 */}
-      {/* <div className="menu-underline-box">
-        <div
-          className="menu-underline"
-          style={{
-            transform: `translateX(calc(600px / ${items?.length} * ${parseInt(
-              selectedKey
-            )}))`,
-            width: `calc(100% / ${items?.length})`,
-          }}
-        ></div>
-      </div> */}
     </>
   );
 };
@@ -126,6 +97,7 @@ const MenuCompontent: React.FC<MenuProps> = (props) => {
 MenuCompontent.defaultProps = {
   defaultSelectedKey: "0",
   mode: "horizontal",
+  expandIcon: "📝",
 };
 
 export default MenuCompontent;

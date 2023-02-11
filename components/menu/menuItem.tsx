@@ -1,11 +1,7 @@
-import React, { ReactNode } from "react";
-
+import React, { useContext } from "react";
 import ClassNames from "classnames";
-
 import MenuDivider from "./menuDivider";
-
 import { ItemType } from "./index";
-
 import SubMenu from "./subMenu";
 import classNames from "classnames";
 
@@ -19,29 +15,38 @@ const MenuItem: React.FC<ItemType> = (props) => {
     selectedKey,
     getSelectedKey,
     children,
-    ...rest
+    mode,
+    ...restProps
   } = props;
 
-  const classes = ClassNames("menu-item", {
-    [`menu-disabled`]: disabled,
-    [`${selectedKey === index ? "menu-selected" : ""}`]: selectedKey,
-  });
-
   return (
-    <div className={classes} {...rest}>
-      <div className={classNames(`menu-item-content`)}>
+    <div
+      {...restProps}
+      className={ClassNames("menu-item", {
+        [`menu-disabled`]: disabled,
+        [`menu-item-${mode}`]: mode,
+        [`${selectedKey === index ? "menu-item-selected" : ""}`]: selectedKey,
+      })}
+    >
+      <div
+        className={classNames(`menu-item-content`)}
+        onClick={() => (getSelectedKey ? getSelectedKey(index) : "")}
+      >
         <MenuDivider icon={icon} />
-        <span
-          onClick={() => (getSelectedKey ? getSelectedKey(index) : "")}
-          className={classNames(`menu-item-text`)}
-        >
-          {label}
-        </span>
+        <span className={classNames(`menu-item-text`)}>{label}</span>
+        {mode !== "horizontal" && children && children.length !== 0 && (
+          <div className="menu-item-status">→</div>
+        )}
       </div>
       {/* 判断子集 */}
       {children && children.length !== 0 ? (
         <div className={classNames(`menu-item-submenu`)}>
-          <SubMenu {...props} getSelectedKey={getSelectedKey} />
+          <SubMenu
+            {...props}
+            mode={mode}
+            selectedKey={selectedKey}
+            getSelectedKey={getSelectedKey}
+          />
         </div>
       ) : (
         ""
