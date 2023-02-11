@@ -85,7 +85,6 @@ const Button: React.FC<ButtonProps> = (props) => {
         ...origin,
       };
     }
-
     return style;
   };
 
