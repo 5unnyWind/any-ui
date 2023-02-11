@@ -3,8 +3,7 @@ import MenuItem from "./menuItem";
 import classNames from "classnames";
 import { SubMenuProps } from "./subMenu";
 import { MenuItemProps } from "./menuItem";
-
-export type MenuModeType = "vertical" | "horizontal" | "inline";
+import { ClickParams, MenuModeType } from "./index";
 
 //菜单类型
 interface MenuType {

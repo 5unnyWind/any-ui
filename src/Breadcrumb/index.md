@@ -9,22 +9,77 @@ group:
 
 # Breadcrumb
 
-面包屑
+面包屑组件
 
 ```jsx
 import { Breadcrumb } from "any-ui";
 
-const routes1 = [
-  { label: "Home" },
-  { label: "System" },
-  { label: "Workplace" },
-];
-const routes2 = [
+const routes = [{ label: "Home" }, { label: "System" }, { label: "Workplace" }];
+
+export default () => (
+  <>
+    <div className="session">
+      <h4>基本用法</h4>
+      <Breadcrumb routes={routes} />
+    </div>
+  </>
+);
+```
+
+```jsx
+import { Breadcrumb } from "any-ui";
+
+const routes = [
   { label: "Home" },
   { label: "System", href: "https://www.baidu.com" },
   { label: "Workplace" },
 ];
-const routes3 = [
+
+export default () => (
+  <>
+    <div className="session">
+      <h4>指向外链接</h4>
+      <Breadcrumb routes={routes} />
+    </div>
+  </>
+);
+```
+
+```jsx
+import { Breadcrumb } from "any-ui";
+
+const routes = [{ label: "Home" }, { label: "System" }, { label: "Workplace" }];
+
+export default () => (
+  <>
+    <div className="session">
+      <h4>自定义分割线</h4>
+      <Breadcrumb routes={routes} separator=">" />
+      <Breadcrumb routes={routes} separator="→" />
+    </div>
+  </>
+);
+```
+
+```jsx
+import { Breadcrumb } from "any-ui";
+
+const routes = [{ label: "Home" }, { label: "System" }, { label: "Workplace" }];
+
+export default () => (
+  <>
+    <div className="session">
+      <h4>颜色类型</h4>
+      <Breadcrumb routes={routes} colorType="black" />
+    </div>
+  </>
+);
+```
+
+```jsx
+import { Breadcrumb } from "any-ui";
+
+const routes = [
   { label: "Home", route: "/home" },
   { label: "System", route: "/system" },
   { label: "Workplace", route: "/workplace" },
@@ -33,25 +88,9 @@ const routes3 = [
 export default () => (
   <>
     <div className="session">
-      <h4>基本用法</h4>
-      <Breadcrumb routes={routes1} />
-    </div>
-    <div className="session">
-      <h4>自定义分割线</h4>
-      <Breadcrumb routes={routes1} separator=">" />
-      <Breadcrumb routes={routes1} separator="→" />
-    </div>
-    <div className="session">
-      <h4>指向外链接</h4>
-      <Breadcrumb routes={routes2} />
-    </div>
-    <div className="session">
-      <h4>颜色类型</h4>
-      <Breadcrumb routes={routes1} colorType="black" />
-    </div>
-    <div className="session">
       <h4>router绑定</h4>
-      <Breadcrumb routes={routes3} />
+      <p>注：组件已实现router跳转，需要自定义路由</p>
+      <Breadcrumb routes={routes} colorType="black" />
     </div>
   </>
 );

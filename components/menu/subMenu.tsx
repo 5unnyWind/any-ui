@@ -3,6 +3,7 @@ import ClassNames from "classnames";
 import MenuDivider from "./menuDivider";
 
 import type { ItemType, MenuThemeType } from "./menu";
+import classNames from "classnames";
 
 //子菜单类型
 interface SubMenuType {
@@ -24,7 +25,7 @@ export type SubMenuProps = Partial<SubMenuType>;
 const SubMenuCompontent: React.FC<SubMenuType> = (props) => {
   const { children, isMenuSub, theme, getSelectedKey } = props;
   const classes = ClassNames(
-    "sub-menu",
+    "menu-submenu",
     { [`menu-${theme}`]: theme },
     { [`menu-isMenuSub`]: !isMenuSub }
   );
@@ -49,15 +50,18 @@ const SubMenuCompontent: React.FC<SubMenuType> = (props) => {
           let { children: ch, index, isMenuSub, ...res } = item;
           index = String(index || p);
           return (
-            <li key={index} className="sub-menu-item">
-              <MenuDivider icon={item.icon} />
-              <span
-                onClick={() => {
-                  setKey(index ? index : "");
-                }}
-              >
-                {item.label}
-              </span>
+            <li key={index} className="menu-submenu-item">
+              <div className={classNames(`menu-item-content`)}>
+                <MenuDivider icon={item.icon} />
+                <span
+                  onClick={() => {
+                    setKey(index ? index : "");
+                  }}
+                  className={classNames(`menu-item-text`)}
+                >
+                  {item.label}
+                </span>
+              </div>
               {/* 判断子集 */}
               {ch && ch.length !== 0 ? (
                 <SubMenuCompontent

@@ -20,49 +20,66 @@
       display: flex;
       justify-content: center;
 
-      & > span,
-      * span {
+      .menu-item-content {
+        width: 100%;
+        text-align: center;
         font-size: 0.9rem;
+
+        // 图标
+        .menu-divider {
+          margin-right: 0.4rem;
+        }
+
+        // 文字
+        .menu-item-text {
+        }
       }
 
-      .menu-divider {
-        margin-right: 0.4rem;
-      }
-
-      .sub-menu {
-        margin-top: 0.5rem;
-        padding: 0.5rem 0;
+      // submenu
+      .menu-item-submenu {
+        width: 100%;
         position: absolute;
         top: calc(100%);
         left: 0;
-        visibility: hidden;
-        transition: all 0.3s ease-in-out;
-        box-shadow: 0 0.625rem 1.875rem -0.9375rem $gray-900;
-        border-radius: 0.5rem;
-        background-color: #fff;
 
-        .sub-menu-item {
+        .menu-submenu {
           width: 100%;
-          height: 100%;
-          padding: 0.5rem 1.25rem;
-          min-width: 6rem;
-          list-style: none;
-          text-overflow: ellipsis;
-          overflow: hidden;
-          white-space: nowrap;
+          margin-top: 0.5rem;
+          padding: 0.5rem 0;
+          visibility: hidden;
+          transition: all 0.3s ease-in-out;
+          box-shadow: 0 0.625rem 1.875rem -0.9375rem $gray-900;
+          border-radius: 0.5rem;
+          background-color: #fff;
 
-          &:hover {
-            & > .menu-isMenuSub {
-              display: block;
+          .menu-submenu-item {
+            width: 100%;
+            height: 100%;
+            list-style: none;
+            padding: 0.75rem 0;
+
+            .menu-item-content {
+              width: 100%;
+              text-align: center;
+              text-overflow: ellipsis;
+              overflow: hidden;
+              white-space: nowrap;
             }
 
-            & > span {
-              color: $primary;
+            &:hover {
+              & > .menu-isMenuSub {
+                display: block;
+              }
+
+              & > span {
+                color: $primary;
+              }
             }
           }
         }
       }
 
+      // 第二子菜单
       .menu-isMenuSub {
         position: absolute;
         transform: translate(105%, -50%);
@@ -70,14 +87,16 @@
         transition: all 0.4s;
         border-radius: 0.5rem;
         background-color: #fff;
+        z-index: 1;
 
         &::before {
           content: "";
           width: 20%;
           height: 100%;
-          left: -20%;
+          left: -10%;
           top: 0;
           position: absolute;
+          z-index: 0;
         }
       }
 
@@ -88,7 +107,7 @@
           color: $primary;
         }
 
-        .sub-menu {
+        .menu-submenu {
           visibility: visible;
         }
       }

@@ -7,6 +7,7 @@ import MenuDivider from "./menuDivider";
 import { ItemType } from "./index";
 
 import SubMenu from "./subMenu";
+import classNames from "classnames";
 
 //菜单项类型
 interface MenuItemType {
@@ -41,13 +42,20 @@ const MenuItem: React.FC<ItemType> = (props) => {
 
   return (
     <div className={classes} {...rest}>
-      <MenuDivider icon={icon} />
-      <span onClick={() => (getSelectedKey ? getSelectedKey(index) : "")}>
-        {label}
-      </span>
+      <div className={classNames(`menu-item-content`)}>
+        <MenuDivider icon={icon} />
+        <span
+          onClick={() => (getSelectedKey ? getSelectedKey(index) : "")}
+          className={classNames(`menu-item-text`)}
+        >
+          {label}
+        </span>
+      </div>
       {/* 判断子集 */}
       {children && children.length !== 0 ? (
-        <SubMenu {...props} getSelectedKey={getSelectedKey} />
+        <div className={classNames(`menu-item-submenu`)}>
+          <SubMenu {...props} getSelectedKey={getSelectedKey} />
+        </div>
       ) : (
         ""
       )}

@@ -11,101 +11,105 @@ group:
 
 水平菜单
 
+> 菜单组件演示，以下中&，￥，$作为为图标代替
+
 ```jsx
 import { Menu } from "any-ui";
 
-import "../../components/menu/demo/base.scss";
-
-const items1 = [
-  {
-    label: "主页",
-    index: "0",
-  },
-  {
-    label: "邮箱",
-    index: "1",
-  },
-  {
-    label: "更多咨询",
-    index: "2",
-  },
-  {
-    label: "友链",
-    index: "3",
-  },
+const items = [
+  { label: "主页", index: "0" },
+  { label: "邮箱", index: "1" },
+  { label: "更多咨询", index: "2" },
+  { label: "友链", index: "3" },
 ];
 
-const items2 = [
-  {
-    label: "主页",
-    index: "0",
-  },
-  {
-    label: "邮箱",
-    index: "1",
-    disabled: true,
-  },
-  {
-    label: "更多咨询",
-    index: "2",
-  },
-  {
-    label: "友链",
-    index: "3",
-  },
+export default () => (
+  <>
+    <div>
+      <h3>1，基础使用</h3>
+      <Menu items={items} />
+    </div>
+  </>
+);
+```
+
+```jsx
+import { Menu } from "any-ui";
+
+const items = [
+  { label: "主页", index: "0" },
+  { label: "邮箱", index: "1", disabled: true },
+  { label: "更多咨询", index: "2" },
+  { label: "友链", index: "3", disabled: true },
 ];
 
-const items3 = [
-  {
-    label: (
-      <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-        点我百度
-      </a>
-    ),
-    index: "0",
-    icon: "",
-  },
-  {
-    label: "邮箱",
-    index: "1",
-    icon: "",
-  },
-  {
-    label: "更多咨询",
-    index: "2",
-    icon: "",
-  },
-  {
-    label: "友链",
-    index: "3",
-    icon: "",
-  },
+export default () => (
+  <>
+    <div>
+      <h3>2，禁止菜单</h3>
+      <Menu items={items} />
+    </div>
+  </>
+);
+```
+
+```jsx
+import { Menu } from "any-ui";
+
+const link = (
+  <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+    点我百度
+  </a>
+);
+
+const items = [
+  { label: link, index: "0" },
+  { label: "邮箱", index: "1" },
+  { label: "更多咨询", index: "2" },
+  { label: "友链", index: "3" },
 ];
 
-const items4 = [
-  {
-    label: "主页",
-    index: "0",
-    icon: "$",
-  },
-  {
-    label: "邮箱",
-    index: "1",
-    icon: "$",
-  },
-  {
-    label: "更多咨询",
-    index: "2",
-    icon: "$",
-  },
-  {
-    label: "友链",
-    index: "3",
-    icon: "$",
-  },
+export default () => (
+  <>
+    <div>
+      <h3>3，自定义菜单项</h3>
+      <p>默认功能为自定义功能</p>
+      <Menu items={items} />
+    </div>
+  </>
+);
+```
+
+```jsx
+import { Menu } from "any-ui";
+
+const myIcon = <span>￥￥</span>;
+
+const items = [
+  { label: "主页", index: "0", icon: "$" },
+  { label: "邮箱", index: "1", icon: myIcon },
+  { label: "更多咨询", index: "2", icon: "$" },
+  { label: "友链", index: "3", icon: "$" },
 ];
 
-const items5 = [
+export default () => (
+  <>
+    <div>
+      <h3>4，自定义菜单图标</h3>
+      <Menu items={items} />
+    </div>
+  </>
+);
+```
+
+```jsx
+import { Menu } from "any-ui";
+
+const onClick: MenuProps["onClick"] = (e) => {
+  console.log("click ", e);
+};
+
+const items = [
   {
     label: "导航1",
     index: "mail",
@@ -169,6 +173,23 @@ const items5 = [
     label: "导航3",
     index: "SubMenu",
     icon: "&",
+    children: [
+      {
+        type: "group",
+        label: "子菜单1",
+        icon: "$",
+        children: [
+          {
+            label: "子菜单1-1",
+            index: "setting:1",
+          },
+          {
+            label: "子菜单1-2",
+            index: "setting:2",
+          },
+        ],
+      },
+    ],
   },
   {
     label: (
@@ -180,93 +201,11 @@ const items5 = [
   },
 ];
 
-const items7 = [
-  {
-    label: "主页",
-    index: "/home",
-  },
-  {
-    label: "邮箱",
-    index: "/email",
-  },
-  {
-    label: "更多咨询",
-    index: "/more",
-  },
-  {
-    label: "友链",
-    index: "/friend",
-  },
-];
-
-const onClick: MenuProps["onClick"] = (e) => {
-  console.log("click ", e);
-};
-
 export default () => (
   <>
     <div>
-      <p>菜单组件演示，以下中&，￥，$为图标</p>
-
-      <div className="containerStyle">
-        <div className="sessionStyle">
-          <div className="style1">
-            <h3 className="h3Style">1，基本用法</h3>
-            <Menu items={items1} />
-          </div>
-        </div>
-
-        <div className="sessionStyle">
-          <div className="style1">
-            <h3 className="h3Style">2，禁止点击跳转</h3>
-            <Menu items={items2} />
-          </div>
-        </div>
-
-        <div className="sessionStyle">
-          <div className="style1">
-            <h3 className="h3Style">3，含链接菜单</h3>
-            <Menu items={items3} />
-          </div>
-        </div>
-
-        <div className="sessionStyle">
-          <div className="style1">
-            <h3 className="h3Style">4，菜单图标自定义</h3>
-            <Menu items={items4} />
-          </div>
-        </div>
-
-        <div className="sessionStyle">
-          <div className="style1">
-            <h3 className="h3Style">5，点击事件</h3>
-            <Menu items={items4} onClick={onClick} />
-          </div>
-        </div>
-
-        <div className="sessionStyle">
-          <div className="style1">
-            <h3 className="h3Style">6，子菜单（功能完善中···）</h3>
-            <Menu items={items5} onClick={onClick} />
-          </div>
-        </div>
-
-        <div className="sessionStyle">
-          <div className="style1">
-            <h3 className="h3Style">
-              7，指定index路由（在onClick事件中，没有实现路由跳转）
-            </h3>
-            <Menu items={items7} onClick={onClick} />
-          </div>
-        </div>
-
-        <div className="sessionStyle">
-          <div className="style1">
-            <h3 className="h3Style">8，dark主题</h3>
-            <Menu items={items1} theme="dark" />
-          </div>
-        </div>
-      </div>
+      <h3>5，子菜单及选择事件</h3>
+      <Menu items={items} onClick={onClick} />
     </div>
   </>
 );
