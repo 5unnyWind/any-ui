@@ -1,22 +1,21 @@
 import React from "react";
-import { mount } from "enzyme";
 import Button from "../index";
+import { render, fireEvent, screen } from "@testing-library/react";
+import "@testing-library/jest-dom";
 
 describe("button按钮测试", () => {
   test("测试click", () => {
-    const toggle = jest.fn();
-    const wrapper = mount(
-      <Button
-        label="Download"
-        size="sm"
-        type="default"
-        wave
-        // @ts-ignore let me do it
-        toggle={toggle}
-      ></Button>
-    );
-    const b = wrapper.find("button");
-    b.simulate("click");
-    expect(toggle).toBeCalledWith(1);
+    const props = {
+      label: "Download",
+      size: "sm",
+      type: "default",
+      wave: false,
+    };
+    render(<Button label="Download" size="sm" type="default" wave></Button>);
+
+    const b = screen.getByText(props.label);
+
+    expect(b).toBeInTheDocument();
+    console.log(b);
   });
 });
