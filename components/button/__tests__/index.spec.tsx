@@ -3,8 +3,8 @@ import React from "react";
 import Button from "../index";
 import { render, screen } from "@testing-library/react";
 
-describe("button按钮测试", () => {
-  test("测试属性值", () => {
+describe("Button test", () => {
+  test("测试按钮添加属性", () => {
     const props = {
       label: "Download",
       size: "sm",

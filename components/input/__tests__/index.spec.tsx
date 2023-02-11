@@ -4,7 +4,7 @@ import Input from "../index";
 import { render, fireEvent, screen } from "@testing-library/react";
 
 describe("Input test", () => {
-  test("d", () => {
+  test("测试聚焦事件和失焦事件", () => {
     const props = {
       label: "Label",
       placeholder: "Placeholder",
