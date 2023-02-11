@@ -6,7 +6,14 @@ describe("button按钮测试", () => {
   test("测试click", () => {
     const toggle = jest.fn();
     const wrapper = mount(
-      <Button label="Download" size="sm" type="default" wave></Button>
+      // @ts-ignore let me do it
+      <Button
+        label="Download"
+        size="sm"
+        type="default"
+        wave
+        toggle={toggle}
+      ></Button>
     );
     const b = wrapper.find("button");
     b.simulate("click");
