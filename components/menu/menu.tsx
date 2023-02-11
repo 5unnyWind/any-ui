@@ -1,9 +1,20 @@
-import React, { ReactNode, useState, useRef, useEffect } from "react";
+import React, {
+  ReactNode,
+  useState,
+  useRef,
+  useEffect,
+  useContext,
+} from "react";
 import MenuItem from "./menuItem";
 import classNames from "classnames";
-import { SubMenuProps } from "./subMenu";
-import { MenuItemProps } from "./menuItem";
-import { ClickParams, MenuModeType } from "./index";
+import {
+  ClickParams,
+  MenuModeType,
+  MenuThemeType,
+  ItemType,
+  MenuContext,
+  ContextType,
+} from "./index";
 
 //菜单类型
 interface MenuType {
@@ -12,16 +23,14 @@ interface MenuType {
   expandIcon?: ReactNode; //自定义展开图标
   mode?: MenuModeType; //菜菜单类型，现在支持垂直、水平、和内嵌模式三种
   theme?: MenuThemeType; //主题颜色
-  inlineCollapsed: number[]; //inline 时菜单是否收起状态
+  inlineCollapsed?: number[]; //inline 时菜单是否收起状态
   inlineIndent?: string; //inline 模式的菜单缩进宽度
   items: ItemType[]; //点击子菜单标题事件
-  className: string; //
+  className?: string; //
   onClick?: (key?: string) => void;
 }
 
-export type ItemType = Partial<SubMenuProps & MenuItemProps>;
-export type MenuThemeType = "light" | "dark";
-export type MenuProps = Partial<MenuType>;
+export type MenuProps = MenuType;
 
 const MenuCompontent: React.FC<MenuProps> = (props) => {
   const {
@@ -73,8 +82,14 @@ const MenuCompontent: React.FC<MenuProps> = (props) => {
     }
   }, [selectedKey]);
 
+  const [context, setContext] = useState({
+    mode: mode,
+    selectedKey: selectedKey,
+  });
+
   return (
     <>
+      {/* <MenuContext.Provider value={{context, setContext}}> */}
       <div className={classes} {...restProps}>
         {items?.map((item, p) => {
           let { index, ...res } = item;
@@ -91,6 +106,7 @@ const MenuCompontent: React.FC<MenuProps> = (props) => {
           );
         })}
       </div>
+      {/* </MenuContext.Provider> */}
       {/* 下划线 */}
       {/* <div className="menu-underline-box">
         <div
@@ -109,6 +125,7 @@ const MenuCompontent: React.FC<MenuProps> = (props) => {
 
 MenuCompontent.defaultProps = {
   defaultSelectedKey: "0",
+  mode: "horizontal",
 };
 
 export default MenuCompontent;
