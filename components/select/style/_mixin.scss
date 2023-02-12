@@ -1,0 +1,10 @@
+@mixin select-size(
+  $line-height,
+  $padding-x,
+  $padding-y,
+  $font-size,
+) {
+  line-height: $line-height;
+  padding: $padding-y $padding-x;
+  font-size: $font-size;
+}
