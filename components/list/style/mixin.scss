@@ -1,0 +1,5 @@
+@mixin list-size($ai-li-size-lg-x, $ai-li-size-lg-y, $font-size) {
+  padding-x: $ai-li-size-lg-x;
+  padding-y: $ai-li-size-lg-y;
+  font-size: $font-size;
+}

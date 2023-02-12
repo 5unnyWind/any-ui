@@ -1,8 +1,8 @@
-import React, { ReactNode, useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import classNames from "classnames";
 import MenuDivider from "./menuDivider";
 
-import type { SubMenuProps, MenuThemeType } from "./index";
+import type { SubMenuProps } from "./index";
 
 const SubMenuCompontent: React.FC<SubMenuProps> = (props) => {
   const { children, isMenuSub, theme, selectedKey, getSelectedKey, mode } =

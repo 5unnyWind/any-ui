@@ -44,5 +44,8 @@ module.exports = {
     "prefer-const": 0,
     "@typescript-eslint/no-unused-vars": 0,
     "react/no-children-prop": 0,
+    "@typescript-eslint/no-non-null-assertion": 0,
+    "react/button-has-type": 0,
+    "@typescript-eslint/ban-ts-comment": 0,
   },
 };
