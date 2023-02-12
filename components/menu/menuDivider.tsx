@@ -7,7 +7,7 @@ interface MenuDividerType {
 export type MenuDividerProps = Partial<MenuDividerType>;
 
 const menuDivider: React.FC<MenuDividerProps> = ({ icon }) => {
-  return <span className="menu-divider">{icon}</span>;
+  return <span className="ai-menu-divider">{icon}</span>;
 };
 
 export default menuDivider;

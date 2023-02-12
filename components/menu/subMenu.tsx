@@ -8,9 +8,9 @@ const SubMenuCompontent: React.FC<SubMenuProps> = (props) => {
   const { children, isMenuSub, theme, selectedKey, getSelectedKey, mode } =
     props;
   const classes = classNames(
-    "menu-submenu",
-    { [`menu-${theme}`]: theme },
-    { [`menu-isMenuSub`]: !isMenuSub }
+    "ai-menu-submenu",
+    { [`ai-menu-${theme}`]: theme },
+    { [`ai-menu-isMenuSub`]: !isMenuSub }
   );
 
   const [key, setKey] = useState("");
@@ -35,19 +35,19 @@ const SubMenuCompontent: React.FC<SubMenuProps> = (props) => {
           return (
             <li
               key={index}
-              className={classNames("menu-submenu-item", {
-                [`${selectedKey === index ? "menu-submenu-selected" : ""}`]:
+              className={classNames("ai-menu-submenu-item", {
+                [`${selectedKey === index ? "ai-menu-submenu-selected" : ""}`]:
                   selectedKey,
-                [`menu-submenu-${mode}`]: mode,
+                [`ai-menu-submenu-${mode}`]: mode,
               })}
             >
-              <div className={classNames(`menu-item-content`)}>
+              <div className={classNames(`ai-menu-item-content`)}>
                 <MenuDivider icon={item.icon} />
                 <span
                   onClick={() => {
                     setKey(index ? index : "");
                   }}
-                  className={classNames(`menu-item-text`)}
+                  className={classNames(`ai-menu-item-text`)}
                 >
                   {item.label}
                 </span>

@@ -67,10 +67,10 @@ const MenuCompontent: React.FC<MenuProps> = (props) => {
     <>
       <div
         className={classNames(
-          "menu",
+          "ai-menu",
           className,
-          { [`menu-${mode}`]: mode },
-          { [`menu-${theme}`]: theme }
+          { [`ai-menu-${mode}`]: mode },
+          { [`ai-menu-${theme}`]: theme }
         )}
         {...restProps}
       >
@@ -78,7 +78,7 @@ const MenuCompontent: React.FC<MenuProps> = (props) => {
           let { index, ...res } = item;
           index = String(index || p);
           return (
-            <div key={index} className="menu-item-box">
+            <div key={index} className="ai-menu-item-box">
               <MenuItem
                 selectedKey={selectedKey}
                 getSelectedKey={getSelectedKey}

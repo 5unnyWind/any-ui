@@ -1,4 +1,4 @@
-.menu {
+.ai-menu {
   width: 100%;
   margin: 0.5rem;
   display: flex;
@@ -6,10 +6,10 @@
   border-bottom: 0.15rem solid $gray-200;
   transition: 1s;
 
-  .menu-item-box {
+  .ai-menu-item-box {
     width: 100%;
 
-    .menu-item {
+    .ai-menu-item {
       padding: 1rem 0;
       cursor: pointer;
       margin-bottom: -0.15rem;
@@ -19,25 +19,25 @@
       display: flex;
       justify-content: center;
 
-      .menu-item-content {
+      .ai-menu-item-content {
         width: 100%;
         font-size: 0.9rem;
 
         // 图标
-        .menu-divider {
+        .ai-menu-divider {
           margin-right: 0.4rem;
           margin-left: 1rem;
         }
       }
 
       // submenu
-      .menu-item-submenu {
+      .ai-menu-item-submenu {
         width: 100%;
         position: absolute;
         top: calc(100%);
         left: 0;
 
-        .menu-submenu {
+        .ai-menu-submenu {
           width: 100%;
           margin-top: 0.5rem;
           padding: 0.5rem 0;
@@ -46,14 +46,15 @@
           box-shadow: 0 0.625rem 1.875rem -0.9375rem $gray-900;
           border-radius: 0.5rem;
           background-color: #fff;
+          z-index: 2;
 
-          .menu-submenu-item {
+          .ai-menu-submenu-item {
             width: 100%;
             height: 100%;
             list-style: none;
             padding: 0.75rem 0;
 
-            .menu-item-content {
+            .ai-menu-item-content {
               width: 100%;
               text-overflow: ellipsis;
               overflow: hidden;
@@ -63,11 +64,11 @@
             &:hover {
               background-color: #f0f7fc;
 
-              & > .menu-isMenuSub {
+              & > .ai-menu-isMenuSub {
                 display: block;
               }
 
-              & > .menu-item-content {
+              & > .ai-menu-item-content {
                 color: $primary;
               }
             }
@@ -76,7 +77,7 @@
       }
 
       // 第二子菜单
-      .menu-isMenuSub {
+      .ai-menu-isMenuSub {
         position: absolute;
         transform: translate(105%, -50%);
         display: none;
@@ -97,61 +98,61 @@
       }
     }
 
-    .menu-disabled {
+    .ai-menu-disabled {
       cursor: not-allowed;
       color: $gray-200;
     }
   }
 }
 
-.menu-horizontal {
-  .menu-item-horizontal {
+.ai-menu-horizontal {
+  .ai-menu-item-horizontal {
     border-bottom: 0.15rem solid $gray-200;
 
-    .menu-item-content {
+    .ai-menu-item-content {
       text-align: center;
     }
 
-    &:not(.menu-disabled):hover {
+    &:not(.ai-menu-disabled):hover {
       border-bottom: 0.15rem solid $primary;
 
       & > span {
         color: $primary;
       }
 
-      .menu-submenu {
+      .ai-menu-submenu {
         visibility: visible;
       }
     }
   }
 
-  .menu-item-selected {
+  .ai-menu-item-selected {
     border-bottom: 0.15rem solid $primary;
 
-    & > .menu-item-content {
+    & > .ai-menu-item-content {
       color: $primary;
     }
   }
 }
 
-.menu-vertical {
+.ai-menu-vertical {
   flex-direction: column;
   max-width: 15rem;
   border-right: 0.1rem solid $gray-200;
 
-  .menu-item-vertical {
+  .ai-menu-item-vertical {
     border-bottom: none;
     border-radius: 0.25rem;
     margin: 0 0.1rem;
 
-    .menu-submenu {
+    .ai-menu-submenu {
       transform: translate(105%, -50%);
 
-      .menu-submenu-vertical {
+      .ai-menu-submenu-vertical {
       }
     }
 
-    &:not(.menu-disabled):hover {
+    &:not(.ai-menu-disabled):hover {
       border-bottom: none;
       background-color: #f0f7fc;
 
@@ -159,37 +160,35 @@
         color: $primary;
       }
 
-      .menu-submenu {
+      .ai-menu-submenu {
         visibility: visible;
       }
     }
 
-    .menu-item-content {
+    .ai-menu-item-content {
       position: relative;
 
-      .menu-divider {
+      .ai-menu-divider {
         width: 3rem;
         min-width: 3rem;
-        float: left;
       }
 
-      .menu-item-text {
+      .ai-menu-item-text {
         position: absolute;
         left: 3rem;
       }
 
-      .menu-item-status {
-        width: 3rem;
-        align-self: flex-end;
+      .ai-menu-item-status {
         float: right;
+        margin-right: 1rem;
       }
     }
   }
 
-  .menu-item-selected {
+  .ai-menu-item-selected {
     background-color: #e6f4ff;
 
-    & > .menu-item-content {
+    & > .ai-menu-item-content {
       color: $primary;
     }
   }

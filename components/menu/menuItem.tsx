@@ -22,25 +22,26 @@ const MenuItem: React.FC<ItemType> = (props) => {
   return (
     <div
       {...restProps}
-      className={ClassNames("menu-item", {
-        [`menu-disabled`]: disabled,
-        [`menu-item-${mode}`]: mode,
-        [`${selectedKey === index ? "menu-item-selected" : ""}`]: selectedKey,
+      className={ClassNames("ai-menu-item", {
+        [`ai-menu-disabled`]: disabled,
+        [`ai-menu-item-${mode}`]: mode,
+        [`${selectedKey === index ? "ai-menu-item-selected" : ""}`]:
+          selectedKey,
       })}
     >
       <div
-        className={classNames(`menu-item-content`)}
+        className={classNames(`ai-menu-item-content`)}
         onClick={() => (getSelectedKey ? getSelectedKey(index) : "")}
       >
         <MenuDivider icon={icon} />
-        <span className={classNames(`menu-item-text`)}>{label}</span>
+        <span className={classNames(`ai-menu-item-text`)}>{label}</span>
         {mode !== "horizontal" && children && children.length !== 0 && (
-          <div className="menu-item-status">→</div>
+          <div className="ai-menu-item-status">→</div>
         )}
       </div>
       {/* 判断子集 */}
       {children && children.length !== 0 ? (
-        <div className={classNames(`menu-item-submenu`)}>
+        <div className={classNames(`ai-menu-item-submenu`)}>
           <SubMenu
             {...props}
             mode={mode}

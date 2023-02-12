@@ -16,7 +16,7 @@ export type Route = {
 //面包屑的传入参数定义
 interface defaultBreadcrumbProps {
   routes?: Partial<Route>[]; //路由信息组
-  separator?: string;
+  separator?: React.ReactNode;
   className?: string;
   colorType?: ColorType;
 }
