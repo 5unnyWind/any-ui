@@ -11,19 +11,78 @@ group:
 
 通用开关组件
 
+## 示例
+
+### 基础使用
+
 ```jsx
 import { Switch } from "any-ui";
 
 export default () => (
   <>
-    <h2>初始状态</h2>
     <Switch></Switch>
-    <h2>修改长度</h2>
-    <Switch width={100}></Switch>
-    <h2>修改颜色</h2>
-    <Switch activeColor={"green"} inactiveColor={"red"}></Switch>
-    <h2>传入文本</h2>
-    <Switch activeValue={"开启"} inactiveValue="关闭"></Switch>
   </>
 );
 ```
+
+### 禁止状态
+
+```jsx
+import { Switch } from "any-ui";
+
+export default () => (
+  <>
+    <Switch disabled={true}></Switch>
+  </>
+);
+```
+
+### 更换颜色
+
+```jsx
+import { Switch } from "any-ui";
+
+export default () => (
+  <>
+    <Switch activeColor={"green"} inactiveColor={"red"}></Switch>
+  </>
+);
+```
+
+### 更换长度
+
+```jsx
+import { Switch } from "any-ui";
+
+export default () => (
+  <>
+    <Switch width={60}></Switch>
+  </>
+);
+```
+
+### 加入文本
+
+```jsx
+import { Switch } from "any-ui";
+
+export default () => (
+  <>
+    <Switch activeValue={"开启"} inactiveValue={"关闭"}></Switch>
+  </>
+);
+```
+
+## Switch API
+
+|      参数      |       说明       |   类型    | 默认值 |
+| :------------: | :--------------: | :-------: | :----: |
+|   ischecked    | 指定当前是否选中 | `boolean` | false  |
+|   className    |  Switch 器类名   | `	string`  |   --   |
+| defaultChecked |   初始是否选中   | `boolean` |  true  |
+|    disabled    |     是否禁用     | `boolean` | false  |
+|     width      |     开关大小     | `string`  |  40px  |
+|  activeColor   |     开启颜色     | `string`  |   --   |
+| inactiveColor  |     关闭颜色     | `string`  |   --   |
+|  activeValue   |     开启文本     | `string`  |   --   |
+| inactiveValue  |     关闭文本     | `string`  |   --   |

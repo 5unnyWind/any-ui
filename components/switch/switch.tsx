@@ -2,6 +2,12 @@ import React, { memo, useState } from "react";
 import classNames from "classnames";
 import "./style/index.scss";
 
+export type SwitchChangeEventHandler = (
+  checked: boolean,
+  event: React.MouseEvent<HTMLButtonElement>
+) => void;
+export type SwitchClickEventHandler = SwitchChangeEventHandler;
+
 interface BaseSwitchProps {
   className?: string; // 接受用户自定义类名
   disabled?: boolean; // 是否开启禁用
