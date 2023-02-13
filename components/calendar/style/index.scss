@@ -18,6 +18,7 @@
     &-date {
       margin: 15px;
       button {
+        background-color: #fff;
         height: 24px;
         padding-inline: 7px;
         padding-block: 0;
@@ -28,8 +29,8 @@
         border-start-start-radius: 5px;
         border-end-start-radius: 5px;
         &.on {
-          border-color: #1677ff;
-          color: #1677ff;
+          border-color: var(--color);
+          color: var(--color);
         }
       }
       &-year {
@@ -37,8 +38,8 @@
         border-start-end-radius: 5px;
         border-end-end-radius: 5px;
         &.on {
-          border-color: #1677ff;
-          color: #1677ff;
+          border-color: var(--color);
+          color: var(--color);
         }
       }
       &:after {
@@ -58,7 +59,7 @@
       border-radius: 5px;
       font-weight: 300;
       &:active {
-        border-color: #1677ff;
+        border-color: var(--color);
       }
     }
   }
@@ -74,23 +75,23 @@
       width: 40px;
       height: 40px;
       border: none;
-      color: #1677ff;
+      color: var(--color);
       background-color: #fff;
       cursor: pointer;
       &:hover {
         border-radius: 50%;
-        background-color: #1677ff;
+        background-color: var(--color);
         color: #fff;
       }
       &.isToday {
         border-radius: 50%;
-        border: 1px solid #1677ff;
+        border: 1px solid var(--color);
       }
       &.notCurrentMonth {
         opacity: 0.5;
       }
       &.isSelect {
-        background-color: #1677ff;
+        background-color: var(--color);
         color: #fff;
         border-radius: 50%;
       }
@@ -108,21 +109,21 @@
       width: 50px;
       height: 50px;
       border: none;
-      color: #1677ff;
+      color: var(--color);
       background-color: #fff;
       cursor: pointer;
       &:hover {
         border-radius: 50%;
-        background-color: #1677ff;
+        background-color: var(--color);
         color: #fff;
       }
       &.isCurrentMonth {
         border-radius: 50%;
-        border: 1px solid #1677ff;
+        border: 1px solid var(--color);
       }
       &.isSelect {
         border-radius: 50%;
-        background-color: #1677ff;
+        background-color: var(--color);
         color: #fff;
       }
     }

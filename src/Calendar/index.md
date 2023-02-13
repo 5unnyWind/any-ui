@@ -17,6 +17,8 @@ import { Calendar } from "any-ui";
 export default () => (
   <>
     <Calendar></Calendar>
+    <h2>月历</h2>
+    <Calendar calendarType={"year"}></Calendar>
   </>
 );
 ```

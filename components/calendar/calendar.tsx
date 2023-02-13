@@ -22,11 +22,12 @@ interface BaseCalendarProps {
   year?: number;
   month?: number;
   day?: Date;
-  children?: ReactNode;
+  color?: string;
+  calendarHeaderName?: string;
 }
 
 const Calendar: FC<BaseCalendarProps> = (props) => {
-  const { year, month, day, calendarType } = props;
+  const { year, month, day, calendarType, color, calendarHeaderName } = props;
 
   const [select, setSelect] = useState(day);
   const [selectMonth, setSelectMonth] = useState((month as number) + 1);
@@ -78,9 +79,9 @@ const Calendar: FC<BaseCalendarProps> = (props) => {
 
   return (
     <>
-      <div className="ai-calendar">
+      <div className="ai-calendar" style={{ "--color": `${color}` }}>
         <div className="ai-calendar-header">
-          <div className="ai-calendar-header-name">Calendar header</div>
+          <div className="ai-calendar-header-name">{calendarHeaderName}</div>
           <div className="ai-calendar-header-date">
             <button
               type="button"
@@ -203,6 +204,8 @@ Calendar.defaultProps = {
   year: getYear(new Date()),
   month: getMonth(new Date()),
   day: new Date(),
+  color: "#1677ff",
+  calendarHeaderName: "Calendar Header",
 };
 
 export default memo(Calendar);
