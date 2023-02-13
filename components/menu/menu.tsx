@@ -1,10 +1,7 @@
 import React, { ReactNode, useState, useRef, useEffect } from "react";
 import MenuItem from "./menuItem";
 import classNames from "classnames";
-import { SubMenuProps } from "./subMenu";
-import { MenuItemProps } from "./menuItem";
-
-export type MenuModeType = "vertical" | "horizontal" | "inline";
+import { ClickParams, MenuModeType, MenuThemeType, ItemType } from "./index";
 
 //菜单类型
 interface MenuType {
@@ -13,16 +10,14 @@ interface MenuType {
   expandIcon?: ReactNode; //自定义展开图标
   mode?: MenuModeType; //菜菜单类型，现在支持垂直、水平、和内嵌模式三种
   theme?: MenuThemeType; //主题颜色
-  inlineCollapsed: number[]; //inline 时菜单是否收起状态
+  inlineCollapsed?: number[]; //inline 时菜单是否收起状态
   inlineIndent?: string; //inline 模式的菜单缩进宽度
   items: ItemType[]; //点击子菜单标题事件
-  className: string; //
+  className?: string; //
   onClick?: (key?: string) => void;
 }
 
-export type ItemType = Partial<SubMenuProps & MenuItemProps>;
-export type MenuThemeType = "light" | "dark";
-export type MenuProps = Partial<MenuType>;
+export type MenuProps = MenuType;
 
 const MenuCompontent: React.FC<MenuProps> = (props) => {
   const {
@@ -31,20 +26,11 @@ const MenuCompontent: React.FC<MenuProps> = (props) => {
     expandIcon,
     mode,
     theme,
-    inlineCollapsed,
-    inlineIndent,
     items,
     className,
     onClick,
     ...restProps
   } = props;
-
-  const classes = classNames(
-    "menu",
-    className,
-    { [`menu-${mode}`]: mode },
-    { [`menu-${theme}`]: theme }
-  );
 
   //公共状态--选中的item的key
   const [selectedKey, setSelectedKey] = useState(
@@ -74,42 +60,44 @@ const MenuCompontent: React.FC<MenuProps> = (props) => {
     }
   }, [selectedKey]);
 
+  // 更改expand状态
+  const [expand, setExpand] = useState(true);
+
   return (
     <>
-      <div className={classes} {...restProps}>
+      <div
+        className={classNames(
+          "ai-menu",
+          className,
+          { [`ai-menu-${mode}`]: mode },
+          { [`ai-menu-${theme}`]: theme }
+        )}
+        {...restProps}
+      >
         {items?.map((item, p) => {
           let { index, ...res } = item;
           index = String(index || p);
           return (
-            <div key={index} className="menu-item-box">
+            <div key={index} className="ai-menu-item-box">
               <MenuItem
                 selectedKey={selectedKey}
                 getSelectedKey={getSelectedKey}
                 {...res}
+                mode={mode}
                 index={index}
               />
             </div>
           );
         })}
       </div>
-      {/* 下划线 */}
-      {/* <div className="menu-underline-box">
-        <div
-          className="menu-underline"
-          style={{
-            transform: `translateX(calc(600px / ${items?.length} * ${parseInt(
-              selectedKey
-            )}))`,
-            width: `calc(100% / ${items?.length})`,
-          }}
-        ></div>
-      </div> */}
     </>
   );
 };
 
 MenuCompontent.defaultProps = {
   defaultSelectedKey: "0",
+  mode: "horizontal",
+  expandIcon: "📝",
 };
 
 export default MenuCompontent;
