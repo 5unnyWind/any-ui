@@ -1,7 +1,7 @@
 # ANY-UI
 
-<p align="center" height="370">
-<img align="center" height="370" src="./logo.png">
+<p align="center" height="256">
+<img align="center" height="256" src="./public/logo2.png">
 </p>
 
 > 一套用于构建现代 Web 应用的开源设计敏捷方案
