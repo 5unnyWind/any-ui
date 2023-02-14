@@ -6,6 +6,9 @@ on:
     branches: [main]
     paths-ignore:
       - "README.md"
+      - "LICENSE"
+      - "__tests__/**"
+
   pull_request:
     types:
       - 'opened'
@@ -25,18 +28,18 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v2.2.4
         
-#       - name: Get pnpm store directory
-#         id: pnpm-cache
-#         run: |
-#           echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        run: |
+          echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
           
-#       - name: Setup pnpm cache
-#         uses: actions/cache@v3.2.4
-#         with:
-#           path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
-#           key: ${{ runner.os }}-pnpm-store-node${{ matrix.node-version }}-${{ hashFiles('**/pnpm-lock.yaml') }}
-#           restore-keys: |
-#             ${{ runner.os }}-pnpm-store-node${{ matrix.node-version }}-
+      - name: Setup pnpm cache
+        uses: actions/cache@v3.2.4
+        with:
+          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+          key: ${{ runner.os }}-pnpm-store-node${{ matrix.node-version }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-node${{ matrix.node-version }}-
             
       - name: Install dependencies
         run: pnpm i
