@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Form, { Field, useForm } from "../part";
 import "../style/index.scss";
-import Button from "../../button/button";
+import Button from "../../button/index";
 import Card from "../../card/card";
 const nameRules = { required: true, message: "请输入姓名！" };
 const passworRules = { required: true, message: "请输入密码！" };

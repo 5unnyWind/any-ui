@@ -1,65 +1,27 @@
-import React from "react";
-import { Store, FormInstance, Callbacks } from "./interface";
-import FieldContext, { HOOK_MARK } from "./FieldContext";
+import React, { useImperativeHandle } from "react";
+import FieldContext from "./FieldContext";
 import useForm from "./useForm";
+import type { Callbacks, FormInstance } from "./interface";
 
-type BaseFormProps = Omit<
-  React.FormHTMLAttributes<HTMLFormElement>,
-  "onSubmit"
->;
-
-type RenderProps = (
-  values: Store,
-  form: FormInstance
-) => JSX.Element | React.ReactNode;
-
-export interface FormProps<Values = any> extends BaseFormProps {
-  initialValues?: Store;
+interface FormProps<Values = any> {
   form?: FormInstance<Values>;
-  children?: React.ReactNode;
-  name?: string;
-  onValuesChange?: Callbacks<Values>["onValuesChange"];
-  onFieldsChange?: Callbacks<Values>["onFieldsChange"];
   onFinish?: Callbacks<Values>["onFinish"];
   onFinishFailed?: Callbacks<Values>["onFinishFailed"];
-  validateTrigger?: string | string[] | false;
-  preserve?: boolean;
 }
 
-const Form: React.FC<FormProps> = ({
-  name,
-  initialValues,
-  form,
-  preserve,
-  children,
-  onValuesChange,
-  onFinish,
-  onFinishFailed,
-  ...restProps
-}: FormProps) => {
-  // 由于可能没有传入form，所以这里useForm执行一下
-  const [formInstance] = useForm(form);
-  const { setCallbacks, setInitialValues } = formInstance as FormInstance;
-  // setCallbacks保存用户自定义回调函数
-  setCallbacks({
-    onFinish,
-    onFinishFailed,
-    onValuesChange,
-  });
+const Form: React.FC<FormProps> = (props) => {
+  const { children, onFinish, onFinishFailed, form } = props;
 
-  // 设置表单初始值
-  setInitialValues(initialValues || {});
+  const [formInstance] = useForm(form);
+  formInstance.setCallbacks({ onFinish, onFinishFailed });
 
   return (
     <form
-      {...restProps}
-      onSubmit={(event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
-        event.stopPropagation();
+      onSubmit={(e) => {
+        e.preventDefault();
         formInstance.submit();
       }}
     >
-      {/* 把form对象实例透传下去 */}
       <FieldContext.Provider value={formInstance}>
         {children}
       </FieldContext.Provider>

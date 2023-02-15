@@ -52,9 +52,7 @@ const Card = React.forwardRef(
         {children}
       </div>
     );
-    const coverDom = cover ? (
-      <div className={"ai-card-cover"}>{cover}</div>
-    ) : null;
+
     return (
       <div className={card} style={style}>
         {/* head */}

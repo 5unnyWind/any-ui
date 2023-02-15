@@ -1,123 +1,49 @@
-import React, { Component } from "react";
+import React, { ChangeEvent, useLayoutEffect } from "react";
 import FieldContext from "./FieldContext";
+import type { NamePath, Rule } from "./interface";
+import classNames from "classnames";
 import "../../style/index.scss";
-import {
-  EventArgs,
-  FieldEntity,
-  FormInstance,
-  Rule,
-  InternalFormInstance,
-} from "./interface";
-import { validateRules } from "./utils/validateUtil";
+type FiledProps = {
+  name: NamePath;
+  label: NamePath;
+  rules: Rule[];
+};
 
-interface ChildProps {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  [name: string]: any;
-}
+const Field: React.FC<FiledProps> = (props) => {
+  const { children, name, label } = props;
 
-export interface InternalFieldProps<Values = any> {
-  children?:
-    | React.ReactElement
-    | ((control: ChildProps, form: FormInstance<Values>) => React.ReactNode);
-  /**
-   * Set up `dependencies` field.
-   * When dependencies field update and current field is touched,
-   * will trigger validate rules and render.
-   */
-  name?: string;
-  rules?: Rule[];
-  initialValue?: any;
-  onReset?: () => void;
-}
+  console.log(label);
+  const { getFieldValue, setFieldsValue, registerFieldEntities } =
+    React.useContext(FieldContext);
+  const [, forceUpdate] = React.useReducer((x) => x + 1, 0);
 
-export interface FieldProps<Values = any>
-  extends Omit<InternalFieldProps<Values>, "name"> {
-  name?: string;
-}
-
-class Field
-  extends Component<InternalFieldProps, InternalFormInstance>
-  implements FieldEntity
-{
-  // 指定this.context 等于FieldContext.Provider传递过来的form实例对象
-  public static contextType = FieldContext;
-
-  private cancelRegister: any;
-
-  private validatePromise: Promise<string[]> | null = null;
-
-  componentDidMount() {
-    const { registerField } = this.context;
-    this.cancelRegister = registerField(this);
-  }
-
-  componentWillUnmount() {
-    this.cancelRegister && this.cancelRegister();
-  }
-
-  onStoreChange = () => {
-    //值改变调用react的forceUpdate重新render，因为数据不是响应式的
-    this.forceUpdate();
-  };
-
-  validateRules = () => {
-    const { rules, name } = this.props;
-    if (!name || !rules || !rules.length) return [];
-    const cloneRule: any = [...rules];
-    const { getFieldValue } = this.context;
-    const value = getFieldValue(name);
-
-    const promise = validateRules(name, value, cloneRule);
-
-    promise
-      .catch((e) => e)
-      .then(() => {
-        if (this.validatePromise === promise) {
-          this.validatePromise = null;
-          this.onStoreChange();
-        }
+  useLayoutEffect(() => {
+    const unregister =
+      registerFieldEntities &&
+      registerFieldEntities({
+        props,
+        onStoreChange: forceUpdate,
       });
+    return unregister;
+  }, []);
 
-    return promise;
-  };
-
-  getControled = () => {
-    const { name } = this.props;
-    const { getFieldValue, setFieldsValue } = this.context;
+  const getControlled = () => {
     return {
-      value: getFieldValue(name),
-      onChange: (...args: EventArgs) => {
-        const event = args[0];
-        if (event && event.target && name) {
-          setFieldsValue({
-            [name]: (event.target as HTMLInputElement).value,
-          });
-        }
+      value: (getFieldValue && getFieldValue(name, label)) || "",
+      onChange: (e: ChangeEvent<HTMLInputElement>) => {
+        const newValue = e?.target?.value;
+        setFieldsValue && setFieldsValue({ [name]: newValue });
       },
     };
   };
-  // return (
-  //   <>
-  //     <div  className={"ai-form-item"}>
-  //       <div className={"ai-form-title"}>{label}</div>
-  //       {React.cloneElement(children as React.ReactElement, getControlled())}
-  //     </div>
-  //   </>
-  // )
-  render() {
-    const { children } = this.props;
-    // 为form.item附加上form中的属性
-    const returnChildNode = React.cloneElement(
-      children as React.ReactElement,
-      this.getControled()
-    );
-    return (
+  return (
+    <>
       <div className={"ai-form-item"}>
-        <div className={"ai-form-title"}></div>
-        {returnChildNode}
+        <div className={"ai-form-title"}>{label}</div>
+        {React.cloneElement(children as React.ReactElement, getControlled())}
       </div>
-    );
-  }
-}
+    </>
+  );
+};
 
 export default Field;

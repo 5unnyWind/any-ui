@@ -12,7 +12,7 @@ group:
 通用卡片容器
 
 ```jsx
-import { Form, Card, Button, Field, useForm } from "any-ui";
+import { Form, Button, Field, Input } from "any-ui";
 import React, { useEffect } from "react";
 const nameRules = { required: true, message: "请输入姓名！" };
 const passworRules = { required: true, message: "请输入密码！" };
@@ -26,11 +26,11 @@ export default () => (
         console.log("err", err);
       }}
     >
-      <Field name={"username"} label="用户名:" rules={[nameRules]}>
-        <input placeholder="用户名" />
+      <Field name={"username"} rules={[nameRules]}>
+        <Input label="用户名" placeholder="username"></Input>
       </Field>
-      <Field name={"password"} label="密码:" rules={[passworRules]}>
-        <input placeholder="密码" type="password" />
+      <Field name={"password"} rules={[passworRules]}>
+        <Input label="密码" placeholder="Placeholder"></Input>
       </Field>
       <Field>
         <Button type="primary">admin</Button>
