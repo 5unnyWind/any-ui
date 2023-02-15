@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import type { TreeProps, ListItem } from "./index";
 import { handlerClick } from "./index";
 

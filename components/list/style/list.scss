@@ -1,0 +1,40 @@
+@import "./mixin.scss";
+@import "./basic.scss";
+@import "../../theme/themes/default/index.scss";
+ul,
+.ai-listItem {
+  padding: 12px 16px;
+  //margin-top: -1px;
+  position: relative;
+  top: 1px;
+  //width: 500px;
+  display: block;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  color: rgba(0, 0, 0, 0.88);
+  border-block-end-color: rgba(5, 5, 5, 0.06);
+  border-block-end-style: solid;
+  border-block-end-width: 1px;
+  margin: 0px;
+}
+.ai-li-bordered-true {
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.309);
+}
+.ai-list {
+  width: 800px;
+}
+
+.ai-li-lg {
+  @include list-size($ai-li-size-lg-x, $ai-li-size-lg-y, $ai-li-font-size-lg);
+}
+
+.ai-li-sm {
+  @include list-size($ai-li-size-sm-x, $ai-li-size-sm-y, $ai-li-font-size-sm);
+}
+
+.ai-li-demo-pic {
+  height: 30px;
+  width: 30px;
+}

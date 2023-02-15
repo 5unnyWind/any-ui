@@ -3,11 +3,12 @@ import "./style/index.scss";
 import type { TreeProps } from "./index";
 import TreeItem from "./treeItem";
 import { handlerClick } from "./index";
+
 const Tree: React.FC<TreeProps> = (props) => {
   const { list, checkbox, ...restProps } = props;
   const [classes, UseClasses] = useState<string>("false");
   const handleClick = () => {
-    UseClasses("indet");
+    classes === "false" ? UseClasses("truthy") : UseClasses("false");
   };
 
   return (
@@ -48,10 +49,6 @@ const Tree: React.FC<TreeProps> = (props) => {
                     fill="none"
                     d="M1.73,12.91 8.1,19.28 22.79,4.59"
                   ></path>
-                  <path
-                    className="ai-tree-checkbox__indet"
-                    d="M4,14H20V10H4"
-                  ></path>
                 </svg>
               </div>
             </div>
@@ -65,6 +62,10 @@ const Tree: React.FC<TreeProps> = (props) => {
         <TreeItem
           list={list && list[0].children}
           checkbox={checkbox}
+          handleParent={() => {
+            handleClick();
+          }}
+          parentStatus={classes === "false" ? false : true}
           {...restProps}
         ></TreeItem>
       </div>

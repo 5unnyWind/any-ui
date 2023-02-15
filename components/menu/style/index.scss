@@ -1,4 +1,4 @@
-.menu {
+.ai-menu {
   width: 100%;
   margin: 0.5rem;
   display: flex;
@@ -6,13 +6,12 @@
   border-bottom: 0.15rem solid $gray-200;
   transition: 1s;
 
-  .menu-item-box {
+  .ai-menu-item-box {
     width: 100%;
 
-    .menu-item {
-      padding: 0.75rem 0;
+    .ai-menu-item {
+      padding: 1rem 0;
       cursor: pointer;
-      border-bottom: 0.15rem solid $gray-200;
       margin-bottom: -0.15rem;
       transition: all 0.6s ease-in-out;
       position: relative;
@@ -20,100 +19,177 @@
       display: flex;
       justify-content: center;
 
-      & > span,
-      * span {
+      .ai-menu-item-content {
+        width: 100%;
         font-size: 0.9rem;
+
+        // 图标
+        .ai-menu-divider {
+          margin-right: 0.4rem;
+          margin-left: 1rem;
+        }
       }
 
-      .menu-divider {
-        margin-right: 0.4rem;
-      }
-
-      .sub-menu {
-        margin-top: 0.5rem;
-        padding: 0.5rem 0;
+      // submenu
+      .ai-menu-item-submenu {
+        width: 100%;
         position: absolute;
         top: calc(100%);
         left: 0;
-        visibility: hidden;
-        transition: all 0.3s ease-in-out;
-        box-shadow: 0 0.625rem 1.875rem -0.9375rem $gray-900;
-        border-radius: 0.5rem;
-        background-color: #fff;
 
-        .sub-menu-item {
+        .ai-menu-submenu {
           width: 100%;
-          height: 100%;
-          padding: 0.5rem 1.25rem;
-          min-width: 6rem;
-          list-style: none;
-          text-overflow: ellipsis;
-          overflow: hidden;
-          white-space: nowrap;
+          margin-top: 0.5rem;
+          padding: 0.5rem 0;
+          visibility: hidden;
+          transition: all 0.3s ease-in-out;
+          box-shadow: 0 0.625rem 1.875rem -0.9375rem $gray-900;
+          border-radius: 0.5rem;
+          background-color: #fff;
+          z-index: 2;
 
-          &:hover {
-            & > .menu-isMenuSub {
-              display: block;
+          .ai-menu-submenu-item {
+            width: 100%;
+            height: 100%;
+            list-style: none;
+            padding: 0.75rem 0;
+
+            .ai-menu-item-content {
+              width: 100%;
+              text-overflow: ellipsis;
+              overflow: hidden;
+              white-space: nowrap;
             }
 
-            & > span {
-              color: $primary;
+            &:hover {
+              background-color: #f0f7fc;
+
+              & > .ai-menu-isMenuSub {
+                display: block;
+              }
+
+              & > .ai-menu-item-content {
+                color: $primary;
+              }
             }
           }
         }
       }
 
-      .menu-isMenuSub {
+      // 第二子菜单
+      .ai-menu-isMenuSub {
         position: absolute;
         transform: translate(105%, -50%);
         display: none;
         transition: all 0.4s;
         border-radius: 0.5rem;
         background-color: #fff;
+        z-index: 1;
 
         &::before {
           content: "";
           width: 20%;
           height: 100%;
-          left: -20%;
+          left: -10%;
           top: 0;
           position: absolute;
-        }
-      }
-
-      &:not(.menu-disabled):hover {
-        border-bottom: 0.15rem solid $primary;
-
-        & > span {
-          color: $primary;
-        }
-
-        .sub-menu {
-          visibility: visible;
+          z-index: 0;
         }
       }
     }
 
-    .menu-selected {
-      color: $primary;
-      border-bottom: 0.15rem solid $primary;
-    }
-
-    .menu-disabled {
+    .ai-menu-disabled {
       cursor: not-allowed;
       color: $gray-200;
     }
   }
 }
 
-.menu-underline-box {
-  width: 100%;
-  height: 2px;
-  background-color: $gray-200;
+.ai-menu-horizontal {
+  .ai-menu-item-horizontal {
+    border-bottom: 0.15rem solid $gray-200;
 
-  .menu-underline {
-    height: 100%;
-    background: $primary;
-    transition: all 1s;
+    .ai-menu-item-content {
+      text-align: center;
+    }
+
+    &:not(.ai-menu-disabled):hover {
+      border-bottom: 0.15rem solid $primary;
+
+      & > span {
+        color: $primary;
+      }
+
+      .ai-menu-submenu {
+        visibility: visible;
+      }
+    }
+  }
+
+  .ai-menu-item-selected {
+    border-bottom: 0.15rem solid $primary;
+
+    & > .ai-menu-item-content {
+      color: $primary;
+    }
+  }
+}
+
+.ai-menu-vertical {
+  flex-direction: column;
+  max-width: 15rem;
+  border-right: 0.1rem solid $gray-200;
+
+  .ai-menu-item-vertical {
+    border-bottom: none;
+    border-radius: 0.25rem;
+    margin: 0 0.1rem;
+
+    .ai-menu-submenu {
+      transform: translate(105%, -50%);
+
+      .ai-menu-submenu-vertical {
+      }
+    }
+
+    &:not(.ai-menu-disabled):hover {
+      border-bottom: none;
+      background-color: #f0f7fc;
+
+      & > span {
+        color: $primary;
+      }
+
+      .ai-menu-submenu {
+        visibility: visible;
+      }
+    }
+
+    .ai-menu-item-content {
+      position: relative;
+
+      .ai-menu-divider {
+        width: 3rem;
+        min-width: 3rem;
+      }
+
+      .ai-menu-item-text {
+        position: absolute;
+        left: 3rem;
+      }
+
+      .ai-menu-item-status {
+        float: right;
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  .ai-menu-item-selected {
+    background-color: #e6f4ff;
+
+    & > .ai-menu-item-content {
+      color: $primary;
+    }
   }
 }

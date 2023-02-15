@@ -1,25 +1,9 @@
-import React, { ReactNode } from "react";
-
+import React, { useContext } from "react";
 import ClassNames from "classnames";
-
 import MenuDivider from "./menuDivider";
-
 import { ItemType } from "./index";
-
 import SubMenu from "./subMenu";
-
-//菜单项类型
-interface MenuItemType {
-  disabled?: boolean; //是否禁用
-  icon?: ReactNode; //菜单图标
-  index?: string; //item 的唯一标志
-  label?: ReactNode; //菜单项标题
-  title?: string; //设置收缩时展示的悬浮标题
-  selectedKey?: string; //是否选中
-  getSelectedKey?: (index?: string) => void | null;
-}
-
-export type MenuItemProps = Partial<MenuItemType>;
+import classNames from "classnames";
 
 const MenuItem: React.FC<ItemType> = (props) => {
   const {
@@ -31,23 +15,40 @@ const MenuItem: React.FC<ItemType> = (props) => {
     selectedKey,
     getSelectedKey,
     children,
-    ...rest
+    mode,
+    ...restProps
   } = props;
 
-  const classes = ClassNames("menu-item", {
-    [`menu-disabled`]: disabled,
-    [`${selectedKey === index ? "menu-selected" : ""}`]: selectedKey,
-  });
-
   return (
-    <div className={classes} {...rest}>
-      <MenuDivider icon={icon} />
-      <span onClick={() => (getSelectedKey ? getSelectedKey(index) : "")}>
-        {label}
-      </span>
+    <div
+      {...restProps}
+      className={ClassNames("ai-menu-item", {
+        [`ai-menu-disabled`]: disabled,
+        [`ai-menu-item-${mode}`]: mode,
+        [`${selectedKey === index ? "ai-menu-item-selected" : ""}`]:
+          selectedKey,
+      })}
+    >
+      <div
+        className={classNames(`ai-menu-item-content`)}
+        onClick={() => (getSelectedKey ? getSelectedKey(index) : "")}
+      >
+        <MenuDivider icon={icon} />
+        <span className={classNames(`ai-menu-item-text`)}>{label}</span>
+        {mode !== "horizontal" && children && children.length !== 0 && (
+          <div className="ai-menu-item-status">→</div>
+        )}
+      </div>
       {/* 判断子集 */}
       {children && children.length !== 0 ? (
-        <SubMenu {...props} getSelectedKey={getSelectedKey} />
+        <div className={classNames(`ai-menu-item-submenu`)}>
+          <SubMenu
+            {...props}
+            mode={mode}
+            selectedKey={selectedKey}
+            getSelectedKey={getSelectedKey}
+          />
+        </div>
       ) : (
         ""
       )}
