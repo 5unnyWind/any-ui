@@ -10,4 +10,6 @@ export {
   Tree,
   Upload,
   Breadcrumb,
+  Select,
+  List,
 } from "../components";
