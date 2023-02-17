@@ -20,6 +20,17 @@ export default () => (
       title="Card title"
       style={{ width: 300 }}
       bordered={true}
+      headStyle={{ color: "yellow" }}
+      bodyStyle={{ color: "red" }}
+      extra={<a href="#">More</a>}
+    >
+      <p>Card content</p>
+      <p>Card content</p>
+    </Card>
+    <Card
+      title="Card title"
+      style={{ width: 300 }}
+      bordered={true}
       extra={<a href="#">More</a>}
       cover={
         <img

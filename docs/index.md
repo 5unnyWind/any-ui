@@ -1,4 +1,7 @@
 ---
+title: ANY-UI # 配置页面标题,同时生成 <title> 标签
+description: 一套用于构建现代 Web 应用的开源设计敏捷方案 # 配置页面简介，同时用于生成 <meta> 标签
+keywords: ["组件库", "组件", "any", "any ui", "components", "react components"] # 配置页面关键词，同时用于生成 <meta> 标签
 hero:
   title: ANY UI
   description: 一套用于构建现代 Web 应用的开源设计敏捷方案

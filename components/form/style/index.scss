@@ -9,3 +9,15 @@ input {
   margin: 20px;
   padding: 20px;
 }
+
+.ai-form-title {
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: $font-size-base;
+  width: 20%;
+  float: right;
+}
+.ai-form-item {
+  display: flex;
+  margin: 10px 0 10px 0;
+}
