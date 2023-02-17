@@ -18,9 +18,13 @@ group:
 ```jsx
 import { Switch } from "any-ui";
 
+const onClick = (ischecked: boolean) => {
+  console.log(ischecked);
+};
+
 export default () => (
   <>
-    <Switch></Switch>
+    <Switch onClick={onClick}></Switch>
   </>
 );
 ```
@@ -75,14 +79,15 @@ export default () => (
 
 ## Switch API
 
-|      参数      |       说明       |   类型    | 默认值 |
-| :------------: | :--------------: | :-------: | :----: |
-|   ischecked    | 指定当前是否选中 | `boolean` | false  |
-|   className    |  Switch 器类名   | `	string`  |   --   |
-| defaultChecked |   初始是否选中   | `boolean` |  true  |
-|    disabled    |     是否禁用     | `boolean` | false  |
-|     width      |     开关大小     | `string`  |  40px  |
-|  activeColor   |     开启颜色     | `string`  |   --   |
-| inactiveColor  |     关闭颜色     | `string`  |   --   |
-|  activeValue   |     开启文本     | `string`  |   --   |
-| inactiveValue  |     关闭文本     | `string`  |   --   |
+|      参数      |       说明       |              类型               | 默认值 |
+| :------------: | :--------------: | :-----------------------------: | :----: |
+|   ischecked    | 指定当前是否选中 |            `boolean`            | false  |
+|   className    |  Switch 器类名   |            `	string`             |   --   |
+| defaultChecked |   初始是否选中   |            `boolean`            |  true  |
+|    disabled    |     是否禁用     |            `boolean`            | false  |
+|     width      |     开关大小     |            `string`             |  40px  |
+|  activeColor   |     开启颜色     |            `string`             |   --   |
+| inactiveColor  |     关闭颜色     |            `string`             |   --   |
+|  activeValue   |     开启文本     |            `string`             |   --   |
+| inactiveValue  |     关闭文本     |            `string`             |   --   |
+|    onClick     |     点击回调     | `(ischecked?: boolean) => void` |   --   |
