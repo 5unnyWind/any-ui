@@ -12,7 +12,7 @@ group:
 显示一个需要注意的指标
 
 ```jsx
-import { Badge } from "any-ui";
+import { Badge } from "@any-ui/core";
 
 export default () => (
   <>

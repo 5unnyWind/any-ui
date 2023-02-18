@@ -1,5 +1,5 @@
 {
-  "name": "any-ui",
+  "name": "@any-ui/core",
   "version": "0.1.0",
   "main": "dist/index.js",
   "module": "esm/index.js",
@@ -19,7 +19,8 @@
     "test": "jest --watch ",
     "eject": "react-scripts eject",
     "prepare": "husky install",
-    "lint:style": "stylelint --fix \"src/**/*.{css,scss}\""
+    "lint:style": "stylelint --fix \"src/**/*.{css,scss}\"",
+    "release": "pnpm build && pnpm publish --access public --non-interactive"
   },
   "license": "MIT",
   "description": "An open-source design agile approach for building modern web applications.",

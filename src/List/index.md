@@ -16,7 +16,7 @@ group:
 通过设置 bordered 为 true/false 来设定是否需要边框。若不设置 bordered，则为 true。
 
 ```jsx
-import { List } from "any-ui";
+import { List } from "@any-ui/core";
 
 const data = [
   "Racing car sprays burning fuel into crowd.",
@@ -43,7 +43,7 @@ export default function App() {
 通过设置 footer 来设置列表底名。
 
 ```jsx
-import { List } from "any-ui";
+import { List } from "@any-ui/core";
 
 const data = [
   "Racing car sprays burning fuel into crowd.",
@@ -70,7 +70,7 @@ export default function App() {
 通过设置 renderItem，当使用 dataSource 时，可以用 renderItem,自定义渲染列表项。
 
 ```jsx
-import { List } from "any-ui";
+import { List } from "@any-ui/core";
 import img from "./daddsf.png";
 const data = [
   "Racing car sprays burning fuel into crowd.",

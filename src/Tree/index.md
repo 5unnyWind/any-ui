@@ -12,7 +12,7 @@ group:
 树形控件
 
 ```jsx
-import { Tree } from "any-ui";
+import { Tree } from "@any-ui/core";
 const simple = [
   {
     label: "Satisfied customers (with avatar)",
@@ -51,7 +51,7 @@ export default () => {
 ```
 
 ```jsx
-import { Tree } from "any-ui";
+import { Tree } from "@any-ui/core";
 const simple = [
   {
     label: "Satisfied customers (with avatar)",

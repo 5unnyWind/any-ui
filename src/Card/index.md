@@ -12,7 +12,7 @@ group:
 通用卡片容器
 
 ```jsx
-import { Card } from "any-ui";
+import { Card } from "@any-ui/core";
 
 export default () => (
   <>

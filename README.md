@@ -11,15 +11,15 @@
 ## Quick Start
 
 ```bash
-npm i any-ui
+npm i @any-ui/core
 # or
-yarn add any-ui
+yarn add @any-ui/core
 # or
-pnpm add any-ui
+pnpm add @any-ui/core
 ```
 
 ```js
-import { Button } from "any-ui";
+import { Button } from "@any-ui/core";
 
 export default () => (
   <>

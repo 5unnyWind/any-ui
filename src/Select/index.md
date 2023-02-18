@@ -14,7 +14,7 @@ group:
 通过设置 size 为 lg sm 分别把选择器设为大、小尺寸。若不设置 size，则尺寸为中。
 
 ```jsx
-import { Select } from "any-ui";
+import { Select } from "@any-ui/core";
 
 const options = [
   {
@@ -52,7 +52,7 @@ export default function App() {
 通过设置 mode="mutiple"将选择器设置为多选选择器，若不设置则默认为单选。
 
 ```jsx
-import { Select } from "any-ui";
+import { Select } from "@any-ui/core";
 
 const options = [
   {
@@ -86,7 +86,7 @@ export default function App() {
 通过设置 disabled 将选择器设置为禁用，若不设置则默认为 false。
 
 ```jsx
-import { Select } from "any-ui";
+import { Select } from "@any-ui/core";
 const options = [
   {
     label: "orange",
