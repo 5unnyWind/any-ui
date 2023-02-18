@@ -14,6 +14,7 @@ const esmPath = path.join(root, 'esm')
 const extensions = ['.js', '.jsx', '.ts', '.tsx']
 
 const plugins = [
+  scss(),
   babel({
     exclude: 'node_modules/**',
     extensions,
@@ -27,8 +28,7 @@ const plugins = [
     browser: true,
     extensions,
   }),
-  commonjs(),
-  scss()
+  commonjs()
 ]
 
 const globals = {
