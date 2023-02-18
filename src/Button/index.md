@@ -12,7 +12,7 @@ group:
 用于触发一个操作
 
 ```jsx
-import { Button } from "@any-ui/core";
+import { Button } from "@any_ui/core";
 
 export default () => (
   <>
