@@ -1,5 +1,6 @@
 {
   "name": "@any-ui/core",
+  "author": "any_U",
   "version": "0.1.0",
   "main": "dist/index.js",
   "module": "esm/index.js",
