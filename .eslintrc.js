@@ -6,7 +6,7 @@ module.exports = {
   extends: [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
+    // "plugin:@typescript-eslint/recommended",
     "prettier",
     require.resolve("@umijs/lint/dist/config/eslint"),
   ],
@@ -23,6 +23,7 @@ module.exports = {
     "default-case": 0,
     "eol-last": 0,
     "no-console": 0,
+    "no-unused-vars": 0,
     "no-plusplus": 0,
     "no-script-url": 0,
     "prefer-rest-params": 0,

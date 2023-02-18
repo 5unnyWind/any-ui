@@ -7,6 +7,7 @@ type FiledProps = {
   name: NamePath;
   label: NamePath;
   rules: Rule[];
+  children: React.ReactNode;
 };
 
 const Field: React.FC<FiledProps> = (props) => {

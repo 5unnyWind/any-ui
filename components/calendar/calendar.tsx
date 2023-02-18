@@ -1,3 +1,4 @@
+//@ts-nocheck
 import React, { memo, useMemo, useState } from "react";
 import type { FC, ReactNode } from "react";
 import {

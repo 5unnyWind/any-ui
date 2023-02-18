@@ -7,6 +7,7 @@ interface FormProps<Values = any> {
   form?: FormInstance<Values>;
   onFinish?: Callbacks<Values>["onFinish"];
   onFinishFailed?: Callbacks<Values>["onFinishFailed"];
+  children: React.ReactNode;
 }
 
 const Form: React.FC<FormProps> = (props) => {

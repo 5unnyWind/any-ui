@@ -12,4 +12,4 @@ export {
   Breadcrumb,
   Select,
   List,
-} from "../components";
+} from "../components/index";
