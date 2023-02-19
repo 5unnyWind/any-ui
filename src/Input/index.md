@@ -12,7 +12,7 @@ group:
 Input 表单
 
 ```jsx
-import { Input } from "any-ui";
+import { Input } from "@any_ui/core";
 export default () => {
   return (
     <>

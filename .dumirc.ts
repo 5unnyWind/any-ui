@@ -5,7 +5,7 @@ export default defineConfig({
   outputPath: "docs-dist",
   themeConfig: {
     name: "any-ui",
-    logo: "./logo2.png",
+    logo: "logo2.png",
   },
   locales: [
     { id: "zh-CN", name: "中文" },

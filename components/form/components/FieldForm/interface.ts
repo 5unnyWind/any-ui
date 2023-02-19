@@ -10,7 +10,7 @@ export interface Callbacks<Values = any> {
 }
 
 export interface FormInstance<Values = any> {
-  getFieldValue: (name: NamePath) => StoreValue;
+  getFieldValue: (name: NamePath, label: NamePath) => StoreValue;
   submit: () => void;
   getFieldsValue: () => Values;
   setFieldsValue: (newStore: Store) => void;
@@ -23,6 +23,7 @@ export type Rule = { required: boolean; message: string };
 export interface FieldEntity {
   props: {
     name?: NamePath;
+    label?: NamePath;
     rules?: Rule[];
   };
   onStoreChange: () => void;

@@ -9,34 +9,30 @@ group:
 
 # Tree
 
-树形控件
+normal
 
 ```jsx
-import { Tree } from "any-ui";
+import { Tree } from "@any_ui/core";
 const simple = [
   {
-    label: "Satisfied customers (with avatar)",
+    label: "a",
     children: [
       {
-        label: "1231231",
+        label: "b",
         children: [
           {
-            label: "12312",
+            label: "b",
           },
-          { label: "421412e" },
+          { label: "c" },
         ],
       },
       {
-        label: "214121t1412 i412)",
-        children: [{ label: "Pr142141tion" }, { label: "Pro21412412al41iter" }],
+        label: "d",
+        children: [{ label: "e" }, { label: "f" }],
       },
       {
-        label: "Ple4nt su141h icon)",
-        children: [
-          { label: "Ha141" },
-          { label: "Good ta124ation" },
-          { label: "Plea124or" },
-        ],
+        label: "g",
+        children: [{ label: "h" }, { label: "i" }, { label: "j" }],
       },
     ],
   },
@@ -50,42 +46,39 @@ export default () => {
 };
 ```
 
+# Tree
+
+checkbox
+
 ```jsx
-import { Tree } from "any-ui";
+import { Tree } from "@any_ui/core";
 const simple = [
   {
-    label: "Satisfied customers (with avatar)",
+    label: "a",
     children: [
       {
-        label: "1231231",
+        label: "b",
         children: [
           {
-            label: "12312",
+            label: "c",
             children: [
               {
-                label: "Pr142141tion",
-                children: [
-                  { label: "Pr142141tion" },
-                  { label: "Pro21412412al41iter" },
-                ],
+                label: "d",
+                children: [{ label: "e" }, { label: "f" }],
               },
-              { label: "Pro21412412al41iter" },
+              { label: "g" },
             ],
           },
-          { label: "421412e" },
+          { label: "h" },
         ],
       },
       {
-        label: "214121t1412 i412)",
-        children: [{ label: "Pr142141tion" }, { label: "Pro21412412al41iter" }],
+        label: "i",
+        children: [{ label: "j" }, { label: "k" }],
       },
       {
-        label: "Ple4nt su141h icon)",
-        children: [
-          { label: "Ha141" },
-          { label: "Good ta124ation" },
-          { label: "Plea124or" },
-        ],
+        label: "l",
+        children: [{ label: "m" }, { label: "n" }, { label: "o" }],
       },
     ],
   },
@@ -98,3 +91,19 @@ export default () => {
   );
 };
 ```
+
+## Tree API
+
+`type ListItem = { 
+  label: string;
+  children?: ListItem[];
+  check?: boolean;
+}`
+`type BaseTreeProps = { 
+  list: ListItem[];
+  checkbox?: boolean
+}`
+| 参数 | 说明 | 类型 | 默认值 |
+| :------: | :----------: | :---------------: | :----: |
+| list | 树形控件信息 | `BaseTreeProps[]` | -- |
+| checkbox | 树形控件类型 | `Boolean` | false |

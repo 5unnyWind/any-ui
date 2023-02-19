@@ -33,10 +33,13 @@ const Card = React.forwardRef(
     } = props;
 
     const card = classNames("ai-card");
+    const coverDom = cover ? (
+      <div className={"ai-card-cover"}>{cover}</div>
+    ) : null;
     const headclass = classNames(
       "ai-card-head",
       hasborder ? "hasborder" : null,
-      title ? null : "istitle"
+      title || coverDom ? null : "istitle"
     );
     const headwrapperclass = classNames("ai-card-head-wrapper");
     //    const headtitleclass=classNames()
@@ -49,9 +52,7 @@ const Card = React.forwardRef(
         {children}
       </div>
     );
-    const coverDom = cover ? (
-      <div className={"ai-card-cover"}>{cover}</div>
-    ) : null;
+
     return (
       <div className={card} style={style}>
         {/* head */}

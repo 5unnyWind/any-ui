@@ -1,7 +1,7 @@
 import React, { useImperativeHandle } from "react";
 import FieldContext from "./FieldContext";
 import useForm from "./useForm";
-
+import "../style/index.scss";
 import type { Callbacks, FormInstance } from "./interface";
 
 interface FormProps<Values = any> {

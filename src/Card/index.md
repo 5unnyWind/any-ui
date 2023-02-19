@@ -12,10 +12,21 @@ group:
 通用卡片容器
 
 ```jsx
-import { Card } from "any-ui";
+import { Card } from "@any_ui/core";
 
 export default () => (
   <>
+    <Card
+      title="Card title"
+      style={{ width: 300 }}
+      bordered={true}
+      headStyle={{ color: "yellow" }}
+      bodyStyle={{ color: "red" }}
+      extra={<a href="#">More</a>}
+    >
+      <p>Card content</p>
+      <p>Card content</p>
+    </Card>
     <Card
       title="Card title"
       style={{ width: 300 }}

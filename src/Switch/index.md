@@ -12,7 +12,7 @@ group:
 通用开关组件
 
 ```jsx
-import { Switch } from "any-ui";
+import { Switch } from "@any_ui/core";
 
 export default () => (
   <>
