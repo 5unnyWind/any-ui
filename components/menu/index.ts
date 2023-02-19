@@ -22,6 +22,8 @@ interface MenuType {
   items?: ItemType[]; //点击子菜单标题事件
   className?: string; //
   onClick?: (key?: string) => void;
+  width?: string | number; // horizontal模式下的宽度
+  style?: object;
 }
 
 //菜单的props

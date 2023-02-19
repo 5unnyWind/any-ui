@@ -336,11 +336,15 @@ const items = [
   },
 ];
 
+const style = {
+  width: "200px",
+};
+
 export default () => (
   <>
     <div>
       <div style={{ width: "600px" }}>
-        <Menu items={items} onClick={onClick} mode="vertical" />
+        <Menu items={items} onClick={onClick} mode="vertical" width="100" />
       </div>
     </div>
   </>
@@ -354,6 +358,7 @@ export default () => (
 |  items  |                 传入的菜单数组                  |       `ItemType[]`       |     --     |
 |  mode   | 菜单类型（水平 _horizontal_ 和垂直 _vertical_） |      `MenuModeType`      | horizontal |
 | onClick |             点击事件触发的回调函数              | `(key?: string) => void` |     --     |
+|  width  |      菜单宽度（只在 vertical 模式下使用）       |    `string / number`     |   10rem    |
 
 ## `ItemType`
 
