@@ -21,7 +21,7 @@
     "prepare": "husky install",
     "lint:style": "stylelint --fix \"src/**/*.{css,scss}\"",
     "release": "pnpm build && npm publish --access public",
-    "chore": "chmod +x ./chore.sh && ./chore.sh"
+    "chore": "chmod +x ./scripts/chore.sh && ./scripts/chore.sh"
   },
   "license": "MIT",
   "description": "An open-source design agile approach for building modern web applications.",
