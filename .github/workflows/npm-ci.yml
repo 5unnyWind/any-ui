@@ -1,9 +1,11 @@
-name: Publish
+name: npm-ci
 
 on:
-  workflow_dispatch:
   release:
     types: [created]
+  # push:
+  #   tags:
+  #     - "v*"
 
 jobs:
   build:
@@ -15,8 +17,6 @@ jobs:
           
       - name: Setup Node.js environment
         uses: actions/setup-node@v3.6.0
-        with:
-          registry-url: https://registry.npmjs.org/
         
       - name: Setup pnpm
         uses: pnpm/action-setup@v2.2.4
@@ -36,7 +36,25 @@ jobs:
             
       - name: Install dependencies
         run: pnpm i
-        
+
+      - name: build
+        run: pnpm build
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.6.0
+        with:
+          node-version: 12
+          registry-url: https://registry.npmjs.org/
+
+      - name: install
+        run: pnpm i --frozen-lockfile
+
       - name: set dist-tag
         run: |
           case "${{github.event.release.name}}" in
@@ -49,7 +67,6 @@ jobs:
           *)
            echo "r_tag=latest" >> $GITHUB_ENV;;
           esac
-
       - name: publish
         run: |
           echo ">> dist-tag: ${{ env.r_tag }}"
