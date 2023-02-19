@@ -17,7 +17,6 @@
     "build:clear": "rm -rf ./dist ./esm",
     "build:webpack": "webpack --progress",
     "test": "jest --watch ",
-    "eject": "react-scripts eject",
     "prepare": "husky install",
     "lint:style": "stylelint --fix \"src/**/*.{css,scss}\"",
     "release": "pnpm build && npm publish --access public",
