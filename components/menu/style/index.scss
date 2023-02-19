@@ -113,6 +113,10 @@
       text-align: center;
     }
 
+    .ai-menu-submenu-item .ai-menu-item-content {
+      text-align: left;
+    }
+
     &:not(.ai-menu-disabled):hover {
       border-bottom: 0.15rem solid $primary;
 
@@ -137,7 +141,8 @@
 
 .ai-menu-vertical {
   flex-direction: column;
-  max-width: 15rem;
+  max-width: 20rem;
+  min-width: 10rem;
   border-right: 0.1rem solid $gray-200;
 
   .ai-menu-item-vertical {
