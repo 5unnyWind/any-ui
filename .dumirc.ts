@@ -1,4 +1,3 @@
-import { locales } from ".dumi/tmp/dumi/locales/config";
 import { defineConfig } from "dumi";
 
 export default defineConfig({
