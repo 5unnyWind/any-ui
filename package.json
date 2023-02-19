@@ -1,6 +1,6 @@
 {
   "name": "@any_ui/core",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "main": "dist/index.js",
   "module": "esm/index.js",
   "types": "esm/index.d.ts",
@@ -20,7 +20,8 @@
     "eject": "react-scripts eject",
     "prepare": "husky install",
     "lint:style": "stylelint --fix \"src/**/*.{css,scss}\"",
-    "release": "pnpm build && npm publish --access public"
+    "release": "pnpm build && npm publish --access public",
+    "chore": "chmod +x ./chore.sh && ./chore.sh"
   },
   "license": "MIT",
   "description": "An open-source design agile approach for building modern web applications.",

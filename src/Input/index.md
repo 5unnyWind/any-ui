@@ -9,7 +9,7 @@ group:
 
 # Input
 
-Input 表单.
+Input 表单
 
 ```jsx
 import { Input } from "@any_ui/core";
