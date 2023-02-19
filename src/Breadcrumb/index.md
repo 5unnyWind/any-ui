@@ -16,7 +16,7 @@ group:
 ### 基本用法
 
 ```jsx
-import { Breadcrumb } from "any-ui";
+import { Breadcrumb } from "@any_ui/core";
 
 const routes = [{ label: "Home" }, { label: "System" }, { label: "Workplace" }];
 
@@ -30,7 +30,7 @@ export default () => (
 ### 指向外链接
 
 ```jsx
-import { Breadcrumb } from "any-ui";
+import { Breadcrumb } from "@any_ui/core";
 
 const routes = [
   { label: "Home" },
@@ -48,7 +48,7 @@ export default () => (
 ### 自定义分割线
 
 ```jsx
-import { Breadcrumb } from "any-ui";
+import { Breadcrumb } from "@any_ui/core";
 
 const routes = [{ label: "Home" }, { label: "System" }, { label: "Workplace" }];
 
@@ -72,7 +72,7 @@ export default () => (
 只支持全黑色（black）和默认（default）类型。
 
 ```jsx
-import { Breadcrumb } from "any-ui";
+import { Breadcrumb } from "@any_ui/core";
 
 const routes = [{ label: "Home" }, { label: "System" }, { label: "Workplace" }];
 
@@ -92,7 +92,7 @@ export default () => (
 增加 route，默认实现绑定跳转，尝试点击 workplace。
 
 ```jsx
-import { Breadcrumb } from "any-ui";
+import { Breadcrumb } from "@any_ui/core";
 
 const routes = [
   { label: "Home", route: "/home" },
