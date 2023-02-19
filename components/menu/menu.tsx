@@ -1,7 +1,7 @@
 import React, { ReactNode, useState, useRef, useEffect } from "react";
 import MenuItem from "./menuItem";
 import classNames from "classnames";
-import { ClickParams, MenuModeType, MenuThemeType, ItemType } from "./index";
+import { MenuModeType, MenuThemeType, ItemType } from "./index";
 
 //菜单类型
 interface MenuType {
@@ -59,9 +59,6 @@ const MenuCompontent: React.FC<MenuProps> = (props) => {
       onClick ? onClick(selectedKey) : "";
     }
   }, [selectedKey]);
-
-  // 更改expand状态
-  const [expand, setExpand] = useState(true);
 
   return (
     <>
