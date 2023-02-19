@@ -1,0 +1,58 @@
+name: Publish
+
+on:
+  workflow_dispatch:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.6.0
+        with:
+          registry-url: https://registry.npmjs.org/
+        
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.2.4
+        
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        run: |
+          echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
+          
+      - name: Setup pnpm cache
+        uses: actions/cache@v3.2.4
+        with:
+          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+          key: ${{ runner.os }}-pnpm-store-node${{ matrix.node-version }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-node${{ matrix.node-version }}-
+            
+      - name: Install dependencies
+        run: pnpm i
+        
+      - name: set dist-tag
+        run: |
+          case "${{github.event.release.name}}" in
+          *"rc"* | *"canary"*)
+           echo "r_tag=canary" >> $GITHUB_ENV;;
+          *"dev"*)
+           echo "r_tag=dev" >> $GITHUB_ENV;;
+          *"beta"*)
+           echo "r_tag=beta" >> $GITHUB_ENV;;
+          *)
+           echo "r_tag=latest" >> $GITHUB_ENV;;
+          esac
+
+      - name: publish
+        run: |
+          echo ">> dist-tag: ${{ env.r_tag }}"
+          pnpm release --tag ${{ env.r_tag }}
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
