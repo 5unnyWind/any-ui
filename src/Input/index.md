@@ -25,3 +25,13 @@ export default () => {
   );
 };
 ```
+
+## Input API
+
+|    参数     |      说明      |   类型   | 默认值 |
+| :---------: | :------------: | :------: | :----: |
+|    label    |    表单标题    | `String` |   --   |
+|   bgColor   |    背景颜色    | `String` |   --   |
+|    fill     |    填充颜色    | `String` |   --   |
+|  outlined   |    边框颜色    | `String` |   --   |
+| placeholder | placeholder 值 | `String` |   --   |
