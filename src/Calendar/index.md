@@ -16,7 +16,7 @@ group:
 ### 基础使用
 
 ```jsx
-import { Calendar } from "any-ui";
+import { Calendar } from "@any_ui/core";
 
 export default () => (
   <>
@@ -28,7 +28,7 @@ export default () => (
 ### 改变颜色
 
 ```jsx
-import { Calendar } from "any-ui";
+import { Calendar } from "@any_ui/core";
 
 export default () => (
   <>
@@ -40,7 +40,7 @@ export default () => (
 ### 初始模式
 
 ```jsx
-import { Calendar } from "any-ui";
+import { Calendar } from "@any_ui/core";
 
 export default () => (
   <>
@@ -52,7 +52,7 @@ export default () => (
 ### 自定义日历头部
 
 ```jsx
-import { Calendar } from "any-ui";
+import { Calendar } from "@any_ui/core";
 
 export default () => (
   <>

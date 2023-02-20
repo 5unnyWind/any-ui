@@ -16,7 +16,7 @@ group:
 ### 基础使用
 
 ```jsx
-import { Switch } from "any-ui";
+import { Switch } from "@any_ui/core";
 
 const onClick = (ischecked: boolean) => {
   console.log(ischecked);
@@ -44,7 +44,7 @@ export default () => (
 ### 更换颜色
 
 ```jsx
-import { Switch } from "any-ui";
+import { Switch } from "@any_ui/core";
 
 export default () => (
   <>
@@ -56,7 +56,7 @@ export default () => (
 ### 更换长度
 
 ```jsx
-import { Switch } from "any-ui";
+import { Switch } from "@any_ui/core";
 
 export default () => (
   <>
@@ -68,7 +68,7 @@ export default () => (
 ### 加入文本
 
 ```jsx
-import { Switch } from "any-ui";
+import { Switch } from "@any_ui/core";
 
 export default () => (
   <>
