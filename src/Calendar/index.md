@@ -18,9 +18,17 @@ group:
 ```jsx
 import { Calendar } from "@any_ui/core";
 
+const onClick = (day: Date) => {
+  console.log(day);
+};
+
+const onClick2 = (month: number) => {
+  console.log(month);
+};
+
 export default () => (
   <>
-    <Calendar></Calendar>
+    <Calendar dayOnClick={onClick} monthOnClick={onClick2}></Calendar>
   </>
 );
 ```
