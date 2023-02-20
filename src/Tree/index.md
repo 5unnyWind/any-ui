@@ -7,9 +7,11 @@ group:
   title: 数据展示：
 ---
 
-# Tree
+# Tree 树形控件
 
-normal
+多层次的结构列表。
+
+### 基础使用
 
 ```jsx
 import { Tree } from "@any_ui/core";
@@ -46,9 +48,7 @@ export default () => {
 };
 ```
 
-# Tree
-
-checkbox
+### 选择框
 
 ```jsx
 import { Tree } from "@any_ui/core";

@@ -7,7 +7,7 @@ group:
   title: 数据展示：
 ---
 
-# Card
+# Card 卡片
 
 通用卡片容器
 
@@ -20,7 +20,7 @@ export default () => (
       title="Card title"
       style={{ width: 300 }}
       bordered={true}
-      headStyle={{ color: "yellow" }}
+      headStyle={{ color: "skyblue" }}
       bodyStyle={{ color: "red" }}
       extra={<a href="#">More</a>}
     >
@@ -45,3 +45,15 @@ export default () => (
   </>
 );
 ```
+
+## Card API
+
+|   参数    |         说明         |      类型       | 默认值 |
+| :-------: | :------------------: | :-------------: | :----: |
+|   title   |       卡片标题       |   `ReactNode`   |   --   |
+|   style   |     指定按钮大小     |    `String`     |   sm   |
+| bordered  |      是否有边框      |    `boolean`    |   --   |
+| headStyle |  自定义标题区域样式  | `CSSProperties` |   --   |
+| bodyStyle |  内容区域自定义样式  | `CSSProperties` |   --   |
+|   extra   | 卡片右上角的操作区域 |   `ReactNode`   |   --   |
+|   cover   |       卡片封面       |   `ReactNode`   |   --   |

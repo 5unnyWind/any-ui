@@ -4,10 +4,10 @@
 nav:
   title: 组件
 group:
-  title: 数据展示：
+  title: 基础组件：
 ---
 
-# Switch
+# Switch 开关
 
 通用开关组件
 

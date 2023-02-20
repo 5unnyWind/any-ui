@@ -7,9 +7,9 @@ group:
   title: 数据展示：
 ---
 
-# Calendar
+# Calendar 日历
 
-通用日历组件
+按照日历形式展示数据的容器。
 
 ## 示例
 
