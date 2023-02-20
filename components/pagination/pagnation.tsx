@@ -5,6 +5,7 @@ import type {
 } from "rc-pagination";
 import RcPagination from "rc-pagination";
 import classnames from "classnames";
+import "./style/index.scss";
 
 const DOST = "•••";
 

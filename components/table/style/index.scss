@@ -1,46 +1,45 @@
 @import "../../theme/themes/default/index";
-table {
+.ai-table {
   width: 100%;
   position: relative;
   text-align: start;
   border-radius: 8px 8px 0 0;
   border-collapse: separate;
   border-spacing: 0;
-}
 
-thead tr th {
-  background-color: #fafafa;
-  position: relative;
-  color: rgba(0, 0, 0, 0.88);
-  font-weight: $font-weight-bold;
-  text-align: start;
-  border-bottom: 1px solid #f0f0f0;
-  transition: background 0.2s ease;
-}
+  .ai-table-column {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+  }
 
-tr {
-  display: table-row;
-  vertical-align: inherit;
-  border-color: inherit;
-}
+  .ai-table-thead .ai-table-column .ai-table-column-content {
+    background-color: #fafafa;
+    position: relative;
+    color: rgba(0, 0, 0, 0.88);
+    font-weight: $font-weight-bold;
+    text-align: start;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background 0.2s ease;
+  }
 
-tbody tr th {
-  font-weight: $font-weight-light;
-  transition: background 0.2s, border-color 0.2s;
-  border-bottom: 1px solid #f0f0f0;
-  position: relative;
-  padding: 16px;
-  overflow-wrap: break-word;
-}
+  .ai-table-tbody .ai-table-container .ai-table-content {
+    font-weight: $font-weight-light;
+    transition: background 0.2s, border-color 0.2s;
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+    padding: 16px;
+    overflow-wrap: break-word;
+  }
 
-tbody tr:nth-child(even) {
-  background-color: #fafafa;
-}
+  .ai-table-content .ai-table-column-content {
+    padding: 8px;
+    overflow-wrap: break-word;
+  }
 
-th,
-td {
-  padding: 8px;
-  overflow-wrap: break-word;
+  .ai-table-tbody .ai-table-container:nth-child(even) {
+    background-color: #fafafa;
+  }
 }
 
 .pagination-bar {
