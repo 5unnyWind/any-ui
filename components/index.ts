@@ -15,3 +15,5 @@ export { default as Select } from "./select";
 export { default as List } from "./list";
 export { default as Modal } from "./modal/modal";
 export { default as Drawer } from "./drawer/drawer";
+export { default as Pagination } from "./pagination"
+export { default as Table } from "./table";

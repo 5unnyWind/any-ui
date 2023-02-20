@@ -1,0 +1,278 @@
+@import "../../theme/themes/default/index";
+
+.ai-pagination {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.88);
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  list-style: none;
+
+  li {
+    display: inline-block;
+    position: relative;
+    min-width: 35px;
+    height: 35px;
+    margin-inline-end: 8px;
+    font-weight: $font-weight-normal;
+    line-height: $line-height-base;
+    text-align: center;
+    vertical-align: middle;
+    list-style: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    outline: 0;
+    cursor: pointer;
+    user-select: none;
+    box-sizing: border-box;
+  }
+
+  button:disabled {
+    cursor: not-allowed;
+  }
+
+  /*分页器样式*/
+  .ai-pagination-item {
+    display: inline-block;
+    position: relative;
+    min-width: 32px;
+    height: 32px;
+    margin-inline-end: 8px;
+    font-weight: $font-weight-normal;
+    line-height: $line-height-base;
+    text-align: center;
+    vertical-align: middle;
+    list-style: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    outline: 0;
+    cursor: pointer;
+    user-select: none;
+    box-sizing: border-box;
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: $gray-300;
+    }
+
+    a {
+      display: inline-block;
+      line-height: $line-height-sm;
+      text-align: center;
+      vertical-align: middle;
+      overflow: hidden;
+      padding: 0 6px;
+      color: rgba(0, 0, 0, 0.88);
+      transition: none;
+    }
+  }
+
+  /*分页按钮上一页样式*/
+  .ai-pagination-prev {
+    display: inline-block;
+    min-width: 32px;
+    height: 32px;
+    text-align: center;
+    vertical-align: middle;
+    list-style: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.88);
+    line-height: $line-height-base;
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: $gray-300;
+    }
+  }
+
+  /*分页按钮下一页样式*/
+  .ai-pagination-next {
+    display: inline-block;
+    min-width: 32px;
+    height: 32px;
+    text-align: center;
+    vertical-align: middle;
+    list-style: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.88);
+    line-height: $line-height-base;
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: $gray-300;
+    }
+  }
+
+  /*跳转键样式*/
+  .ai-pagination-item-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    font-size: 17px;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    outline: none;
+    transition: border .2s;
+  }
+
+  /*跳转图标*/
+  .ai-pagination-icon {
+    display: inline-flex;
+    align-items: center;
+    color: inherit;
+    font-style: normal;
+    line-height: 0;
+    text-align: center;
+    text-transform: none;
+    vertical-align: -.125em;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /*当前页样式*/
+  .ai-pagination-item-active {
+    font-weight: $font-weight-bold - 150;
+    background-color: $white;
+    border-color: $blue;
+
+    &:hover {
+      background-color: $white;
+      border-color: #094ebd;
+    }
+
+    a {
+      color: $blue;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  /*快速跳转*/
+  .ai-pagination-item-ellipsis {
+    position: absolute;
+    top: 0;
+    inset-inline-end: 0;
+    bottom: 0;
+    inset-inline-start: 0;
+    display: block;
+    margin: auto;
+    color: rgba(0,0,0,.25);
+    font-family: Arial,Helvetica,sans-serif;
+    letter-spacing: 2px;
+    text-align: center;
+    text-indent: .13em;
+    opacity: 1;
+    transition: all .2s;
+  }
+
+  /*分页器菜单样式*/
+  .ai-pagination-options {
+    .ai-pagination-options-quick-jumper {
+      display: inline-block;
+      height: 32px;
+      margin-inline-start: 8px;
+      line-height: $line-height-base;
+      vertical-align: top;
+
+      input {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        min-width: 0;
+        padding: 4px 11px;
+        color: rgba(0, 0, 0, 0.88);
+        font-size: $font-size-sm;
+        line-height: $line-height-base;
+        background-color: $white;
+        background-image: none;
+        border-width: 1px;
+        border-style: solid;
+        border-color: $gray-400;
+        border-radius: 6px;
+        transition: all 0.2s;
+        height: 32px;
+        box-sizing: border-box;
+        margin: 0;
+        margin-inline-start: 8px;
+        margin-inline-end: 8px;
+
+        &:focus {
+          border-color: $blue;
+          box-shadow: 0 0 0 2px rgba(5, 145, 255, 0.1);
+          border-inline-end-width: 1px;
+          outline: 0;
+        }
+
+        &:hover {
+          border-color: blue;
+          border-inline-end-width: 1px;
+        }
+      }
+    }
+  }
+}
+
+.ai-pagination-simple {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.88);
+  font-size: 14px;
+  line-height: 30px;
+  list-style: none;
+
+  .ai-pagination-simple-pager {
+    display: inline-block;
+    height: inherit;
+    min-height: 24px;
+    margin-inline-end: 8px;
+
+    input {
+      box-sizing: border-box;
+      height: 100%;
+      margin-inline-end: 8px;
+      padding: 0 6px;
+      text-align: center;
+      background-color: $white;
+      border-radius: 6px;
+      outline: none;
+      transition: border-color 0.2s;
+      color: inherit;
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      min-width: 0;
+      font-size: $font-size-sm;
+      line-height: $line-height-base;
+      background-image: none;
+      border: 1px solid $gray-400;
+      margin-inline-start: 8px;
+      &:focus {
+        border-color: #4096ff;
+        box-shadow: 0 0 0 2px rgba(5, 145, 255, 0.1);
+      }
+
+      &:hover {
+        border-color: $blue;
+      }
+    }
+  }
+
+  .ai-pagination-slash {
+    margin-inline-end: 12px;
+    margin-inline-start: 4px;
+  }
+}
