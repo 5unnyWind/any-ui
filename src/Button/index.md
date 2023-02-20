@@ -9,10 +9,10 @@ group:
 
 # Button
 
-用于触发一个操作
+用于触发一个按钮点击操作
 
 ```jsx
-import { Button } from "any-ui";
+import { Button } from "@any_ui/core";
 
 export default () => (
   <>
@@ -22,3 +22,17 @@ export default () => (
   </>
 );
 ```
+
+## Button API
+
+|   参数    |                  说明                   |    参数    |       类型        | 默认值 |
+| :-------: | :-------------------------------------: | :--------: | :---------------: | :----: |
+|   lebel   |              按钮内容信息               |     --     |     `String`      |   --   |
+|   size    |              指定按钮大小               | `sm md lg` |     `String`      |   sm   |
+|   color   |                颜色类型                 |     --     |     `String`      |   --   |
+|   wave    |                 水波纹                  |     --     |     `Boolean`     | false  |
+| disabled  |                  禁用                   |     --     |     `Boolean`     | false  |
+| children  | 可以传入子组件，但 label 有更高的优先级 |     --     | `React.ReactNode` |   --   |
+|  padding  |                 内边距                  |     --     |     `String`      |   --   |
+| textColor |                字体颜色                 |     --     |     `String`      |   --   |
+|  glossy   |                 渐变色                  |     --     |     `String`      |   --   |

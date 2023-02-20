@@ -8,8 +8,8 @@ hero:
   actions:
     - text: 开始
       link: /guide
-    - text: github
-      link: https://github.com/5unnyWind/any-ui
+    - text: 组件
+      link: /components/badge
 features:
   - title: 开箱即用
     emoji: 💎

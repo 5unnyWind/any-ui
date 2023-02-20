@@ -32,7 +32,7 @@ export default () => (
 ### 禁止状态
 
 ```jsx
-import { Switch } from "any-ui";
+import { Switch } from "@any_ui/core";
 
 export default () => (
   <>

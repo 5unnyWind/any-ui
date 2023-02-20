@@ -18,7 +18,7 @@ group:
 ### 基础使用
 
 ```jsx
-import { Menu } from "any-ui";
+import { Menu } from "@any_ui/core";
 
 const items = [
   { label: "主页", index: "0" },
@@ -41,7 +41,7 @@ export default () => (
 ### 禁止菜单
 
 ```jsx
-import { Menu } from "any-ui";
+import { Menu } from "@any_ui/core";
 
 const items = [
   { label: "主页", index: "0" },
@@ -66,7 +66,7 @@ export default () => (
 默认功能为自定义功能
 
 ```jsx
-import { Menu } from "any-ui";
+import { Menu } from "@any_ui/core";
 
 const link = (
   <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
@@ -95,7 +95,7 @@ export default () => (
 ### 菜单图标及自定义
 
 ```jsx
-import { Menu } from "any-ui";
+import { Menu } from "@any_ui/core";
 
 const myIcon = <span>￥￥</span>;
 
@@ -120,7 +120,7 @@ export default () => (
 ### 自定义点击事件和子菜单
 
 ```jsx
-import { Menu } from "any-ui";
+import { Menu } from "@any_ui/core";
 
 const onClick: MenuProps["onClick"] = (e) => {
   console.log("click ", e);
@@ -232,7 +232,7 @@ export default () => (
 ### 垂直菜单
 
 ```jsx
-import { Menu } from "any-ui";
+import { Menu } from "@any_ui/core";
 
 const onClick: MenuProps["onClick"] = (e) => {
   console.log("click ", e);
@@ -336,11 +336,15 @@ const items = [
   },
 ];
 
+const style = {
+  width: "200px",
+};
+
 export default () => (
   <>
     <div>
       <div style={{ width: "600px" }}>
-        <Menu items={items} onClick={onClick} mode="vertical" />
+        <Menu items={items} onClick={onClick} mode="vertical" width="100" />
       </div>
     </div>
   </>
@@ -354,6 +358,7 @@ export default () => (
 |  items  |                 传入的菜单数组                  |       `ItemType[]`       |     --     |
 |  mode   | 菜单类型（水平 _horizontal_ 和垂直 _vertical_） |      `MenuModeType`      | horizontal |
 | onClick |             点击事件触发的回调函数              | `(key?: string) => void` |     --     |
+|  width  |      菜单宽度（只在 vertical 模式下使用）       |    `string / number`     |   10rem    |
 
 ## `ItemType`
 

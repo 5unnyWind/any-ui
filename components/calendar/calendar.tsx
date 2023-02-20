@@ -1,3 +1,4 @@
+//@ts-nocheck
 import React, { memo, useMemo, useState } from "react";
 import type { FC, ReactNode } from "react";
 import {
@@ -12,7 +13,7 @@ import dateFnsIsToday from "date-fns/isToday";
 import getMonth from "date-fns/getMonth";
 import getYear from "date-fns/getYear";
 import isSameDay from "date-fns/isSameDay";
-import "./style/index.scss";
+// import "./style/index.scss";
 import classNames from "classnames";
 
 export type CalendarType = "month" | "year";

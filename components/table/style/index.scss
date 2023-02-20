@@ -1,0 +1,50 @@
+@import "../../theme/themes/default/index";
+table {
+  width: 100%;
+  position: relative;
+  text-align: start;
+  border-radius: 8px 8px 0 0;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+thead tr th {
+  background-color: #fafafa;
+  position: relative;
+  color: rgba(0, 0, 0, 0.88);
+  font-weight: $font-weight-bold;
+  text-align: start;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.2s ease;
+}
+
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+
+tbody tr th {
+  font-weight: $font-weight-light;
+  transition: background 0.2s, border-color 0.2s;
+  border-bottom: 1px solid #f0f0f0;
+  position: relative;
+  padding: 16px;
+  overflow-wrap: break-word;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+th,
+td {
+  padding: 8px;
+  overflow-wrap: break-word;
+}
+
+.pagination-bar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

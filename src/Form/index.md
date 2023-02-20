@@ -12,7 +12,7 @@ group:
 通用卡片容器
 
 ```jsx
-import { Form, Button, Field, Input } from "any-ui";
+import { Form, Button, Field, Input } from "@any_ui/core";
 import React, { useEffect } from "react";
 const nameRules = { required: true, message: "请输入姓名！" };
 const passworRules = { required: true, message: "请输入密码！" };

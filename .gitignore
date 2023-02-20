@@ -1,3 +1,4 @@
+.npmrc
 
 # dependencies
 /node_modules
@@ -8,8 +9,9 @@
 /coverage
 
 # production
-/build
-/dist
+build
+dist
+esm
 docs-dist
 
 

@@ -1,6 +1,6 @@
+//@ts-nocheck
 import React, { memo, useState } from "react";
 import classNames from "classnames";
-import "./style/index.scss";
 
 export type SwitchClickEventHandler = (ischecked: boolean) => void;
 
