@@ -36,7 +36,7 @@ const MenuItem: React.FC<ItemType> = (props) => {
         <MenuDivider icon={icon} />
         <span className={classNames(`ai-menu-item-text`)}>{label}</span>
         {mode !== "horizontal" && children && children.length !== 0 && (
-          <div className="ai-menu-item-status">→</div>
+          <div className="ai-menu-item-status">＞</div>
         )}
       </div>
       {/* 判断子集 */}
