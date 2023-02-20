@@ -16,7 +16,7 @@
     "preinstall": "npx -y only-allow pnpm",
     "build:clear": "npx rimraf ./dist ./esm",
     "build:webpack": "webpack --progress",
-    "test-unit": "jest --watch",
+    "test": "jest --watchAll --config ./jest.config.js",
     "prepare": "husky install",
     "lint:style": "stylelint --fix \"src/**/*.{css,scss}\"",
     "release": "pnpm build && npm publish --access public",
