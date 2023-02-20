@@ -152,9 +152,6 @@
 
     .ai-menu-submenu {
       transform: translate(105%, -50%);
-
-      .ai-menu-submenu-vertical {
-      }
     }
 
     &:not(.ai-menu-disabled):hover {
@@ -186,6 +183,7 @@
       .ai-menu-item-status {
         float: right;
         margin-right: 1rem;
+        font-weight: bold;
       }
     }
   }
