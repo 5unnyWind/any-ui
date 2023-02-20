@@ -4,7 +4,7 @@ description: 一套用于构建现代 Web 应用的开源设计敏捷方案 # �
 keywords: ["组件库", "组件", "any", "any ui", "components", "react components"] # 配置页面关键词，同时用于生成 <meta> 标签
 hero:
   title: ANY UI
-  description: 一套用于构建现代 Web 应用的开源设计敏捷方案
+  description: 一套用于构建现代 Web 应用的开源设计敏捷方案。
   actions:
     - text: 开始
       link: /guide
@@ -17,7 +17,7 @@ features:
   - title: 自由定制
     emoji: 🌈
     description: 应对灵活场景展现个性
-  - title: 便捷
+  - title: 方便快捷
     emoji: 🚀
     description: 致力于提升开发效率
 ---
