@@ -2,6 +2,8 @@
 import React, { memo, useState } from "react";
 import classNames from "classnames";
 
+export type SwitchClickEventHandler = (ischecked: boolean) => void;
+
 interface BaseSwitchProps {
   className?: string; // 接受用户自定义类名
   disabled?: boolean; // 是否开启禁用
@@ -12,6 +14,7 @@ interface BaseSwitchProps {
   activeValue?: string; //打开值
   inactiveValue?: string; //关闭值
   children?: React.ReactNode; //传入子
+  onClick?: SwitchClickEventHandler; //点击回调
 }
 
 const Switch: React.FC<BaseSwitchProps> = (props) => {
@@ -25,25 +28,27 @@ const Switch: React.FC<BaseSwitchProps> = (props) => {
     activeValue,
     inactiveValue,
     children,
+    onClick,
   } = props;
 
-  const [ischeckout, setischeckout] = useState(defaultChecked);
+  const [ischecked, setischecked] = useState(defaultChecked);
 
   const handleClick = () => {
     if (!disabled) {
-      setischeckout(!ischeckout);
+      setischecked(!ischecked);
     }
+    onClick ? onClick(ischecked as boolean) : "";
   };
 
   const switchclasses = classNames("switch", className, {
     disabled: disabled,
   });
 
-  const spanClasses = classNames("core", ischeckout ? "on" : "off", {
+  const spanClasses = classNames("core", ischecked ? "on" : "off", {
     disabled: disabled,
   });
 
-  const spanValueClasses = classNames("switchValue", ischeckout ? "on" : "off");
+  const spanValueClasses = classNames("switchValue", ischecked ? "on" : "off");
 
   return (
     <div
@@ -58,9 +63,9 @@ const Switch: React.FC<BaseSwitchProps> = (props) => {
       <span className={spanClasses} onClick={handleClick}></span>
       <span className={spanValueClasses}>
         <span>
-          {activeValue && ischeckout
+          {activeValue && ischecked
             ? activeValue
-            : inactiveValue && !ischeckout
+            : inactiveValue && !ischecked
             ? inactiveValue
             : children}
         </span>

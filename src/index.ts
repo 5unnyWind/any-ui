@@ -16,4 +16,5 @@ export {
   Drawer,
   Pagination,
   Table,
+  Calendar,
 } from "../components/index";

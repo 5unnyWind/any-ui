@@ -1,5 +1,4 @@
-// @ts-ignore
-import chunk from "lodash";
+import chunk from "lodash/chunk";
 import startOfWeek from "date-fns/startOfWeek";
 import addDays from "date-fns/addDays";
 import setDay from "date-fns/setDay";
