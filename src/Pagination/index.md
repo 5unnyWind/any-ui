@@ -12,7 +12,7 @@ group:
 ## 基础
 
 ```jsx
-import { Pagination } from "any-ui";
+import { Pagination } from "@any_ui/core";
 
 const totalDemo = 50;
 
@@ -26,7 +26,7 @@ export default () => (
 ## 更多
 
 ```jsx
-import { Pagination } from "any-ui";
+import { Pagination } from "@any_ui/core";
 
 const moreTotal = 500;
 
@@ -40,7 +40,7 @@ export default () => (
 ## 跳转
 
 ```jsx
-import { Pagination } from "any-ui";
+import { Pagination } from "@any_ui/core";
 
 const moreTotal = 500;
 
@@ -54,7 +54,7 @@ export default () => (
 ## 简洁
 
 ```jsx
-import { Pagination } from "any-ui";
+import { Pagination } from "@any_ui/core";
 
 const moreTotal = 500;
 

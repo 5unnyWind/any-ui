@@ -12,7 +12,7 @@ group:
 表格
 
 ```jsx
-import { Table } from "any-ui";
+import { Table } from "@any_ui/core";
 import dataSource from "../../components/table/demo/mock.json";
 
 export default () => (
