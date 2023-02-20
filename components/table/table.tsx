@@ -3,8 +3,19 @@ import Pagination from "./pagination";
 import { useEffect, useMemo, useState } from "react";
 import { useFilter } from "./hook/useFilter";
 import "./style/index.scss";
+import classnames from "classnames";
 
-const Table = ({ dataSource, showSorterTooltip }: any) => {
+export interface TableProps {
+  dataSource: object[];
+  showSorterTooltip?: boolean;
+  prefixCls: string;
+}
+
+const Table = ({
+  dataSource,
+  showSorterTooltip,
+  prefixCls = "ai",
+}: TableProps) => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [columnName, setColumnName] = useState<string[]>(["null"]);
   const [showTableFilter, setShowTableFilter] = useState<boolean>(false);
@@ -32,9 +43,9 @@ const Table = ({ dataSource, showSorterTooltip }: any) => {
 
   return (
     <>
-      <table>
-        <thead>
-          <tr>
+      <table className={`${prefixCls}-table`}>
+        <thead className={`${prefixCls}-table-thead`}>
+          <tr className={`${prefixCls}-table-column`}>
             {columnName!.map((key: string) => {
               if (showTableFilter) {
                 const target = key;
@@ -42,10 +53,12 @@ const Table = ({ dataSource, showSorterTooltip }: any) => {
                 const { ascData, descData } = useFilter({ dataSource, target });
 
                 return (
-                  <th key={key}>
-                    <div className={"table-column-sorters"}>
-                      <span className={"table-column-title"}>{key}</span>
-                      <span className={"table-column-sorter"}>
+                  <th className={`${prefixCls}-table-column-content`} key={key}>
+                    <div className={`${prefixCls}-table-column-sorters`}>
+                      <span className={`${prefixCls}-table-column-title`}>
+                        {key}
+                      </span>
+                      <span className={`${prefixCls}-table-column-sorter`}>
                         <span className={"caret-up"} onClick={ascData()}>
                           w
                         </span>
@@ -58,17 +71,23 @@ const Table = ({ dataSource, showSorterTooltip }: any) => {
                 );
               }
 
-              return <th key={key}>{key}</th>;
+              return (
+                <th className={`${prefixCls}-table-column-content`} key={key}>
+                  {key}
+                </th>
+              );
             })}
           </tr>
         </thead>
-        <tbody>
+        <tbody className={`${prefixCls}-table-tbody`}>
           {currentTableData.map((item: any) => {
             const values = Object.values(item);
             return (
-              <tr key={item.id}>
+              <tr className={`${prefixCls}-table-container`} key={item.id}>
                 {values.map((el: string | number, idx) => (
-                  <th key={idx}>{el}</th>
+                  <th className={`${prefixCls}-table-content`} key={idx}>
+                    {el}
+                  </th>
                 ))}
               </tr>
             );
