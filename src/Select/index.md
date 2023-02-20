@@ -7,9 +7,10 @@ group:
   title: 数据录入：
 ---
 
-# Select
+# Select 选择器
 
-**选择器尺寸**
+### 选择器尺寸
+
 选择器有大、中、小三种尺寸。
 通过设置 size 为 lg sm 分别把选择器设为大、小尺寸。若不设置 size，则尺寸为中。
 
@@ -33,22 +34,29 @@ const options = [
 export default function App() {
   return (
     <div>
-      <h2>大</h2>
+      <h3>大</h3>
       <Select
         placeholder={"choose a fruit"}
         options={options}
         size="lg"
       ></Select>
-      <h2>中</h2>
+
+      <h3>中</h3>
       <Select placeholder={"choose a fruit"} options={options}></Select>
-      <h2>小</h2>
-      <Select placeholder={"选择一种水果"} options={options} size="sm"></Select>
+
+      <h3>小</h3>
+      <Select
+        placeholder={"choose a fruit"}
+        options={options}
+        size="sm"
+      ></Select>
     </div>
   );
 }
 ```
 
-**多选选择器**
+### 多选选择器
+
 通过设置 mode="mutiple"将选择器设置为多选选择器，若不设置则默认为单选。
 
 ```jsx
@@ -82,7 +90,8 @@ export default function App() {
 }
 ```
 
-**禁用属性**
+### 禁用属性
+
 通过设置 disabled 将选择器设置为禁用，若不设置则默认为 false。
 
 ```jsx
@@ -113,3 +122,11 @@ export default function App() {
   );
 }
 ```
+
+## Button API
+
+|    参数     |     说明     |    参数    |   类型   | 默认值 |
+| :---------: | :----------: | :--------: | :------: | :----: |
+| placeholder | 按钮内容信息 |     --     | `String` |   --   |
+|   options   | 指定按钮大小 | `sm md lg` | `String` |   sm   |
+|  disabled   |   颜色类型   |     --     | `String` |   --   |

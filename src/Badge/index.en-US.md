@@ -1,10 +1,8 @@
 ---
-# title: 自定义页面名称
-# order: 控制页面顺序，数字越小越靠前，默认以路径长度和字典序排序
 nav:
-  title: 组件
+  title: Components
 group:
-  title: 数据展示：
+  title: Data Display：
 ---
 
 # Badge

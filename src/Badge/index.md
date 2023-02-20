@@ -7,7 +7,7 @@ group:
   title: 数据展示：
 ---
 
-# Badge
+# Badge 徽标
 
 显示一个需要注意的指标
 

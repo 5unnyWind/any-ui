@@ -7,7 +7,7 @@ group:
   title: 数据展示：
 ---
 
-# Table
+# Table 表格
 
 表格
 
@@ -22,3 +22,9 @@ export default () => (
   </>
 );
 ```
+
+## Switch API
+
+|    参数    |   说明   |    类型    | 默认值 |
+| :--------: | :------: | :--------: | :----: |
+| dataSource | 数据数组 | `object[]` |   --   |

@@ -17,7 +17,7 @@ features:
   - title: 自由定制
     emoji: 🌈
     description: 应对灵活场景展现个性
-  - title: 快
+  - title: 便捷
     emoji: 🚀
     description: 致力于提升开发效率
 ---
