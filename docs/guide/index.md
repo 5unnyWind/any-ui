@@ -1,6 +1,6 @@
 ---
 nav:
-  title: 指北
+  title: 指导
   order: -1
 group:
   title: 介绍
@@ -20,6 +20,7 @@ yarn add @any_ui/core
 # or
 pnpm add @any_ui/core
 ```
+
 <br/>
 
 ```js
@@ -33,8 +34,6 @@ export default () => (
 );
 ```
 
-
 ## 问题反馈
 
 如果在使用过程中发现任何问题、或者有改善建议，欢迎在 GitHub Issues 进行反馈：https://github.com/5unnyWind/any-ui/issues
-

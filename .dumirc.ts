@@ -7,7 +7,7 @@ export default defineConfig({
     logo: "https://any-ui.oss-cn-hangzhou.aliyuncs.com/logo2.png",
     nav: {
       "zh-CN": [
-        { title: "指北", link: "/guide" },
+        { title: "指导", link: "/guide" },
         { title: "组件", link: "/components/badge" },
       ],
       "en-US": [

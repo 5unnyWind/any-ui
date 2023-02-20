@@ -1,6 +1,6 @@
 ---
 nav:
-  title: 指北
+  title: 指导
   order: -1
 group:
   title: 定制化
@@ -9,4 +9,4 @@ group:
 
 # 主题
 
- 正在迭代中...
+正在迭代中...
