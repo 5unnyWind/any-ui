@@ -41,3 +41,30 @@ export default () => (
   </>
 );
 ```
+
+## Badge API
+
+|   参数    |        说明        |       类型        | 默认值  |
+| :-------: | :----------------: | :---------------: | :-----: |
+|   type    |        类型        |   `BadgeTypes`    | default |
+| children  |      徽标内容      | `React.ReactNode` |   --    |
+|    dot    | 将内容渲染为省略号 |     `Boolean`     |  false  |
+| className |     自定义样式     |     `String`      |   --    |
+
+`BadgeTypes` = "default" | "secondary" | "success" | "warning" | "error"
+
+<br/>
+
+## Badge.Anchor API
+
+|   参数    |        说明        |          类型          |  默认值  |
+| :-------: | :----------------: | :--------------------: | :------: |
+| placement |      锚点位置      | `BadgeAnchorPlacement` | topRight |
+|   type    |        类型        |        `String`        | default  |
+| children  |      徽标内容      |   `React.ReactNode`    |    --    |
+|    dot    | 将内容渲染为省略号 |       `Boolean`        |  false   |
+| className |     自定义样式     |        `String`        |    --    |
+
+`BadgeAnchorPlacement` = "topLeft" | "topRight" | "bottomLeft" | "bottomRight"
+
+<br/>

@@ -7,9 +7,9 @@ hero:
   description: An open-source design agile approach for building modern web applications
   actions:
     - text: start
-      link: /guide
-    - text: github
-      link: https://github.com/5unnyWind/any-ui
+      link: /en-US/guide
+    - text: components
+      link: /components/badge
 features:
   - title: Out of the box
     emoji: 💎

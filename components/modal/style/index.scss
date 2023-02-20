@@ -1,0 +1,93 @@
+.ai-modal-btn {
+  margin-left: 20px;
+  display: block;
+  border-radius: 6px;
+  height: 40px;
+  background-color: rgb(18, 94, 246);
+  color: aliceblue;
+  border: none;
+  outline: none;
+  &:hover {
+    background-color: rgb(68, 119, 220);
+  }
+  &:focus {
+    outline: none;
+  }
+}
+.ai-modal-shade {
+  width: calc(100vw) !important;
+  height: calc(100vh) !important;
+  top: 0;
+  left: 0;
+  background-color: rgba(173, 171, 171, 0.439) !important;
+  z-index: 10;
+  position: fixed !important;
+}
+.ai-modal-notiBox {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(35vw);
+  padding-bottom: 40px;
+  background-color: #fff;
+  position: absolute;
+  z-index: 11;
+}
+.ai-modal-innerBox {
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 360px;
+  height: 180px;
+  background-color: #fff;
+}
+.ai-modal-none {
+  display: none;
+}
+.ai-modal-title {
+  display: inline-block;
+  font-weight: bold;
+  font-size: large;
+}
+.ai-modal-closeBtn {
+  border: 0 none;
+  float: right;
+  background-color: #fff;
+  color: rgb(191, 189, 189);
+  border-radius: 4px;
+  &:hover {
+    background-color: rgb(237, 235, 235);
+    color: black;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+.ai-modal-cancelBtn,
+.ai-modal-confirmBtn {
+  float: right;
+  border-radius: 4px;
+  width: 60px;
+  height: 30px;
+  &:focus {
+    outline: none;
+  }
+}
+.ai-modal-cancelBtn {
+  margin-right: 10px;
+  color: rgb(18, 94, 246);
+  background-color: #fff;
+  border: 1px solid rgb(18, 94, 246);
+  &:hover {
+    background-color: rgb(18, 94, 246);
+    color: #fff;
+  }
+}
+.ai-modal-confirmBtn {
+  color: #fff;
+  border: 1px solid rgb(18, 94, 246);
+  background-color: rgb(18, 94, 246);
+  &:hover {
+    background-color: rgb(68, 119, 220);
+    border: 1px solid rgb(68, 119, 220);
+  }
+}

@@ -12,4 +12,8 @@ export {
   Breadcrumb,
   Select,
   List,
+  Modal,
+  Drawer,
+  Pagination,
+  Table,
 } from "../components/index";

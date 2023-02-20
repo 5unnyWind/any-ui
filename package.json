@@ -1,6 +1,6 @@
 {
   "name": "@any_ui/core",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "main": "dist/index.js",
   "module": "esm/index.js",
   "types": "esm/index.d.ts",
@@ -17,10 +17,10 @@
     "build:clear": "rm -rf ./dist ./esm",
     "build:webpack": "webpack --progress",
     "test": "jest --watch ",
-    "eject": "react-scripts eject",
     "prepare": "husky install",
     "lint:style": "stylelint --fix \"src/**/*.{css,scss}\"",
-    "release": "pnpm build && npm publish --access public"
+    "release": "pnpm build && npm publish --access public",
+    "chore": "chmod +x ./scripts/chore.sh && ./scripts/chore.sh"
   },
   "license": "MIT",
   "description": "An open-source design agile approach for building modern web applications.",
@@ -64,6 +64,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.20.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "classnames": "^2.3.2",
     "cross-env": "^7.0.3",
     "date-fns": "^2.29.3",
@@ -75,8 +77,6 @@
     "rc-field-form": "^1.27.3",
     "rc-upload": "^4.3.4",
     "rc-util": "^5.27.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
     "react-loading": "^2.0.3",
     "react-router-dom": "^6.8.0",
@@ -139,8 +139,6 @@
     "prettier": "^2.8.2",
     "prettier-plugin-organize-imports": "^3.0.0",
     "prettier-plugin-packagejson": "^2.2.18",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
     "rollup": "^3.17.0",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-local-resolve": "^1.0.7",
@@ -160,10 +158,6 @@
     "webpack-bundle-analyzer": "^4.7.0",
     "webpack-cli": "^5.0.1",
     "webpack-merge": "^5.8.0"
-  },
-  "peerDependencies": {
-    "react": ">=16.9.0",
-    "react-dom": ">=16.9.0"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
