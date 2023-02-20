@@ -26,9 +26,22 @@ const onClick2 = (month: number) => {
   console.log(month);
 };
 
+const onChange = (day: Date) => {
+  console.log(day);
+};
+
+const onChange2 = (month: number) => {
+  console.log(month);
+};
+
 export default () => (
   <>
-    <Calendar dayOnClick={onClick} monthOnClick={onClick2}></Calendar>
+    <Calendar
+      dayOnClick={onClick}
+      monthOnClick={onClick2}
+      dayOnChange={onChange}
+      monthOnChange={onChange2}
+    ></Calendar>
   </>
 );
 ```
