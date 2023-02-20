@@ -20,6 +20,7 @@ yarn add @any_ui/core
 # or
 pnpm add @any_ui/core
 ```
+
 <br/>
 
 ```js
@@ -32,7 +33,6 @@ export default () => (
   </>
 );
 ```
-
 
 ## Issues
 
