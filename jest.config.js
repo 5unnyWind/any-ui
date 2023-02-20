@@ -13,6 +13,7 @@ module.exports = {
     "^.+\\.(js|jsx)$": ["babel-jest"],
     "^.+\\.(ts|tsx)$": ["ts-jest"],
   },
+  testMatch: ["./components/**/__tests__/*.spec.tsx"],
   transformIgnorePatterns: [
     "[/\\\\]node_modules/(?!(antd)/)[/\\\\].+\\.(js|jsx|ts|tsx)$",
   ],
