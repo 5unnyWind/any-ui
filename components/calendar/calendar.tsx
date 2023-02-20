@@ -13,10 +13,14 @@ import dateFnsIsToday from "date-fns/isToday";
 import getMonth from "date-fns/getMonth";
 import getYear from "date-fns/getYear";
 import isSameDay from "date-fns/isSameDay";
-// import "./style/index.scss";
+import "./style/index.scss";
 import classNames from "classnames";
 
 export type CalendarType = "month" | "year";
+export type CalendarDayClickEventHandler = (day: Date) => void;
+export type CalendarMonthClickEventHandler = (month: number) => void;
+export type CalendarDayChangeEventHandler = (day: Date) => void;
+export type CalendarMonthChangeEventHandler = (day: Date) => void;
 
 interface BaseCalendarProps {
   calendarType?: CalendarType;
@@ -25,10 +29,25 @@ interface BaseCalendarProps {
   day?: Date;
   color?: string;
   calendarHeaderName?: string;
+  dayOnClick?: CalendarDayClickEventHandler; //点击回调
+  monthOnClick?: CalendarMonthClickEventHandler;
+  dayOnChange?: CalendarDayChangeEventHandler;
+  monthOnChange?: CalendarMonthChangeEventHandler;
 }
 
 const Calendar: FC<BaseCalendarProps> = (props) => {
-  const { year, month, day, calendarType, color, calendarHeaderName } = props;
+  const {
+    year,
+    month,
+    day,
+    calendarType,
+    color,
+    calendarHeaderName,
+    dayOnClick,
+    monthOnClick,
+    dayOnChange,
+    monthOnChange,
+  } = props;
 
   const [select, setSelect] = useState(day);
   const [selectMonth, setSelectMonth] = useState((month as number) + 1);
@@ -56,14 +75,19 @@ const Calendar: FC<BaseCalendarProps> = (props) => {
     setSelect(day);
     setSelectMonth(getMonth(day) + 1);
     setSelectYear(getYear(day));
+    dayOnClick ? dayOnClick(day) : "";
+    dayOnChange ? dayOnChange(day) : "";
   };
 
   const handleClick2 = (month: number) => {
     setSelectMonth(month);
+    monthOnClick ? monthOnClick(month) : "";
+    monthOnChange ? monthOnChange(month) : "";
   };
 
   const selectMonthChange = (e: any) => {
     setSelectMonth(e.target.value);
+    monthOnChange ? monthOnChange(e.target.value) : "";
   };
 
   const selectYearChange = (e: any) => {
@@ -172,8 +196,7 @@ const Calendar: FC<BaseCalendarProps> = (props) => {
                     const isCurrentMonth =
                       _ === getMonth(new Date()) + 1 &&
                       selectYear === getYear(new Date());
-                    const isSelect = _ === (selectMonth as number);
-
+                    const isSelect = parseInt(_) === parseInt(selectMonth);
                     const btnclassnames = classNames(
                       isCurrentMonth ? "isCurrentMonth" : "notCurrentMonth",
                       isSelect ? "isSelect" : "notSelect"

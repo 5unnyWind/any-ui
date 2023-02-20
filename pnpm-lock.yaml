@@ -20,6 +20,7 @@ specifiers:
   "@testing-library/react": ^13.4.0
   "@testing-library/user-event": ^13.5.0
   "@types/jest": ^27.5.2
+  "@types/lodash": ^4.14.191
   "@types/lodash.chunk": ^4.2.7
   "@types/node": ^16.18.11
   "@types/react": ^18.0.26
@@ -99,6 +100,7 @@ specifiers:
 
 dependencies:
   "@babel/runtime": 7.20.13
+  "@types/lodash": 4.14.191
   classnames: 2.3.2
   cross-env: 7.0.3
   date-fns: 2.29.3
@@ -6758,7 +6760,6 @@ packages:
       {
         integrity: sha512-BdZ5BCCvho3EIXw6wUCXHe7rS53AIDPLE+JzwgT+OsJk53oBfbSmZZ7CX4VaRoN78N+TJpFi9QPlfIVNmJYWxQ==,
       }
-    dev: true
 
   /@types/mdast/3.0.10:
     resolution:
