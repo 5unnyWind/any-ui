@@ -1,6 +1,6 @@
 @use "sass:map";
 @import "./mixin.scss";
-.badge {
+.ai-badge {
   position: relative;
   display: inline-block;
   color: $body-color;
@@ -17,27 +17,27 @@
   box-sizing: content-box;
 }
 
-.badge-default {
+.ai-badge-default {
   @include colors($white, map-get($map: $theme-colors, $key: "primary"), none);
 }
-.badge-secondary {
+.ai-badge-secondary {
   @include colors(
     $white,
     map-get($map: $theme-colors, $key: "secondary"),
     none
   );
 }
-.badge-success {
+.ai-badge-success {
   @include colors($white, map-get($map: $theme-colors, $key: "success"), none);
 }
-.badge-warning {
+.ai-badge-warning {
   @include colors($white, map-get($map: $theme-colors, $key: "warning"), none);
 }
-.badge-error {
+.ai-badge-error {
   @include colors($white, map-get($map: $theme-colors, $key: "danger"), none);
 }
 
-.anchor {
+.ai-badge-anchor {
   position: relative;
   display: inline-flex;
   vertical-align: middle;
@@ -50,28 +50,28 @@ sup {
   z-index: 1;
 }
 
-.sup-topLeft {
+.ai-sup-topLeft {
   top: 0;
   left: 0;
   transform: translate(-50%, -50%);
   transform-origin: 0% 0%;
 }
 
-.sup-topRight {
+.ai-sup-topRight {
   top: 0;
   right: 0;
   transform: translate(50%, -50%);
   transform-origin: 100% 0%;
 }
 
-.sup-bottomLeft {
+.ai-sup-bottomLeft {
   bottom: 0;
   left: 0;
   transform: translate(-50%, 50%);
   transform-origin: 0% 100%;
 }
 
-.sup-bottomRight {
+.ai-sup-bottomRight {
   bottom: 0;
   right: 0;
   transform: translate(50%, 50%);

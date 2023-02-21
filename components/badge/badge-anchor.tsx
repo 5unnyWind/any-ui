@@ -26,9 +26,9 @@ const BadgeAnchor: React.FC<React.PropsWithChildren<BadgeAnchorProps>> = ({
   const [withoutBadgeChildren, badgeChldren] = pickChild(children, Badge);
 
   return (
-    <div className="anchor">
+    <div className="ai-badge-anchor">
       {withoutBadgeChildren}
-      <sup className={`sup-${placement}`}>{badgeChldren}</sup>
+      <sup className={`ai-sup-${placement}`}>{badgeChldren}</sup>
     </div>
   );
 };
