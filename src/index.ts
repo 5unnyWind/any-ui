@@ -14,7 +14,7 @@ export {
   List,
   Modal,
   Drawer,
-  // Pagination,
   Table,
+  Pagination,
   Calendar,
 } from "../components/index";

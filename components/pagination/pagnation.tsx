@@ -41,8 +41,8 @@ const Pagination: React.FC<PaginationConfig> = ({
   });
 
   const getIcon = () => {
-    const prevEllipsis = <span className={`${prefixCls}-icon`}>＜</span>;
-    const nextEllipsis = <span className={`${prefixCls}-icon`}>＞</span>;
+    const prevEllipsis = <span className={`${prefixCls}-icon`}>&#60;</span>;
+    const nextEllipsis = <span className={`${prefixCls}-icon`}>&#62;</span>;
     const ellipsis = (
       <span className={`${prefixCls}-item-ellipsis`}>{DOST}</span>
     );
