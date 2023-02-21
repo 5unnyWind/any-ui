@@ -13,32 +13,68 @@
     border-color: inherit;
   }
 
-  .ai-table-thead .ai-table-column .ai-table-column-content {
-    background-color: #fafafa;
+  .ai-table-column-content {
+    background-color: $white;
     position: relative;
     color: rgba(0, 0, 0, 0.88);
     font-weight: $font-weight-bold;
     text-align: start;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid $white;
     transition: background 0.2s ease;
   }
 
-  .ai-table-tbody .ai-table-container .ai-table-content {
+  .ai-table-content {
     font-weight: $font-weight-light;
     transition: background 0.2s, border-color 0.2s;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid $white;
     position: relative;
     padding: 16px;
     overflow-wrap: break-word;
   }
 
-  .ai-table-content .ai-table-column-content {
-    padding: 8px;
+  .ai-table-column-content {
+    outline: none;
+    cursor: pointer;
+    padding: 12px;
     overflow-wrap: break-word;
   }
 
-  .ai-table-tbody .ai-table-container:nth-child(even) {
-    background-color: #fafafa;
+  .ai-table-content {
+    padding: 16px;
+    overflow-wrap: break-word;
+  }
+
+  .ai-table-container:nth-child(even) {
+    background-color: $white;
+  }
+
+  .ai-table-column-sorters {
+    display: flex;
+    flex: auto;
+    align-items: center;
+    justify-content: space-between;
+
+    .ai-table-column-title {
+      position: relative;
+      z-index: 1;
+      flex: 1;
+    }
+
+    .ai-table-column-sorter {
+      margin-inline-start: 4px;
+      color: rgba(0, 0, 0, 0.29);
+      transition: color 0.3s;
+
+      .ai-table-column-sorter-inner {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+
+        .caret-down {
+          margin-top: -0.3em;
+        }
+      }
+    }
   }
 }
 
@@ -46,4 +82,44 @@
   width: 100%;
   display: flex;
   justify-content: center;
+}
+
+.ai-table-filter-form {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+
+  .ai-table-filter-form-button {
+    font-size: 16px;
+    height: 40px;
+    padding: 6.5px 20px;
+    margin: 0 12px;
+    border-radius: 8px;
+    color: $white;
+    background-color: $primary;
+    box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
+    outline: none;
+    position: relative;
+    display: inline-block;
+    font-weight: 400;
+    white-space: nowrap;
+    text-align: center;
+    background-image: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    user-select: none;
+    touch-action: manipulation;
+    line-height: 1.5714285714285714;
+
+    &:hover {
+      color: $white;
+      background-color: #4096ff;
+    }
+
+    &:active {
+      color: $white;
+      background-color: #0958d9;
+    }
+  }
 }
