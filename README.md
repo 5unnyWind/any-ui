@@ -4,7 +4,15 @@
 <img align="center" height="256" src="./public/logo2.png">
 </p>
 
-> 一套用于构建现代 Web 应用的开源设计敏捷方案
+<div align="center">
+
+一套用于构建现代 Web 应用的开源设计敏捷方案
+
+<img alt="" src="https://img.shields.io/github/actions/workflow/status/5unnywind/any-ui/npm-ci.yml?style=for-the-badge&labelColor=000000">
+<a href="https://www.npmjs.com/package/@any_ui/core">
+  <img alt="npm (scoped)" src="https://img.shields.io/npm/v/@any_ui/core?style=for-the-badge&labelColor=000000">
+</a>
+</div>
 
 <br/>
 
