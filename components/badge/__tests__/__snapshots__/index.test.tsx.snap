@@ -7,22 +7,22 @@ exports[`Badge test should render different types 1`] = `
     <div>
       <div>
         <span
-          class="badge badge-success"
+          class="ai-badge ai-badge-success"
         >
           badge
         </span>
         <span
-          class="badge badge-secondary"
+          class="ai-badge ai-badge-secondary"
         >
           badge
         </span>
         <span
-          class="badge badge-warning"
+          class="ai-badge ai-badge-warning"
         >
           badge
         </span>
         <span
-          class="badge badge-error"
+          class="ai-badge ai-badge-error"
         >
           badge
         </span>
@@ -32,22 +32,22 @@ exports[`Badge test should render different types 1`] = `
   "container": <div>
     <div>
       <span
-        class="badge badge-success"
+        class="ai-badge ai-badge-success"
       >
         badge
       </span>
       <span
-        class="badge badge-secondary"
+        class="ai-badge ai-badge-secondary"
       >
         badge
       </span>
       <span
-        class="badge badge-warning"
+        class="ai-badge ai-badge-warning"
       >
         badge
       </span>
       <span
-        class="badge badge-error"
+        class="ai-badge ai-badge-error"
       >
         badge
       </span>
@@ -113,7 +113,7 @@ exports[`Badge test should supoort text 1`] = `
   "baseElement": <body>
     <div>
       <span
-        class="badge badge-default"
+        class="ai-badge ai-badge-default"
       >
         count
       </span>
@@ -121,7 +121,7 @@ exports[`Badge test should supoort text 1`] = `
   </body>,
   "container": <div>
     <span
-      class="badge badge-default"
+      class="ai-badge ai-badge-default"
     >
       count
     </span>
