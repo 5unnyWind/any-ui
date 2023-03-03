@@ -4,7 +4,7 @@ export default defineConfig({
   outputPath: "docs-dist",
   themeConfig: {
     name: "ANY-UI",
-    logo: "https://any-ui.oss-cn-hangzhou.aliyuncs.com/logo2.png",
+    logo: "https://github.com/5unnyWind/any-ui/blob/main/public/logo2.png?raw=true",
     nav: {
       "zh-CN": [
         { title: "指南", link: "/guide" },
@@ -25,5 +25,5 @@ export default defineConfig({
     { id: "zh-CN", name: "中文" },
     { id: "en-US", name: "English" },
   ],
-  favicons: ["https://any-ui.oss-cn-hangzhou.aliyuncs.com/logo2.png"],
+  favicons: ["https://github.com/5unnyWind/any-ui/blob/main/public/logo2.png?raw=true"],
 });
