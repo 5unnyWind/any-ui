@@ -2,17 +2,17 @@ name: docs-ci
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths-ignore:
-      - "README.md"
-      - "LICENSE"
-      - "__tests__/**"
+  # push:
+  #   branches: [main]
+  #   paths-ignore:
+  #     - "README.md"
+  #     - "LICENSE"
+  #     - "__tests__/**"
 
-  pull_request:
-    types:
-      - 'opened'
-      - 'synchronize'
+  # pull_request:
+  #   types:
+  #     - 'opened'
+  #     - 'synchronize'
 
 jobs:
   build:

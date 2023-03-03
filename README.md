@@ -41,8 +41,8 @@ export default () => (
 
 ## Documentation
 
-- [中文文档](https://any-ui.ncuos.com/)
-- [Document Site](https://any-ui.ncuos.com/en-US)
+- [中文文档](https://any-ui-5unnywind.vercel.app/)
+- [Document Site](https://any-ui-5unnywind.vercel.app//en-US)
 
 <br/>
 
