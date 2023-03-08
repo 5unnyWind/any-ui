@@ -15,6 +15,7 @@ module.exports = {
     "babel-plugin-transform-scss",
     ["@babel/plugin-proposal-object-rest-spread", { loose: true }],
     ["@babel/plugin-transform-runtime", { useESModules: true }],
+    ["../plugins/add-display-name.js"],
     [
       "transform-rename-import",
       {
