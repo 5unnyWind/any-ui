@@ -7,20 +7,20 @@ input.switchInput {
 
 .switch {
   display: inline-block;
-  height: $ai-sw-width / 2;
+  height: $ai-sw-width * 0.5;
 }
 
 span.switchValue {
   display: inline-block;
-  margin-left: $ai-sw-width / 8;
-  height: $ai-sw-width / 2;
+  margin-left: $ai-sw-width * 0.125;
+  height: $ai-sw-width * 0.5;
   overflow: hidden;
   &:hover {
     cursor: pointer;
   }
   span {
     display: inline-block;
-    font-size: $ai-sw-width * 7 / 20;
+    font-size: $ai-sw-width * 7 * 0.05;
   }
 }
 

@@ -1,25 +1,25 @@
 @mixin switch-size($span-width) {
-  border-radius: $span-width / 2;
+  border-radius: $span-width * 0.5;
   width: var(--width);
-  height: $span-width / 2;
+  height: $span-width * 0.5;
 
   &:after {
-    width: $span-width * 2 / 5;
-    height: $span-width * 2 / 5;
+    width: $span-width * 2 * 0.2;
+    height: $span-width * 2 * 0.2;
   }
 
   &.off {
     &:after {
-      top: $span-width / 20;
-      left: $span-width / 20;
+      top: $span-width * 0.05;
+      left: $span-width * 0.05;
     }
   }
 
   &.on {
     &:after {
-      top: $span-width / 20;
+      top: $span-width * 0.05;
       left: 100%;
-      margin-left: -($span-width * 9 / 20);
+      margin-left: -($span-width * 9 * 0.05);
     }
   }
 }
